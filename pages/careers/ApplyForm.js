@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import style from "../../Components/ContactSect/ContactSet.module.scss"
+import contstyle from "../../Components/ContactSect/ContactSet.module.scss"
 import styles from "./career.module.scss"
 
 export default class ApplyForm extends Component {
@@ -8,7 +8,7 @@ export default class ApplyForm extends Component {
       <div>
 
         <div className={styles.applyform}>
-          <form className={style.formSect}>
+          <form className={contstyle.formSect}>
             <h4>Apply Now</h4>
             <div>
               <input type="text" placeholder="Your Name"></input>
