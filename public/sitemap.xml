@@ -33,14 +33,6 @@
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one/blog/[id]</loc>
-  </url>
-
-  <url>
-    <loc>http://getedge.ntb.one/blog/index</loc>
-  </url>
-
-  <url>
     <loc>http://getedge.ntb.one/careers/ApplyForm</loc>
   </url>
 
@@ -58,6 +50,14 @@
 
   <url>
     <loc>http://getedge.ntb.one/careers/index</loc>
+  </url>
+
+  <url>
+    <loc>http://getedge.ntb.one/blog/[id]</loc>
+  </url>
+
+  <url>
+    <loc>http://getedge.ntb.one/blog/index</loc>
   </url>
 
   <url>

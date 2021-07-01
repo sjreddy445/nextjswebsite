@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { Col, Row } from 'reactstrap';
 import TextSect from './TextSect';
-//  import ProductList from '../ProductList/ProductList';
-// import styles from "./headerBanner.scss"
 import styles from './HeaderBanner.module.scss'
-// import BannerImg from '../../Assets/images/Home/home-banner.png'
 import SubHeader from '../SubHeader/SubHeader';
 
 class HeaderBanner extends Component {

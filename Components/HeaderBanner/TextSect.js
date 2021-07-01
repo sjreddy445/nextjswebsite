@@ -38,7 +38,7 @@ class TextSect extends Component {
   render() {
     return (
       <>
-        <div >
+        <div className={styles.headerbanner} >
           <div className={styles.headerTitle}>
             {!this.props.data.titleImg ?
               <>

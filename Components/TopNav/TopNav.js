@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import NavLink from 'next/link';
-import { withRouter,Router } from 'next/router'
+import { withRouter, Router } from 'next/router'
 import { event } from "../../Utils/Utils";
 // import "./TopNav.scss";
-import { DropdownItem, NavItem } from 'reactstrap';
+import { DropdownItem, NavItem, UncontrolledDropdown } from 'reactstrap';
 import Scroll from 'react-scroll'
 
 class TopNav extends Component {
@@ -20,15 +20,14 @@ class TopNav extends Component {
     this.scrollDiv = React.createRef();
   }
 
-  componentDidMount(){
+  componentDidMount() {
     const { router: { pathname } } = this.props;
-    if(pathname==="/blog")
-    {
-      this.setState({bgClass:'transparent-bg text-white'});
+    if (pathname === "/blog") {
+      this.setState({ bgClass: 'transparent-bg text-white' });
     }
   }
 
-  
+
   toggleMobileMenu() {
     this.setState({
       mobileMenuActive: !this.state.mobileMenuActive
@@ -95,29 +94,31 @@ class TopNav extends Component {
                 <li className="has-sub-menu nav-item">
                   <a className="link-no-decor nav-link" href="/#">Products <i className="arrow-down icon-chevron-down"></i></a>
                   <ul className="sub-menu dropdown-menu ">
-                    <li>
-                      <DropdownItem>
-                        <NavLink  activeClassName="selected" href="/products/pathfinder" ><a className="link-no-decor">Pathfinder <i className="mobile-only icon-chevron-right"></i></a></NavLink>
-                      </DropdownItem>
-                    </li>
-                    <DropdownItem divider></DropdownItem>
-                    <li>
-                      <DropdownItem>
-                        <NavLink activeClassName="selected" href="/products/mobility" ><a  className="link-no-decor"> Mobility<i className="mobile-only icon-chevron-right"></i> </a></NavLink>
-                      </DropdownItem>
-                    </li>
-                    <DropdownItem divider></DropdownItem>
-                    <li>
-                      <DropdownItem>
-                        <NavLink  activeClassName="selected" href="/products/recruit"  ><a  className="link-no-decor">Recruit <i className="mobile-only icon-chevron-right"></i></a></NavLink>
-                      </DropdownItem>
-                    </li>
+                    <UncontrolledDropdown>
+                      <li>
+                        <DropdownItem>
+                          <NavLink activeClassName="selected" href="/products/pathfinder" ><a className="link-no-decor">Pathfinder <i className="mobile-only icon-chevron-right"></i></a></NavLink>
+                        </DropdownItem>
+                      </li>
+                      <DropdownItem divider></DropdownItem>
+                      <li>
+                        <DropdownItem>
+                          <NavLink activeClassName="selected" href="/products/mobility" ><a className="link-no-decor"> Mobility<i className="mobile-only icon-chevron-right"></i> </a></NavLink>
+                        </DropdownItem>
+                      </li>
+                      <DropdownItem divider></DropdownItem>
+                      <li>
+                        <DropdownItem>
+                          <NavLink activeClassName="selected" href="/products/recruit"  ><a className="link-no-decor">Recruit <i className="mobile-only icon-chevron-right"></i></a></NavLink>
+                        </DropdownItem>
+                      </li>
+                    </UncontrolledDropdown>
                   </ul>
                 </li>
-                <NavItem><NavLink  activeClassName="selected" href="/blog"><a  className="link-no-decor">Blog & Resources <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
-                <NavItem><NavLink  activeClassName="selected" href="/contact"><a  className="link-no-decor">Contact <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
-                <NavItem><NavLink  activeClassName="selected" href="/careers" ><a  className="link-no-decor">Careers <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
-                <NavItem><NavLink  activeClassName="selected" href="/about"><a  className="link-no-decor">About Us <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
+                <NavItem><NavLink activeClassName="selected" href="/blog"><a className="link-no-decor">Blog & Resources <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
+                <NavItem><NavLink activeClassName="selected" href="/contact"><a className="link-no-decor">Contact <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
+                <NavItem><NavLink activeClassName="selected" href="/careers" ><a className="link-no-decor">Careers <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
+                <NavItem><NavLink activeClassName="selected" href="/about"><a className="link-no-decor">About Us <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
               </ul>
             </div>
           </div>
