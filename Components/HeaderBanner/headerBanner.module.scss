@@ -1,0 +1,93 @@
+.headerbanner {
+    background-repeat: no-repeat;
+    background-size: cover;
+    // height: 44vw;
+    .secondTitle {
+        margin-top: -1.75rem;
+    }
+    .headerTitle {
+        line-height: 3.5rem;
+    }
+    .titleContainer {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .rightbg {
+        padding-top: 70px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        display: flex;
+    }
+    b {
+        color: inherit
+    }
+    .content {
+        // height: 100%;
+        // margin-top: 5rem;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        padding: 8vh 0px;
+        padding-bottom: 0px;
+    }
+    .bottomgradient {
+        position: relative;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            height: 20vw;
+            width: 100%;
+            background: linear-gradient(transparent, black);
+        }
+    }
+    .bottomtext {
+        .content {
+            align-items: flex-end;
+        }
+    }
+    @media screen and (max-width: 900px) {
+        .rightbg {
+            padding-top: 2rem;
+        }
+        .rectangular {
+            .rightbg {
+                height: 120vw;
+                min-height: initial;
+            }
+        }
+    }
+    @media screen and (max-width: 1300px) {
+        .content {
+            padding: 20px;
+        }
+    }
+    @media screen and (min-width: 1340px) {
+        .rightbg {
+            min-height: 60vh;
+        }
+        &.rectangular {
+            .rightbg {
+                height: 35vw;
+                min-height: initial;
+            }
+        }
+    }
+    @media screen and (min-width: 1670px) {
+        .rightbg {
+            min-height: 80vh;
+        }
+        &.rectangular {
+            .rightbg {
+                height: 35vw;
+                min-height: initial;
+            }
+        }
+    }
+}
