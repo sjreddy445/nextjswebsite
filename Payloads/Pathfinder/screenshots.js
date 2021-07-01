@@ -1,14 +1,14 @@
 export const payload = [
     {
-        img: require("../../Assets/images/Products/pathfinder/slider/Recommended_Path.png").default.src,
+        img: require("../../Assets/images/Products/pathfinder/screenshots/Pathfinder-1@3x.jpg").default.src,
         imgAlt: "getEdge Pathfinder AI"
     },
     {
-        img: require("../../Assets/images/Products/pathfinder/slider/Smart-Jobs-Landing.png").default.src,
+        img: require("../../Assets/images/Products/pathfinder/screenshots/Pathfinder-2@3x.jpg").default.src,
         imgAlt: "getEdge Pathfinder AI"
     },
     {
-        img: require("../../Assets/images/Products/pathfinder/slider/user_profile.png").default.src,
+        img: require("../../Assets/images/Products/pathfinder/screenshots/Pathfinder-3@3x.jpg").default.src,
         imgAlt: "getEdge Pathfinder AI"
     },
 ]

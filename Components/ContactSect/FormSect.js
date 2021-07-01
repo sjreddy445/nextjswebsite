@@ -26,6 +26,7 @@ const FormSect = () => {
   const toggleModal = (val) => setModal(val);
   let recaptcha = null;
   const TEST_SITE_KEY = "6LcsyyobAAAAAPUXq6-8DiWB8ZoJoD5LdLqUB1p-";
+  let msg = "Your message has been sent. The team will get in touch with you shortly."
   const { handleSubmit, handleChange, values, errors } = useFormik({
     enableReinitialize: true,
     initialValues: {
@@ -41,7 +42,7 @@ const FormSect = () => {
     async onSubmit(values) {
       await recaptcha.execute();//get token using this
       axios.post("https://formspree.io/f/xdopaedp", values).then((response) => {
-        // toggleModal(true)
+        router.replace({ pathname: '/thankyou', query: { msg: msg, isOpen: true } }, '/thankyou', { shallow: true });
         // callThank()
       }).catch((err) => {
       })
@@ -51,16 +52,13 @@ const FormSect = () => {
   const onResolve = (token) => {
   }
 
-  let message = "Your message has been sent. The team will get in touch with you shortly."
+
 
   const callThank = () => {
     axios.get("/thankyouContact.html").then((response) => {
     })
   }
 
-  // if (modal) {
-  //   return <Router to={{ pathname: "/thankyou", data: { isOpen: true, message: message } }} />
-  // }
 
 
   return (

@@ -1,86 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:3000/404</loc>
+    <loc>http://getedge.ntb.one/404</loc>
   </url>
 
   <url>
-    <loc>http://localhost:3000/about</loc>
+    <loc>http://getedge.ntb.one/about</loc>
   </url>
 
   <url>
-    <loc>http://localhost:3000/contact</loc>
+    <loc>http://getedge.ntb.one/contact</loc>
   </url>
 
   <url>
-    <loc>http://localhost:3000</loc>
+    <loc>http://getedge.ntb.one</loc>
   </url>
 
   <url>
-    <loc>http://localhost:3000/life-at-edge</loc>
+    <loc>http://getedge.ntb.one/life-at-edge</loc>
   </url>
 
   <url>
-    <loc>http://localhost:3000/sitemap</loc>
+    <loc>http://getedge.ntb.one/sitemap</loc>
   </url>
 
   <url>
-    <loc>http://localhost:3000/sitttte</loc>
+    <loc>http://getedge.ntb.one/sitttte</loc>
   </url>
 
   <url>
-    <loc>http://localhost:3000/thankyou</loc>
+    <loc>http://getedge.ntb.one/thankyou</loc>
   </url>
 
   <url>
-    <loc>http://localhost:3000/all-resource/[slug]</loc>
+    <loc>http://getedge.ntb.one/all-resource/[slug]</loc>
   </url>
 
   <url>
-    <loc>http://localhost:3000/blog/[id]</loc>
+    <loc>http://getedge.ntb.one/blog/[id]</loc>
   </url>
 
   <url>
-    <loc>http://localhost:3000/blog/index</loc>
+    <loc>http://getedge.ntb.one/blog/index</loc>
   </url>
 
   <url>
-    <loc>http://localhost:3000/careers/ApplyForm</loc>
+    <loc>http://getedge.ntb.one/careers/ApplyForm</loc>
   </url>
 
   <url>
-    <loc>http://localhost:3000/careers/CareerCard</loc>
+    <loc>http://getedge.ntb.one/careers/CareerCard</loc>
   </url>
 
   <url>
-    <loc>http://localhost:3000/careers/Contact</loc>
+    <loc>http://getedge.ntb.one/careers/Contact</loc>
   </url>
 
   <url>
-    <loc>http://localhost:3000/careers/Head</loc>
+    <loc>http://getedge.ntb.one/careers/Head</loc>
   </url>
 
   <url>
-    <loc>http://localhost:3000/careers/index</loc>
+    <loc>http://getedge.ntb.one/careers/index</loc>
   </url>
 
   <url>
-    <loc>http://localhost:3000/elapage/index</loc>
+    <loc>http://getedge.ntb.one/elapage/index</loc>
   </url>
 
   <url>
-    <loc>http://localhost:3000/privacy/index</loc>
+    <loc>http://getedge.ntb.one/privacy/index</loc>
   </url>
 
   <url>
-    <loc>http://localhost:3000/products/mobility</loc>
+    <loc>http://getedge.ntb.one/products/mobility</loc>
   </url>
 
   <url>
-    <loc>http://localhost:3000/products/pathfinder</loc>
+    <loc>http://getedge.ntb.one/products/pathfinder</loc>
   </url>
 
   <url>
-    <loc>http://localhost:3000/products/recruit</loc>
+    <loc>http://getedge.ntb.one/products/recruit</loc>
   </url>
 </urlset>

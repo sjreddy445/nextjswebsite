@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[6187],{86187:function(e,s,t){"use strict";t.r(s),s.default={src:"/_next/static/image/Assets/images/Headers/blog.0958150f6e7d87e6dc8525fee00e83b6.svg",height:411,width:799}}}]);

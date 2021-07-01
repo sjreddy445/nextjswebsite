@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[104],{20104:function(e,s,t){"use strict";t.r(s),s.default={src:"/_next/static/image/Assets/images/Home/recruit.e22906039346d97172637c720a6b7491.svg",height:241,width:290}}}]);

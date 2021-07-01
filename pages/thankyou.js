@@ -1,4 +1,4 @@
-import { withRouter } from 'next/router';
+import { withRouter,Router } from 'next/router';
 import React, { Component } from 'react'
 import { Modal, ModalHeader, ModalBody, Col, Row } from 'reactstrap';
 import SuccessModalImg from '../Assets/images/Icons/message-modal.svg'
@@ -9,28 +9,22 @@ class SuccessModal extends Component {
   constructor(props) {
     super()
     this.state = {
-      isOpen: true,
+      isOpen: false,
       msg: ''
     }
   }
   componentDidMount() {
-    console.log("data",this.props)
-    // const { location } = this.props;
-    // if (location && location.data) {
-    //   this.setState({ isOpen: location.data.isOpen, msg: location.data.message })
-    // }
-
+    console.log("data", this.props)
+    const { query } = this.props.router;
+    if (query && query.msg && query.isOpen==="true") {
+      this.setState({ isOpen: true, msg: query.msg })
+    }
   }
   toggleModal = () => {
     this.setState({ isOpen: false, msg: '' })
     this.props.router.push("/", "", { shallow: true })
   }
   render() {
-    if (!this.state.isOpen || !this.state.msg) {
-      // return (
-      //   <Redirect to="/" />
-      // )
-    }
     return (
       <div>
         <Home />

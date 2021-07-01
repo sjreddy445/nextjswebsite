@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[2195],{2195:function(e,s,t){"use strict";t.r(s),s.default={src:"/_next/static/image/Assets/images/Headers/pathfinder.845831465dcf1612a1c45744c53da88b.svg",height:650,width:650}}}]);

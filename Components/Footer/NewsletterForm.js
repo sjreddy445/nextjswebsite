@@ -3,10 +3,7 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import axios from "axios";
 import Router, { withRouter } from 'next/router'
-// import { Redirect } from 'react-router-dom';
-// import styles from '../ContactSect/ContactSet.module.scss'
 import { MAILCHIMP_URL } from '../../configs/constants'
-// import SuccessModal from '../ContactSect/SuccessModal';
 import cogoToast from 'cogo-toast';
 import jsonp from 'jsonp'
 import { useRouter } from 'next/router';
@@ -26,7 +23,7 @@ const NewsletterForm = () => {
     return MAILCHIMP_URL + "&EMAIL=" + values.EMAIL
   }
 
-  const message = "Thank you for subscribing to our mailing list"
+  const msg = "Thank you for subscribing to our mailing list"
 
   const { handleSubmit, handleChange, values } = useFormik({
     initialValues: {
@@ -57,7 +54,7 @@ const NewsletterForm = () => {
         } else if (data.result !== "success") {
           showError(data.msg)
         } else {
-          console.log("hello")
+          router.replace({ pathname: '/thankyou', query: { msg: msg, isOpen: true } }, '/thankyou', { shallow: true });
           // toggleModal()
           // callThank()
         }
@@ -77,10 +74,6 @@ const NewsletterForm = () => {
   const callThank = () => {
     axios.get("/thankyouNews.html").then((response) => {
     })
-  }
-
-  if (modal) {
-    router.push('/thankyou',{ shallow: true });
   }
 
   return (
