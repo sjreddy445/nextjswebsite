@@ -14,7 +14,6 @@ import '../Components/CardList/CardSect.scss'
 import '../Components/Cards/RatioCard/ratioCard.scss'
 // import '../Components/Cards/InfoListCard/InfoListCard.module.scss'
 // import '../Components/ContactSect/ContactSet.module.scss'
-// import "../Components/HeaderBanner/HeaderBanner.module.scss"
 // import '../Components/HomeStats/HomeStats.module.scss'
 // import '../Components/Leadership/Leadership.module.scss'
 // import '../Components/OurStory/OurStory.module.scss'

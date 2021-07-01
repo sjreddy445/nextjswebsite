@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Col, Row } from 'reactstrap'
 import PeopleCard from './PeopleCard'
-
 export default class Leadership extends Component {
   render() {
     let people = this.props.data

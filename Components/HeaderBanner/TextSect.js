@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './HeaderBanner.module.scss'
+import styles from './banner.module.scss'
 import { Button } from 'reactstrap';
 import Scroll  from 'react-scroll'
 
