@@ -20,7 +20,6 @@ class CareerCard extends Component {
     };
   }
   componentDidMount() {
-    console.log("this.ptops",this.props)
     this.setState({
       details: this.props.data.details,
       responsibilities: this.props.data.responsibilities,

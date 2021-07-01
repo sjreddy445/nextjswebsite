@@ -36,7 +36,6 @@ class resourceViewAll extends Component {
   componentWillMount() {
     this.handlePageChange(1);
     const { router: { pathname } } = this.props;
-    console.log("pathname",this.props);
     Api.get(this.props.router.query.slug + "/count").then(({ data: totalItem }) => {
       this.setState({ ...this.state, ...{ totalItem } })
       // this.scrollWindow()

@@ -14,7 +14,6 @@ class SuccessModal extends Component {
     }
   }
   componentDidMount() {
-    console.log("data", this.props)
     const { query } = this.props.router;
     if (query && query.msg && query.isOpen==="true") {
       this.setState({ isOpen: true, msg: query.msg })
