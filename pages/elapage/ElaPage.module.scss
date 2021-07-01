@@ -1,0 +1,14 @@
+.elapage {
+    .infolisting {
+        &>* {
+            margin-bottom: 30px;
+        }
+    }
+    .elafooter {
+        padding-bottom: 5rem;
+    }
+    .mt5 {
+        margin-top: 5rem !important;
+        margin-bottom: 5rem !important;
+    }
+}

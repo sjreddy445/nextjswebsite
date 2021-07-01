@@ -1,0 +1,9 @@
+.serviceList {
+  margin-right: 1rem;
+  border-bottom: 1px solid #fff;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.serviceList:last {
+  border-bottom: none;
+}

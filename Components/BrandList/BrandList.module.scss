@@ -1,0 +1,19 @@
+@import "../../Assets/css/variable";
+.brandImg {
+    width: 200px;
+    height: 200px;
+}
+
+.brandlist {
+    .mobileview {
+        display: none !important;
+    }
+    @media screen and (max-width: $mobileViewStart) {
+        .mobileview {
+            display: block !important;
+        }
+        .desktopview {
+            display: none !important;
+        }
+    }
+}

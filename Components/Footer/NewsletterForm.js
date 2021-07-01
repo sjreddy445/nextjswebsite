@@ -1,0 +1,103 @@
+import React, { useState } from 'react';
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
+import axios from "axios";
+import Router, { withRouter } from 'next/router'
+// import { Redirect } from 'react-router-dom';
+// import styles from '../ContactSect/ContactSet.module.scss'
+import { MAILCHIMP_URL } from '../../configs/constants'
+// import SuccessModal from '../ContactSect/SuccessModal';
+import cogoToast from 'cogo-toast';
+import jsonp from 'jsonp'
+import { useRouter } from 'next/router';
+
+
+const validationSchema = Yup.object({
+  EMAIL: Yup.string().email("Please enter valid email").required("Email is required"),
+})
+
+const NewsletterForm = () => {
+  const router = useRouter();
+  const [modal, setModal] = useState(false);
+  const toggleModal = () => setModal(!modal);
+  // const [errmsg, setErrmsg] = useState("");
+
+  const getFormattedUrl = (values) => {
+    return MAILCHIMP_URL + "&EMAIL=" + values.EMAIL
+  }
+
+  const message = "Thank you for subscribing to our mailing list"
+
+  const { handleSubmit, handleChange, values } = useFormik({
+    initialValues: {
+      EMAIL: ""
+    },
+    validateOnChange: false,
+    validationSchema,
+    onSubmit(values) {
+      let url = getFormattedUrl(values)
+      // console.log("success", url);
+      // axios.get(url).then((response) => {
+      // 	//console.log("success", response.data);
+      //   if (response.data.result === "success") {
+      //     toggleModal( )
+      //     callThank()
+      //   } else {
+      //     showError(response.data.msg)
+      //   }
+      //   // toggleModal()
+      console.lo
+      // }).catch((err) => {
+
+      // })
+
+      jsonp(url, { param: "c" }, (err, data) => {
+        if (err) {
+          showError(data.msg)
+        } else if (data.result !== "success") {
+          showError(data.msg)
+        } else {
+          console.log("hello")
+          // toggleModal()
+          // callThank()
+        }
+      });
+    }
+  })
+
+  const showError = (msg) => {
+    cogoToast.error(
+      <div>
+        <b>Error!</b>
+        <div><span dangerouslySetInnerHTML={{ __html: msg }} /></div>
+      </div>
+    );
+  }
+
+  const callThank = () => {
+    axios.get("/thankyouNews.html").then((response) => {
+    })
+  }
+
+  if (modal) {
+    router.push('/thankyou',{ shallow: true });
+  }
+
+  return (
+    <>
+
+      {/* <SuccessModal modal={modal} toggleModal={toggleModal} message={message} /> */}
+      <form className="form" onSubmit={handleSubmit}>
+        <input placeholder="Your Email Address" type="email" values={values.EMAIL} name="EMAIL" onChange={handleChange} />
+        {/* real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
+        <div style={{ position: "absolute", left: " -5000px" }} aria-hidden="true"><input type="text" name="b_f659ca1b353586a0c99df3cad_0049088ee0" tabIndex="-1" value="" onChange={handleChange} /></div>
+        <button className="btn btn-primary" type="submit">SUBMIT</button>
+      </form>
+      {/* <span className={styles.error}>{errmsg ? errmsg : null}</span> */}
+    </>
+  );
+}
+
+
+
+export default withRouter(NewsletterForm);

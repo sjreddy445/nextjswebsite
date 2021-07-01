@@ -1,0 +1,13 @@
+@import "../../Assets/css/variable";
+.productscreenshot {
+    // background-color: $darkGrey;
+    .productscreenshotbox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .ImageSize {
+        height: 400px;
+        border-radius: 15px
+    }
+}

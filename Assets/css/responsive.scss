@@ -1,0 +1,22 @@
+// Responsive css
+@import './_variable.scss';
+.container-inner {
+    max-width: $innerContainerWidth;
+    margin: auto;
+    @media screen and (max-width: $innerContainerWidth + 20px) {
+        padding: 0px 20px;
+    }
+}
+
+.mobile-only {
+    display: none;
+}
+
+@media screen and (max-width: $mobileViewStart) {
+    .mobile-only {
+        display: inline-block;
+    }
+    .flex-mobile-wrap {
+        flex-wrap: wrap;
+    }
+}

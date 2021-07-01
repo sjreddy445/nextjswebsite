@@ -1,0 +1,13 @@
+.secondTitle {
+  margin-top: -1.75rem;
+}
+.headerTitle {
+  line-height: 3.5rem;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}

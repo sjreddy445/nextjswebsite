@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[4152],{64152:function(e,s,t){"use strict";t.r(s),s.default={src:"/_next/static/image/Assets/images/Icons/user-heart-dark.9f9be32c6b99fe1e1b3e942aa80d46d1.svg",height:60,width:60}}}]);

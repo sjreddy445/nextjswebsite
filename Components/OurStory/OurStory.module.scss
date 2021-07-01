@@ -1,0 +1,28 @@
+  .slidercontainer {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 0px calc(100vw/2 - 640px);
+      scroll-behavior: smooth;
+      display: flex;
+      &>* {
+          display: inline-block;
+          width: 40%;
+          min-width: 30rem;
+          white-space: normal;
+          &:not(:last-child) {
+              margin-right: 30px;
+          }
+      }
+      &::-webkit-scrollbar {
+          display: none;
+      }
+  }
+  
+  @media screen and (max-width: 1280px) {
+      .slidercontainer {
+          padding: 0px 30px;
+          &>* {
+              min-width: 16.4rem;
+          }
+      }
+  }

@@ -1,0 +1,13 @@
+@import "../../Assets/css/variable";
+.productvideo {
+    background-color: $darkGrey;
+    .productvideobox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .videoSize {
+        height: 300px;
+        border-radius: 15px
+    }
+}

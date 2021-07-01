@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[1302],{31302:function(e,s,a){"use strict";a.r(s),s.default={src:"/_next/static/image/Assets/images/Icons/timer-line-dark.588c2df88aa356ae045c09a32d0bd932.svg",height:60,width:60}}}]);

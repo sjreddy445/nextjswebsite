@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://localhost:3000/404</loc>
+  </url>
+
+  <url>
+    <loc>http://localhost:3000/about</loc>
+  </url>
+
+  <url>
+    <loc>http://localhost:3000/contact</loc>
+  </url>
+
+  <url>
+    <loc>http://localhost:3000</loc>
+  </url>
+
+  <url>
+    <loc>http://localhost:3000/life-at-edge</loc>
+  </url>
+
+  <url>
+    <loc>http://localhost:3000/sitemap</loc>
+  </url>
+
+  <url>
+    <loc>http://localhost:3000/sitttte</loc>
+  </url>
+
+  <url>
+    <loc>http://localhost:3000/thankyou</loc>
+  </url>
+
+  <url>
+    <loc>http://localhost:3000/all-resource/[slug]</loc>
+  </url>
+
+  <url>
+    <loc>http://localhost:3000/blog/[id]</loc>
+  </url>
+
+  <url>
+    <loc>http://localhost:3000/blog/index</loc>
+  </url>
+
+  <url>
+    <loc>http://localhost:3000/careers/ApplyForm</loc>
+  </url>
+
+  <url>
+    <loc>http://localhost:3000/careers/CareerCard</loc>
+  </url>
+
+  <url>
+    <loc>http://localhost:3000/careers/Contact</loc>
+  </url>
+
+  <url>
+    <loc>http://localhost:3000/careers/Head</loc>
+  </url>
+
+  <url>
+    <loc>http://localhost:3000/careers/index</loc>
+  </url>
+
+  <url>
+    <loc>http://localhost:3000/elapage/index</loc>
+  </url>
+
+  <url>
+    <loc>http://localhost:3000/privacy/index</loc>
+  </url>
+
+  <url>
+    <loc>http://localhost:3000/products/mobility</loc>
+  </url>
+
+  <url>
+    <loc>http://localhost:3000/products/pathfinder</loc>
+  </url>
+
+  <url>
+    <loc>http://localhost:3000/products/recruit</loc>
+  </url>
+</urlset>

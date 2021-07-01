@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[2383],{52383:function(e,s,t){"use strict";t.r(s),s.default={src:"/_next/static/image/Assets/images/Home/edge-stats-2per.892f8561030e7964312b69d0dc79c6de.svg",height:115,width:402}}}]);

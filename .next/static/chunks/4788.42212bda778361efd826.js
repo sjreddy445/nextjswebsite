@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[4788],{44788:function(e,s,t){"use strict";t.r(s),s.default={src:"/_next/static/image/Assets/images/Products/recruit/slider/recruit-bg.a1d9440fd823b729c666aca972360044.svg",height:420,width:620}}}]);

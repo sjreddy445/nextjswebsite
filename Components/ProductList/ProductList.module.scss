@@ -1,0 +1,16 @@
+@import '../../Assets/css/_variable.scss';
+
+.cardTitle {
+  line-height: 1.8rem;
+}
+.cardSubtitle {
+  line-height: 1.4rem;
+}
+.cardLink {
+  a {
+    color: $brandColor;
+    &:hover {
+      color: $brandColor;
+    }
+  }
+}

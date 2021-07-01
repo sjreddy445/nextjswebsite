@@ -1,0 +1,65 @@
+@import "../../Assets/css/variable";
+.desc {
+    color: $textGrey1;
+}
+
+.designation {
+    font-weight: 600;
+}
+
+.cardheight {
+    min-height: 260px !important;
+    color: $textGrey1;
+    padding: 20px;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: normal;
+    line-height: 1.38;
+}
+
+.slick-list {
+    margin-left: -27px !important;
+}
+
+.cardborder {
+    border-radius: 10px !important;
+    border: none !important;
+    margin: 45.2px 4px;
+    padding: 47.9px 41.2px;
+    border-radius: 10px;
+    width: 400px !important;
+    min-height: 400px !important;
+}
+
+.img {
+    border-radius: 120px;
+    height: 80px;
+    width: 80px;
+    // border-radius: 15px
+}
+
+.slick-next {
+    right: 20px !important;
+    top: 380px !important;
+}
+
+@media screen and (max-width: $mobileViewStart) {
+    .cardborder {
+        border-radius: 10px !important;
+        border: none !important;
+        margin: 5px !important;
+        padding: 5px !important;
+        width: auto !important;
+        min-height: 400px !important;
+    }
+    .img {
+        border-radius: 120px;
+        height: 80px;
+        width: 80px;
+        text-align: center;
+    }
+    .desc {
+        color: $textGrey1;
+        text-align: center;
+    }
+}

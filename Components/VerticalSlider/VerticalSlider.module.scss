@@ -1,0 +1,90 @@
+@import "../../Assets/css/variable";
+.verticalslider {
+    .slidercontent {
+        position: relative;
+        .mobilepagination {
+            display: none;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 5px 0px;
+        }
+        @media screen and (max-width: $mobileViewStart) {
+            margin: 0px 0px 13vh 0px;
+            .mobilepagination {
+                display: block;
+            }
+            .slidetitle {
+                font-size: 23px;
+                font-weight: bold;
+            }
+        }
+        .containerinner {
+            height: calc(100vh - 71px);
+        }
+        // .text-container {
+        //   margin-right: 20px;
+        // }
+        @media screen and (min-width: 1280px) {
+            .textcontainer {
+                margin-right: 20px;
+            }
+        }
+        @media screen and (max-width: 1280px) {
+            .imagecontainer {
+                margin-bottom: 2vh;
+                img {
+                    width: 100%;
+                }
+            }
+            .pager {
+                display: none;
+            }
+        }
+        .pager {
+            position: absolute;
+            left: 20px;
+            .dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: #f23a5a;
+                margin: 20px 0px;
+                &.active {
+                    border: solid 2px #fff;
+                    padding: 2px;
+                    background: #fff content-box;
+                    width: 15px;
+                    height: 15px;
+                    margin-left: -2px;
+                }
+            }
+        }
+    }
+    &.dotgrey {
+        .pager {
+            .dot {
+                background-color: rgba(0, 0, 0, 0.3);
+                &.active {
+                    // background-color: #f23a5a;
+                    border: solid 2px #f23a5a;
+                    padding: 2px;
+                    background: #f23a5a content-box;
+                    width: 15px;
+                    height: 15px;
+                    margin-left: -2px;
+                }
+            }
+        }
+    }
+    .mobileslider {
+        display: none;
+    }
+    @media screen and (max-width: $mobileViewStart) {
+        .mobileslider {
+            display: block;
+        }
+        .desktopslider {
+            display: none;
+        }
+    }
+}

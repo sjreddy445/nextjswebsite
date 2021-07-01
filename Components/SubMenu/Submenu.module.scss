@@ -1,0 +1,9 @@
+@import "../../Assets/css/variable";
+@media screen and (max-width: $mobileViewStart) {
+    .statsBox {
+        margin: 0px;
+    }
+    .mobileview {
+        display: none;
+    }
+}

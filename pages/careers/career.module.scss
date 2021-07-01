@@ -1,0 +1,85 @@
+@import "../../Assets/css/variable";
+.accordionhead {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0px;
+    .headtitle {
+        font-size: 25px;
+    }
+    @media screen and (max-width: $mobileViewStart) {
+        .headtitle {
+            font-size: 18px;
+        }
+    }
+}
+
+.careerpage {
+    .boldtitle {
+        font-size: 27px;
+        font-weight: 900;
+    }
+}
+
+.aboutedge {
+    display: flex;
+    .leftcol {
+        width: 32%;
+        flex-shrink: 0;
+    }
+    .rightcol {
+        flex: 1;
+    }
+    p {
+        font-size: 14px;
+        line-height: 1.7em;
+    }
+    @media screen and (max-width: $mobileViewStart) {
+        flex-wrap: wrap;
+        .leftcol {
+            width: 100%;
+        }
+    }
+}
+
+.careercard {
+    display: flex;
+    justify-content: space-between;
+    .coltitle {
+        font-size: 18px;
+        font-weight: 800;
+    }
+    th {
+        font-size: 14px;
+        width: 150px;
+        line-height: 1.7em;
+    }
+    td {
+        font-size: 12px;
+        line-height: 1.7em;
+    }
+    .listitem {
+        font-size: 14px;
+        line-height: 1.7em;
+    }
+    .applyform {
+        margin-top: 50px;
+        h4 {
+            font-size: 18px;
+        }
+    }
+    .leftcol {
+        width: 32%;
+    }
+    .rightcol {
+        flex: 1;
+    }
+    @media screen and (max-width: $mobileViewStart) {
+        flex-wrap: wrap;
+        .leftcol {
+            width: 100%;
+        }
+        .rightcol {
+            margin-top: 50px;
+        }
+    }
+}

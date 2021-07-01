@@ -1,0 +1,239 @@
+@import "../../Assets/css/variable";
+.footer {
+    background-color: $textColor;
+    .news-letter-form {
+        background-color: $darkGrey2;
+        .form {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 54px;
+            display: flex;
+            input {
+                background-color: transparent;
+                border: none;
+                height: 100%;
+                padding-left: 20px;
+                font-size: 19px;
+                // width: calc(100% - 133px);
+                &:focus {
+                    outline: none;
+                }
+            }
+            button {
+                // background: transparent;
+                // color: red;
+                // color: 
+                border: none;
+                &:hover {
+                    color: #fff
+                }
+            }
+        }
+        .news-letter-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    .book-demo-form {
+        background-color: $brandColor;
+        .form {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 54px;
+            display: flex;
+            button {
+                background: white;
+                color: red;
+                border: none;
+                &:hover {
+                    color: white !important;
+                    background: #D50A0A !important;
+                }
+                &:active {
+                    color: #ed2012 !important;
+                    background: white I !important;
+                }
+            }
+        }
+        .book-demo-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    hr {
+        border-color: #515151;
+        border-bottom: none;
+        margin: 0px;
+    }
+    .about-edge {
+        max-width: 500px;
+    }
+    .gartner {
+        flex-shrink: 0;
+        font-size: 1.4rem;
+        white-space: nowrap;
+    }
+    .gartner-img {
+        width: 150px;
+        border: 10px solid #fff;
+    }
+    .social-icons {
+        width: 100px;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        color: #fff;
+        .icon {
+            font-size: 20px;
+        }
+    }
+    .footer-trio-element,
+    .footer-quarter-element {
+        &>*:not(:last-child):not(:first-child) {
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+        @media screen and (max-width: $mobileViewStart) {
+            flex-wrap: wrap;
+            &>* {
+                margin-bottom: 20px;
+            }
+            &>*:not(:last-child):not(:first-child) {
+                margin-left: 0px;
+                margin-right: 0px
+            }
+        }
+    }
+}
+
+.footer-v-nav {
+    padding: 0px 20px 0px 0px;
+    a {
+        color: $white;
+        &:hover {
+            color: $white;
+        }
+    }
+    li {
+        display: block;
+        white-space: nowrap;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: $mobileViewStart) {
+    .footer {
+        .gartner {
+            width: 100%;
+            font-size: 4vw;
+        }
+        .gartner-img {
+            width: 32vw;
+            border-width: 1vw;
+        }
+        .gartner-title {
+            flex: 1;
+            padding-left: 4vw;
+        }
+        .about-edge,
+        .gartner-details {
+            display: none;
+        }
+        .footer-link-1,
+        .footer-link-2 {
+            width: 50%;
+            .footer-v-nav li:not(:last-child) {
+                margin-bottom: 15px;
+            }
+        }
+        .social-icons {
+            width: 100%;
+            grid-template-columns: repeat(6, 1fr);
+            margin: 20px 0px 0px 0px;
+        }
+        .footer-trio-element>* {
+            margin-bottom: 0px;
+        }
+        .book-demo-form {
+            .book-demo-box {
+                display: flex;
+                align-items: flex-start !important;
+                flex-direction: column;
+                form {
+                    width: 90%;
+                    height: 86px;
+                    border-radius: 5px;
+                    margin: 0px auto;
+                    box-shadow: 0 3px 3px 0 #ac0101;
+                    background-color: #ffffff;
+                }
+                button {
+                    width: 100%;
+                    font-size: 20px;
+                    margin: 0px auto;
+                    font-weight: 800;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: normal;
+                    letter-spacing: normal;
+                    text-align: center;
+                    color: #ed2012;
+                    border: none;
+                    &:hover {
+                        color: white !important;
+                        background: #D50A0A !important;
+                    }
+                    &:active {
+                        color: #ed2012 !important;
+                        background: white I !important;
+                    }
+                }
+                .title {
+                    font-size: 30px;
+                    text-align: center;
+                    margin-bottom: 1rem;
+                    font-weight: bold;
+                    padding: 10px;
+                }
+            }
+        }
+        .news-letter-form {
+            background-color: $darkGrey2;
+            .form {
+                background-color: #fff;
+                border-radius: 10px;
+                overflow: hidden;
+                height: 54px;
+                input {
+                    background-color: transparent;
+                    border: none;
+                    height: 100%;
+                    padding-left: 20px;
+                    font-size: 19px;
+                    // width: calc(100% - 133px);
+                    &:focus {
+                        outline: none;
+                    }
+                }
+                button {
+                    border: none;
+                    &:hover {
+                        color: #fff
+                    }
+                }
+            }
+            .news-letter-box {
+                display: block !important;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .title {
+                font-size: 18px;
+            }
+        }
+    }
+}

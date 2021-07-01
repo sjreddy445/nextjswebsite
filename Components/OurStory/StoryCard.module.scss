@@ -1,0 +1,27 @@
+.storycard {
+    background-color: #f7f7f7;
+    padding: 30px 30px 0px 30px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: inline-flex !important;
+    flex-direction: column;
+    // min-height: 724px;
+    justify-content: space-between;
+    .headerText {
+        font-size: 25px;
+        font-weight: 800;
+        margin-bottom: 40px;
+    }
+    .image {
+        width: 65%;
+        display: flex;
+        margin: 0 auto;
+    }
+    ul {
+        padding: 0px 0px 0px 20px;
+        li {
+            line-height: 2em;
+            font-size: 1.2em;
+        }
+    }
+}

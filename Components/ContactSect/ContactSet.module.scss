@@ -1,0 +1,21 @@
+@import '../../Assets/css/_variable.scss';
+.error {
+  color: red;
+  font-size: .75rem;
+  display: block;
+  padding-top: .2rem;
+}
+.formSect {
+  input, textarea {
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    font-size: $textMd;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid $textGrey1;
+    margin-top: 2rem;
+    &:focus {
+      outline: none;
+    }
+  }
+}

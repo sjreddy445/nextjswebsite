@@ -1,0 +1,41 @@
+@import "../../Assets/css/variable";
+.card-sect {
+    .card-container {
+        @media screen and (max-width: $mobileViewStart) {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+            margin: 0px;
+            &>* {
+                display: inline-block;
+                width: 80vw !important;
+                white-space: normal;
+            }
+        }
+    }
+}
+
+.podcast-title {
+    color: $textGrey1;
+}
+
+.mobileview {
+    display: none !important;
+}
+
+@media screen and (max-width: $mobileViewStart) {
+    .card-mobile {
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)!important;
+        border-radius: 15px !important;
+    }
+    .card-img {
+        border-top-right-radius: 15px !important;
+        border-top-left-radius: 15px !important;
+    }
+    .mobileview {
+        display: block !important;
+    }
+    .desktopview {
+        display: none !important;
+    }
+}
