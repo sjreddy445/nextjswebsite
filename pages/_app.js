@@ -16,7 +16,7 @@ import '../Components/Cards/InfoListCard/InfoListCard.module.scss'
 import '../Components/ContactSect/ContactSet.module.scss'
 import '../Components/Footer/Footer.scss'
 import '../Components/Footer/Footer.scss'
-import '../Components/HeaderBanner/HeaderBanner.module.scss'
+import "../Components/HeaderBanner/HeaderBanner.module.scss"
 import '../Components/HomeStats/HomeStats.module.scss'
 import '../Components/Leadership/Leadership.module.scss'
 import '../Components/OurStory/OurStory.module.scss'
