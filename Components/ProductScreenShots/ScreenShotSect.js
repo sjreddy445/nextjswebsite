@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import Slider from "react-slick";
 import Image from 'next/image';
+import styled from "styled-components";
+import styles from './ProductScreenShots.module.scss'
+const StyledSlider = styled(Slider)`
+  .slick-list {
+    padding: 0px -74px !important;
+  }
+`;
 class ScreenShotSect extends Component {
   componentDidMount() {
 
@@ -14,7 +21,7 @@ class ScreenShotSect extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-            autoplaySpeed: 2000,
+      autoplaySpeed: 2000,
       responsive: [
         {
           breakpoint: 600,
@@ -28,13 +35,16 @@ class ScreenShotSect extends Component {
       ]
     };
     return (
-      <Slider {...settings}>
-        {this.props.data.map((list,i) => (
+      <StyledSlider {...settings}>
+        {this.props.data.map((list, i) => (
           <div key={i}>
-            <img alt={list.imgAlt} className="w-100" style={{height:400}} src={list.img} />
+            <div className={styles.ImageSize} style={{ backgroundImage: `url('${list.img}')` }}>
+
+            </div>
+            {/* <img alt={list.imgAlt} className="w-100" style={{height:400}} src={list.img} /> */}
           </div>
         ))}
-      </Slider>
+      </StyledSlider>
     );
   }
 }

@@ -10,14 +10,14 @@ const BookDemo = (props) => {
         scroller.scrollTo('contactWidget', {
             duration: 800,
             delay: 0,
-            offset: isBrowser ? -20 : 320,
+            offset: isBrowser ? -10 : 320,
             smooth: 'easeInOutQuart'
         })
     }
     const handleNavigate = (e) => {
         e.preventDefault();
         const { pathname } = router;
-        if (pathname === '/' || pathname.includes('/products') || pathname==='about') {
+        if (pathname === '/' || pathname.includes('/products') || pathname==='/about') {
             scrollToContact();
         } else {
             router.push('/contact')
