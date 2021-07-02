@@ -12,7 +12,7 @@ export default class Leadership extends Component {
         <div>
           <Row>
           {people.map((p, i)=>(
-            <Col md={4} xs={12}>
+            <Col key={i} md={4} xs={12}>
               <PeopleCard data={p} key={i}/>
             </Col>
           ))}

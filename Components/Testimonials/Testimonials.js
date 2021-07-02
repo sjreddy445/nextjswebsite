@@ -21,7 +21,7 @@ class Awards extends Component {
             arrows: true,
             speed: 500,
             slidesToShow: 3,
-            // autoplay: true,
+            autoplay: true,
             autoplaySpeed: 2000,
             slidesToScroll: 1,
             nextArrow: <SlideBtn style={{margin:10}} arrow="right" direction="next" />,
@@ -32,6 +32,7 @@ class Awards extends Component {
                     settings: {
                         arrows: false,
                         dots: true,
+                        autoplay: true,
                         slidesToShow: 1,
                         slidesToScroll: 1,
                         // centerMode: true,

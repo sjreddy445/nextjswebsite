@@ -41,10 +41,6 @@
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one/elapage/index</loc>
-  </url>
-
-  <url>
     <loc>http://getedge.ntb.one/careers/ApplyForm</loc>
   </url>
 
@@ -62,6 +58,10 @@
 
   <url>
     <loc>http://getedge.ntb.one/careers/index</loc>
+  </url>
+
+  <url>
+    <loc>http://getedge.ntb.one/elapage/index</loc>
   </url>
 
   <url>

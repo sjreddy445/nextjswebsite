@@ -7,7 +7,7 @@ import styles from './ContactSet.module.scss'
 import axios from "axios";
 // import SuccessModal from './SuccessModal';
 import Recaptcha from 'react-google-invisible-recaptcha';
-import Router, { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 const phoneRegExp = /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
@@ -22,8 +22,9 @@ const validationSchema = Yup.object({
 
 const FormSect = () => {
   const [modal, setModal] = useState(false);
-  const router=useRouter();
+  const router = useRouter();
   const toggleModal = (val) => setModal(val);
+  const [token, setToken] = useState("");
   let recaptcha = null;
   const TEST_SITE_KEY = "6LcsyyobAAAAAPUXq6-8DiWB8ZoJoD5LdLqUB1p-";
   let msg = "Your message has been sent. The team will get in touch with you shortly."
@@ -40,16 +41,22 @@ const FormSect = () => {
     validateOnChange: false,
     validationSchema,
     async onSubmit(values) {
-      await recaptcha.execute();//get token using this
-      axios.post("https://formspree.io/f/xdopaedp", values).then((response) => {
-        router.replace({ pathname: '/thankyou', query: { msg: msg, isOpen: true } }, '/thankyou', { shallow: true });
-        // callThank()
-      }).catch((err) => {
-      })
+      if (!token) {
+        await recaptcha.execute();
+      } else {
+        axios.post("https://formspree.io/f/xdopaedp", values).then((response) => {
+          router.replace({ pathname: '/thankyou', query: { msg: msg, isOpen: true } }, '/thankyou', { shallow: true });
+          // callThank()
+        }).catch((err) => {
+        })
+      }
     }
   })
 
   const onResolve = (token) => {
+    console.log("token", token)
+    setToken(token);
+    handleSubmit();
   }
 
 
@@ -125,12 +132,13 @@ const FormSect = () => {
           </Col>
           <Col md={12} className="mt-4">
             <Button color="primary" type="submit" className="sm-w-100">Book A Demo</Button>
-
+          </Col>
+          <div style={{ visibility: 'hidden' }}>
             <Recaptcha
               ref={ref => recaptcha = ref}
               sitekey={TEST_SITE_KEY}
               onResolved={(X) => onResolve(X)} />
-          </Col>
+          </div>
         </form>
       </div>
     </>
