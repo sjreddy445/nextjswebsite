@@ -10,7 +10,7 @@ class SliderContent extends Component {
     let { item, currentIndex, total } = this.props
     return (
       <div className={styles.slidercontent}>
-        <div className={"d-flex flex-wrap flex-xl-nowrap justify-content-between align-items-center align-content-center container-inner"}>
+        <div className={"d-flex flex-wrap flex-xl-nowrap justify-content-between align-items-center align-content-center "+ styles.containerinner}>
           <div className={"col-md-12 col-xl-6 order-1 order-xl-0 " + styles.textcontainer}>
             <p className={styles.mobilepagination}>{currentIndex} of {total}</p>
             <h4 className="text-xl mb-3 slidetitle">{item.title}</h4>

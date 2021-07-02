@@ -7,10 +7,12 @@ import styles from './VerticalSlider.module.scss';
 import styled from 'styled-components'
 
 const SliderC = styled(Slider)
-  `
+  `.slick-list, .slick-slider {
+    position: relative;
+    display: block;
+  }
    .slick-dots {
     width: 20px;
-    height: 100%;
     top: 0px;
     left: 10px;
     display: flex !important;

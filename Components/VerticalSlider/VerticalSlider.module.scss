@@ -20,10 +20,12 @@
         }
         .containerinner {
             height: calc(100vh - 71px);
+            max-width: 1280px;
+            margin: auto;
         }
-        // .text-container {
-        //   margin-right: 20px;
-        // }
+        .textcontainer {
+            margin-right: 20px;
+        }
         @media screen and (min-width: 1280px) {
             .textcontainer {
                 margin-right: 20px;

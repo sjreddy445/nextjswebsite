@@ -30,6 +30,7 @@ export default function Home() {
   });
  
   return (
+    <>
     <Fade>
       {/* <TopNav></TopNav> */}
       <Helmet>
@@ -67,5 +68,6 @@ export default function Home() {
         <OurProducts data={ourProductsData} />
       </div>
     </Fade>
+    </>
   )
 }

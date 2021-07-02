@@ -5,6 +5,7 @@ import { event } from "../../Utils/Utils";
 // import "./TopNav.scss";
 import { DropdownItem, NavItem, UncontrolledDropdown } from 'reactstrap';
 import Scroll from 'react-scroll'
+import Head from '../Metdata/head'
 
 class TopNav extends Component {
 
@@ -77,6 +78,7 @@ class TopNav extends Component {
   render() {
     return (
       <>
+        <Head />
         <div className="text-center" style={{ backgroundColor: '#f4f4f4', height: '30px' }}>
           <p onClick={() => { this.handleNavigate() }} className="link-no-decor text-xs top-bar">
             <strong style={{ color: 'black' }}>EDGE Recruit -</strong > Book a Demo Now
