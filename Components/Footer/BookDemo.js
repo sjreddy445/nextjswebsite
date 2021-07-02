@@ -17,7 +17,7 @@ const BookDemo = (props) => {
     const handleNavigate = (e) => {
         e.preventDefault();
         const { pathname } = router;
-        if (pathname === '/' || location.pathname.includes('/products')) {
+        if (pathname === '/' || pathname.includes('/products') || pathname==='about') {
             scrollToContact();
         } else {
             router.push('/contact')
