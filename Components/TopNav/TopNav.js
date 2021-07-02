@@ -78,18 +78,18 @@ class TopNav extends Component {
   render() {
     return (
       <>
-        <Head />
-        <div style={{ backgroundColor: '#f4f4f4', height: '30px'}}>
-            <p onClick={() => { this.handleNavigate() }} className="link-no-decor text-xs top-bar text-center">
-              <strong style={{ color: 'black' }}>EDGE Recruit -</strong > Book a Demo Now
-            </p>
+      <Head/>
+        <div className="text-center" style={{ backgroundColor: '#f4f4f4', height: '30px' }}>
+          <p onClick={() => { this.handleNavigate() }} className="link-no-decor text-xs top-bar">
+            <strong style={{ color: 'black' }}>EDGE Recruit -</strong > Book a Demo Now
+          </p>
         </div>
         <div className={`${this.state.bgClass} ${this.state.bgState === 1 ? 'scrolled' : ''} top-nav`} id="topNav">
           <div className="d-flex justify-content-between align-items-center mt-3">
             <NavLink className="link-no-decor" href="/">
               <i style={{cursor:'pointer'}} className="icon-edge_logo edge-logo"></i>
             </NavLink>
-            <div> 
+            <div>
               <button className="mobile-hamburger" onClick={this.toggleMobileMenu}><i className="icon-menu"></i></button>
               <div className={`back-drop ${this.state.mobileMenuActive ? "active" : ''}`} onClick={this.hideMobileMenu}></div>
               <ul className={`top-menu  ${this.state.mobileMenuActive ? "active" : ''}`} onClick={this.hideMobileMenu}>
