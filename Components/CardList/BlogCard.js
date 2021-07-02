@@ -10,11 +10,12 @@ import {
   CardTitle,
 } from 'reactstrap'
 import BlogHeaders from './../BlogItem/BlogHeaders'
+import styles from './CardSect.module.scss'
 
- class BlogCard extends Component {
+class BlogCard extends Component {
 
   navigateToPost = (id) => {
-    this.props.router.push(`/blog/${id}`,'',{ shallow: true })
+    this.props.router.push(`/blog/${id}`, '', { shallow: true })
   }
 
   getCleanText = (content) => {
@@ -27,12 +28,12 @@ import BlogHeaders from './../BlogItem/BlogHeaders'
 
     return (
       <Col md={4} className="p-3">
-        <Card className="h-100 pointer card-mobile" onClick={() => this.navigateToPost(blog.slug)}>
-          <CardImg top width="100%" src={AddCmsImgBaseUrl(blog.featuredImage.url)} alt={blog.title} className="img-fluid card-img" />
+        <Card className={"h-100 pointer " + styles.cardmobile} onClick={() => this.navigateToPost(blog.slug)}>
+          <CardImg top width="100%" src={AddCmsImgBaseUrl(blog.featuredImage.url)} alt={blog.title} className={"img-fluid " + styles.cardimg} />
           <CardBody>
             {blog.categories ?
               <span className="text-xxs">
-              <BlogHeaders categories={blog.categories} date={blog.created_at} /> </span>
+                <BlogHeaders categories={blog.categories} date={blog.created_at} /> </span>
               :
               ""
             }

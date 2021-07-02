@@ -1,6 +1,6 @@
 @import "../../Assets/css/variable";
-.card-sect {
-    .card-container {
+.cardsect {
+    .cardcontainer {
         @media screen and (max-width: $mobileViewStart) {
             display: block;
             overflow-x: auto;
@@ -15,7 +15,7 @@
     }
 }
 
-.podcast-title {
+.podcasttitle {
     color: $textGrey1;
 }
 
@@ -24,11 +24,11 @@
 }
 
 @media screen and (max-width: $mobileViewStart) {
-    .card-mobile {
+    .cardmobile {
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)!important;
         border-radius: 15px !important;
     }
-    .card-img {
+    .cardimg {
         border-top-right-radius: 15px !important;
         border-top-left-radius: 15px !important;
     }

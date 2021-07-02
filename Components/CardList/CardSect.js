@@ -4,11 +4,12 @@ import BlogCard from './BlogCard'
 // import "./CardSect.scss"
 import Slider from "react-slick";
 import styled from "styled-components";
+import styles from './CardSect.module.scss'
 import { withRouter } from 'next/router';
 const StyledSlider = styled(Slider)`
   .slick-list {
-    min-heightheight:600px;
-    width:400px
+    min-height:600px;
+    width:360px !important
   }
 `;
 class CardSect extends Component {
@@ -39,7 +40,7 @@ class CardSect extends Component {
     //   this.props.router.push({ query: { page: 1 } }, undefined, { shallow: true });
     // }
     return (
-      <Row className="card-sect">
+      <Row className={styles.cardsect}>
         <Col md={12} className="mb-3 p-0">
           <div className="title d-flex allign-middle">
             <Col md={6} className="p-0">
@@ -48,13 +49,12 @@ class CardSect extends Component {
             </Col>
           </div>
         </Col>
-        <Row className="container-fluid desktopview">
+        <Row className={"container-fluid "+styles.desktopview}>
           {sect.items.map((item, i) => (
             <BlogCard blog={item} key={i} {...this.props} />
           ))}
         </Row>
-
-        <Row className="container-fluid mobileview">
+        <Row className={"container-fluid "+styles.mobileview}>
           <StyledSlider {...settings}>
             {sect.items.map((item, i) => (
               <BlogCard blog={item} key={i} {...this.props} />

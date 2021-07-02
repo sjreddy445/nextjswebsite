@@ -17,9 +17,9 @@ export default class Blog extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-    setNavColor("transparent-bg text-white");
   }
   componentDidMount() {
+    setNavColor("transparent-bg text-white");
     let blogPageSections = JSON.parse(localStorage.getItem("blogPageSections"))
     if (blogPageSections) {
       this.setState({

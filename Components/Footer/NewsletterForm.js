@@ -83,7 +83,7 @@ const NewsletterForm = () => {
       <form className="form" onSubmit={handleSubmit}>
         <input placeholder="Your Email Address" type="email" values={values.EMAIL} name="EMAIL" onChange={handleChange} />
         {/* real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
-        <div style={{ position: "absolute", left: " -5000px" }} aria-hidden="true"><input type="text" name="b_f659ca1b353586a0c99df3cad_0049088ee0" tabIndex="-1" value="" onChange={handleChange} /></div>
+        <div style={{ position: "absolute"}} aria-hidden="true"><input type="text" name="b_f659ca1b353586a0c99df3cad_0049088ee0" tabIndex="-1" value="" onChange={handleChange} /></div>
         <button className="btn btn-primary" type="submit">SUBMIT</button>
       </form>
       {/* <span className={styles.error}>{errmsg ? errmsg : null}</span> */}

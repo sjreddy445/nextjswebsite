@@ -38,9 +38,9 @@ class AwardImage extends Component {
         return (
             <div className="container-fluid">
                 <StyledSlider {...settings}>
-                    {logo.map((list, index) => (
-                        <div key={index}>
-                            <div onClick={() => window.open(list.link, "_bank")} className={styles.img} style={{ backgroundImage: `url('${list.imgUrl}')` }}></div>
+                    {logo.map((list, i) => (
+                        <div key={i} >
+                            <div  onClick={() => window.open(list.link, "_bank")} className={styles.img} style={{ backgroundImage: `url('${list.imgUrl}')` }}></div>
                         </div>
                     ))}
                 </StyledSlider>

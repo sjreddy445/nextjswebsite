@@ -17,6 +17,7 @@
     color: #fff;
     margin-right: 1rem;
     font-weight: 600;
+    margin: 10px;
 }
 
 .text {
@@ -26,8 +27,8 @@
     font-weight: 600;
 }
 
-.desktopview {
-    display: block;
+.mobileview {
+    display: none;
 }
 
 @media screen and (max-width: $mobileViewStart) {
@@ -38,7 +39,7 @@
         display: none;
     }
     .mobileview {
-        display: none;
+        display: block;
     }
     .statsBox {
         background: rgb(171, 0, 0);

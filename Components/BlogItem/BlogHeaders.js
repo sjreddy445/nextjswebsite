@@ -20,7 +20,7 @@ class BlogHeaders extends Component {
 					<Col md={6} xs={6} className="text-right text-truncate">
 						{categories.length > 0 ?
 							<>
-								<span className="mr-2 text-xxs"><FontAwesomeIcon icon={faTags} /></span>
+								<span className="mr-2 text-xxs"><FontAwesomeIcon style={{width:'1.25rem'}} icon={faTags} /></span>
 								<span className="dash-seperator">
 									{categories.map((category, i) =>
 										<span key={i} className="text-xxs">

@@ -46,8 +46,8 @@ class Awards extends Component {
                 <h3 className="mb-3">Testimonials</h3>
 
                 <Slider className="arrow-dark arrow-slider" {...settings}>
-                    {this.state.data.map((list) => (
-                        <div className={"card card-body text-xs " + styles.cardborder}>
+                    {this.state.data.map((list,i) => (
+                        <div key={i} className={"card card-body text-xs " + styles.cardborder}>
                             {/* <div className={"text-xs h-100"}> */}
                             <p className={styles.cardheight}>{list.desc}</p>
                             {/* </div> */}
