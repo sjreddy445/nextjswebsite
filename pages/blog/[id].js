@@ -3,11 +3,11 @@ import { Row, Col } from 'reactstrap';
 import BlogHeaders from '../../Components/BlogItem/BlogHeaders';
 import Api from '../../Config/Api'
 import { AddCmsImgBaseUrl } from '../../Utils/Utils'
-import {setNavColor} from '../../Components/TopNav/Utils'
+import { setNavColor } from '../../Components/TopNav/Utils'
 import Image from 'next/image';
 import { withRouter } from 'next/router';
 
- class BlogPost extends Component {
+class BlogPost extends Component {
 
   constructor(props) {
     super(props);
@@ -29,9 +29,14 @@ import { withRouter } from 'next/router';
     })
   }
 
-  getCleanText=(content)=> {
-    let filtered = content.replace( /&nbsp;/g,' ' )
-    return filtered
+  getCleanText = (content) => {
+    let filtered = content.replace(/&nbsp;/g, ' ')
+    let endpoint = filtered;
+    endpoint = endpoint.replace('oembed url', 'iframe height=250 width=400 src');
+    // endpoint = endpoint.replace('url', '');
+    endpoint = endpoint.replace('watch?v=', 'embed/');
+    endpoint = endpoint.replace('oembed', 'iframe');
+    return endpoint;
   }
 
   render() {
@@ -48,10 +53,10 @@ import { withRouter } from 'next/router';
                 </Row>
                 <Row className=" mt-5">
                   <Col md={12}>
-                      <div>
-                        <BlogHeaders categories={this.state.blogPost.categories} date={this.state.blogPost.created_at} />
-                      </div>
-                    </Col>
+                    <div>
+                      <BlogHeaders categories={this.state.blogPost.categories} date={this.state.blogPost.created_at} />
+                    </div>
+                  </Col>
                   <Col md={12}>
                     <div className=".text-xl mt-3">
                       <b>
@@ -77,7 +82,7 @@ import { withRouter } from 'next/router';
 }
 export async function getServerSideProps(context) {
   return {
-      props: {},
+    props: {},
   };
 }
 export default withRouter(BlogPost)
