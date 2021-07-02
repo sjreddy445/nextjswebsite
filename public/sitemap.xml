@@ -1,82 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://getedge.ntb.one/404</loc>
+    <loc>https://www.get-edge-nextjs.vercel.app/404</loc>
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one/about</loc>
+    <loc>https://www.get-edge-nextjs.vercel.app/about</loc>
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one/contact</loc>
+    <loc>https://www.get-edge-nextjs.vercel.app/contact</loc>
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one</loc>
+    <loc>https://www.get-edge-nextjs.vercel.app</loc>
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one/life-at-edge</loc>
+    <loc>https://www.get-edge-nextjs.vercel.app/life-at-edge</loc>
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one/sitemap</loc>
+    <loc>https://www.get-edge-nextjs.vercel.app/sitemap</loc>
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one/thankyou</loc>
+    <loc>https://www.get-edge-nextjs.vercel.app/thankyou</loc>
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one/all-resource/[slug]</loc>
+    <loc>https://www.get-edge-nextjs.vercel.app/blog/[id]</loc>
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one/careers/ApplyForm</loc>
+    <loc>https://www.get-edge-nextjs.vercel.app/blog/index</loc>
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one/careers/CareerCard</loc>
+    <loc>https://www.get-edge-nextjs.vercel.app/all-resource/[slug]</loc>
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one/careers/Contact</loc>
+    <loc>https://www.get-edge-nextjs.vercel.app/careers/ApplyForm</loc>
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one/careers/Head</loc>
+    <loc>https://www.get-edge-nextjs.vercel.app/careers/CareerCard</loc>
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one/careers/index</loc>
+    <loc>https://www.get-edge-nextjs.vercel.app/careers/Contact</loc>
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one/blog/[id]</loc>
+    <loc>https://www.get-edge-nextjs.vercel.app/careers/Head</loc>
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one/blog/index</loc>
+    <loc>https://www.get-edge-nextjs.vercel.app/careers/index</loc>
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one/elapage/index</loc>
+    <loc>https://www.get-edge-nextjs.vercel.app/elapage/index</loc>
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one/privacy/index</loc>
+    <loc>https://www.get-edge-nextjs.vercel.app/privacy/index</loc>
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one/products/mobility</loc>
+    <loc>https://www.get-edge-nextjs.vercel.app/products/mobility</loc>
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one/products/pathfinder</loc>
+    <loc>https://www.get-edge-nextjs.vercel.app/products/pathfinder</loc>
   </url>
 
   <url>
-    <loc>http://getedge.ntb.one/products/recruit</loc>
+    <loc>https://www.get-edge-nextjs.vercel.app/products/recruit</loc>
   </url>
 </urlset>

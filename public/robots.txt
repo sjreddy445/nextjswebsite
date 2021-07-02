@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://getedge.ntb.one/sitemap.xml
+Sitemap: https://www.get-edge-nextjs.vercel.app/sitemap.xml
