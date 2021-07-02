@@ -45,10 +45,12 @@
         background: rgb(171, 0, 0);
         background: linear-gradient(90deg, rgba(171, 0, 0, 1) 38%, rgba(249, 37, 11, 1) 86%);
         min-height: 100px;
-        margin: 0px;
-        // margin-right: 10px;
+        margin: 0 1.25rem;
+        margin-right: 10px;
         display: flex;
         padding: 1rem;
+        width: 300px;
+        padding: 10px;
     }
     .number {
         min-width: 35%;
