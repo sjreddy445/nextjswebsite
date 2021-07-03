@@ -29,15 +29,15 @@
   </url>
 
   <url>
+    <loc>https://www.get-edge-nextjs.vercel.app/all-resource/[slug]</loc>
+  </url>
+
+  <url>
     <loc>https://www.get-edge-nextjs.vercel.app/blog/[id]</loc>
   </url>
 
   <url>
     <loc>https://www.get-edge-nextjs.vercel.app/blog/index</loc>
-  </url>
-
-  <url>
-    <loc>https://www.get-edge-nextjs.vercel.app/all-resource/[slug]</loc>
   </url>
 
   <url>

@@ -142,7 +142,7 @@ class VerticalSlider extends Component {
     // const container = this.sliderContainer.current;
     this.currentSlide = 0;
     window.scrollTo(0, 0);
-    document.addEventListener("wheel", this.calculate, { passive: false })
+    // document.addEventListener("wheel", this.calculate, { passive: false })
 
   }
 
