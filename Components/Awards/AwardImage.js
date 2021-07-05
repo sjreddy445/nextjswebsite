@@ -4,7 +4,7 @@ import styles from './Awards.module.scss'
 import styled from "styled-components";
 const StyledSlider = styled(Slider)`
   .slick-list {
-    padding: 0px -74px !important;
+    padding: 0px 60px !important;
   }
 `;
 class AwardImage extends Component {
@@ -39,12 +39,12 @@ class AwardImage extends Component {
             <div className="container-fluid">
                 <StyledSlider {...settings}>
                     {logo.map((list, i) => (
-                        <div key={i} >
-                            <div  onClick={() => window.open(list.link, "_bank")} className={styles.img} style={{ backgroundImage: `url('${list.imgUrl}')` }}></div>
+                        <div key={i}>
+                            <img onClick={() => window.open(list.link, "_bank")} src={list.imgUrl} className={styles.img} />
                         </div>
                     ))}
                 </StyledSlider>
-            </div>
+            </div >
         )
     }
 }

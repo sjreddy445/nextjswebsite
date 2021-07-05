@@ -6,7 +6,7 @@ import { AddCmsImgBaseUrl } from '../../Utils/Utils'
 import { setNavColor } from '../../Components/TopNav/Utils'
 import Image from 'next/image';
 import { withRouter } from 'next/router';
-
+import YouTube from 'react-youtube'
 class BlogPost extends Component {
 
   constructor(props) {
@@ -32,7 +32,7 @@ class BlogPost extends Component {
   getCleanText = (content) => {
     let filtered = content.replace(/&nbsp;/g, ' ')
     let endpoint = filtered;
-    endpoint = endpoint.replace('oembed url', 'iframe height=250 width=400 src');
+    endpoint = endpoint.replace('oembed url', 'iframe height=250 width=400 style="align:center" allowfullscreen="allowfullscreen" src');
     // endpoint = endpoint.replace('url', '');
     endpoint = endpoint.replace('watch?v=', 'embed/');
     endpoint = endpoint.replace('oembed', 'iframe');
