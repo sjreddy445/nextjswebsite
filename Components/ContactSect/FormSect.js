@@ -36,7 +36,9 @@ const FormSect = () => {
       designation: "",
       organization: "",
       phone: "",
-      message: ""
+      message: "",
+      country:"",
+      no_of_emp:0
     },
     validateOnChange: false,
     validationSchema,
@@ -119,6 +121,26 @@ const FormSect = () => {
               />
               <span className={styles.error}>{errors.email ? errors.email : null}</span>
             </Col>
+            {/* <Col md={6} sm={12} className={styles.formSect}>
+              <select
+                name="no_of_emp"
+                type="number"
+                placeholder="No of Employees"
+                onChange={handleChange}
+                values={values.no_of_emp}>
+                  <option value="1">1</option>
+                </select>
+              <span className={styles.error}>{errors.no_of_emp ? errors.no_of_emp : null}</span>
+            </Col>
+            <Col md={6} sm={12} className={styles.formSect}>
+              <input
+                name="country"
+                placeholder="Country"
+                onChange={handleChange}
+                values={values.country}
+              />
+              <span className={styles.error}>{errors.country ? errors.country : null}</span>
+            </Col> */}
           </Row>
           <Col md={12} className={styles.formSect}>
             <textarea
