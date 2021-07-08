@@ -7,7 +7,9 @@ import styles from './ContactSet.module.scss'
 import axios from "axios";
 // import SuccessModal from './SuccessModal';
 import Recaptcha from 'react-google-invisible-recaptcha';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import { countries as countryList } from '../../Payloads/country'
+
 const phoneRegExp = /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
@@ -16,6 +18,8 @@ const validationSchema = Yup.object({
   organization: Yup.string().required("Organization is required"),
   message: Yup.string().required("Message is required"),
   phone: Yup.string().matches(phoneRegExp, "Phone number is not valid").required("Phone number is required"),
+  country: Yup.string().required("Country is required"),
+  no_of_emp: Yup.string().required("No of Employees is required"),
 })
 
 
@@ -37,8 +41,8 @@ const FormSect = () => {
       organization: "",
       phone: "",
       message: "",
-      country:"",
-      no_of_emp:0
+      country: "",
+      no_of_emp: ""
     },
     validateOnChange: false,
     validationSchema,
@@ -121,26 +125,42 @@ const FormSect = () => {
               />
               <span className={styles.error}>{errors.email ? errors.email : null}</span>
             </Col>
-            {/* <Col md={6} sm={12} className={styles.formSect}>
+          </Row>
+          <Row className="m-0">
+            <Col md={6} sm={12} className={styles.formSect} >
               <select
                 name="no_of_emp"
-                type="number"
-                placeholder="No of Employees"
+                style={!values.no_of_emp ? {color:'#6c757d'}:{color:'black'}}
                 onChange={handleChange}
                 values={values.no_of_emp}>
-                  <option value="1">1</option>
-                </select>
+                <option  value="" disabled selected hidden>No of Employees</option>
+                <option value="Below 100">Below 100</option>
+                <option value="101-500">101-500</option>
+                <option value="501-2500">501-2500</option>
+                <option value="2501-5000">2501-5000</option>
+                <option value="5001-10000">5001-10000</option>
+                <option value="10000+">10000+</option>
+              </select>
               <span className={styles.error}>{errors.no_of_emp ? errors.no_of_emp : null}</span>
             </Col>
             <Col md={6} sm={12} className={styles.formSect}>
-              <input
+              <select
                 name="country"
-                placeholder="Country"
+                style={!values.country ? {color:'#6c757d'}:{color:'black'}}
                 onChange={handleChange}
-                values={values.country}
-              />
+                values={values.country}>
+                <option value="" disabled selected hidden>Country</option>
+                <option value={"USA"}>{"USA"}</option>
+                <option value={"India"}>{"India"}</option>
+                <hr />
+                {countryList.map(data => {
+                  return (
+                    <option value={data.name}>{data.name}</option>
+                  )
+                })}
+              </select>
               <span className={styles.error}>{errors.country ? errors.country : null}</span>
-            </Col> */}
+            </Col>
           </Row>
           <Col md={12} className={styles.formSect}>
             <textarea

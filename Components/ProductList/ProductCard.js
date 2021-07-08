@@ -28,7 +28,7 @@ class ProductCard extends Component {
     return (
       <>
         <Col md={4} sm={12}>
-          <div className="d-none d-md-block">
+          <div className="d-none d-md-block text-center">
             <img src={this.state.productImg} alt={this.props.data.imgAlt} className="img-fluid"/>
           </div>
           <h2 className={styles.cardTitle+" text-lg mt-4"}>
