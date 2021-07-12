@@ -7,10 +7,8 @@ import styled from "styled-components";
 import { withRouter } from 'next/router';
 const StyledSlider = styled(Slider)`
   .slick-list {
-    min-heightheight:400px;
-    width:380px;
-    margin-left:10px;
-    margin-right:10px;
+    min-height:200px;
+    width:370px; 
   }
 `;
 class VideoSect extends Component {
@@ -56,7 +54,6 @@ class VideoSect extends Component {
               <BlogVideo video={item} key={i} {...this.props} style={"mobileView"} />
             ))}
           </StyledSlider>
-
         </Row>
         <Col md={11} sm={8} xs={4} className={'container-inner'} >
           <span className="mt-2 text-xs" onClick={() => this.props.router.push(sect.viewAll, "", { shallow: true })} >

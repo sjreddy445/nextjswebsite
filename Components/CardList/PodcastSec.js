@@ -5,16 +5,17 @@ import BlogPodcast from './BlogPodcast'
 import Slider from "react-slick";
 import styled from "styled-components";
 import withRouter from 'next/dist/client/with-router';
+import styles from './CardSect.module.scss'
 const StyledSlider = styled(Slider)`
   .slick-list {
-    min-heightheight:600px;
-    width:400px
+    min-height:400px;
+    width:370px
   }
   .slick-slide img {
     display: inline;
 }
 `;
- class PodcastSect extends Component {
+class PodcastSect extends Component {
   render() {
     let { sect } = this.props
     var settings = {
@@ -38,7 +39,7 @@ const StyledSlider = styled(Slider)`
       ]
     };
     return (
-      <Row className="card-sect">
+      <Row className={styles.cardsect}>
         <Col md={12} className="mb-3 p-0">
           <div className="title d-flex allign-middle">
             <Col md={6} className=" p-0">
@@ -47,12 +48,12 @@ const StyledSlider = styled(Slider)`
             </Col>
           </div>
         </Col>
-        <Row className="container-fluid desktopview">
+        <Row className={"container-fluid " + styles.desktopview}>
           {sect.items.map((item, i) => (
             <BlogPodcast podcast={item} key={i} {...this.props} />
           ))}
         </Row>
-        <Row className="container-fluid mobileview">
+        <Row className={"container-fluid "+styles.mobileview}>
           <StyledSlider {...settings}>
             {sect.items.map((item, i) => (
               <BlogPodcast podcast={item} key={i} {...this.props} />
@@ -60,9 +61,10 @@ const StyledSlider = styled(Slider)`
           </StyledSlider>
         </Row>
         <Col md={11} sm={8} xs={4} className={'container-inner'} >
-        <span className="mt-2 text-xs" onClick={() => this.props.router.push(sect.viewAll, "", { shallow: true })} >
+          <span className="mt-2 text-xs" onClick={() => this.props.router.push(sect.viewAll, "", { shallow: true })} >
             <b className="text-brand mt-2 float-right" style={{ cursor: 'pointer' }}>VIEW ALL</b>
           </span>
+          <div className={"p-4"}></div>
         </Col>
       </Row>
     )

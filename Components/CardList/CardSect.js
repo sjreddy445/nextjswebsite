@@ -8,8 +8,8 @@ import styles from './CardSect.module.scss'
 import { withRouter } from 'next/router';
 const StyledSlider = styled(Slider)`
   .slick-list {
-    min-height:600px;
-    width:400px !important
+    min-height:400px;
+    width:370px !important
   }
 `;
 class CardSect extends Component {
