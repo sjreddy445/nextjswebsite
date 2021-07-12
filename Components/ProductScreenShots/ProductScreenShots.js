@@ -13,7 +13,7 @@ class ProductScreenShots extends Component {
                         <Col md={4} sm={12} className="pr-5">
                             <TextSect />
                         </Col>
-                        <Col md={6} sm={12} >
+                        <Col md={8} sm={12} >
                             <ScreenshotSect {...this.props} />
                         </Col>
 

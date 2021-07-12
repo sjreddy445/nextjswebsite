@@ -9,7 +9,7 @@ import { withRouter } from 'next/router';
 const StyledSlider = styled(Slider)`
   .slick-list {
     min-height:600px;
-    width:360px !important
+    width:400px !important
   }
 `;
 class CardSect extends Component {
@@ -61,7 +61,7 @@ class CardSect extends Component {
             ))}
           </StyledSlider>
         </Row>
-        <Col md={11} sm={8} xs={4} className={'container-inner p-4'} >
+        <Col md={11} sm={8} xs={4} className={'container-inner'} >
           <span className="mt-2 text-xs" onClick={() => this.props.router.push(sect.viewAll, "", { shallow: true })} >
             <b className="text-brand mt-2 float-right" style={{ cursor: 'pointer' }}>VIEW ALL</b>
           </span>

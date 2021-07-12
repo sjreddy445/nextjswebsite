@@ -5,7 +5,6 @@ import '../Assets/css/app.scss'
 import '../Assets/css/icomoon.scss'
 import '../Assets/css/responsive.scss'
 import '../Assets/css/slick_overide.scss'
-import '../Components/Cards/RatioCard/ratioCard.scss'
 import '../Components/Footer/Footer.scss'
 import '../Components/TopNav/TopNav.scss'
 import "slick-carousel/slick/slick.css";

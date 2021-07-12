@@ -59,7 +59,7 @@ const StyledSlider = styled(Slider)`
             ))}
           </StyledSlider>
         </Row>
-        <Col md={11} sm={8} xs={4} className={'container-inner p-4'} >
+        <Col md={11} sm={8} xs={4} className={'container-inner'} >
         <span className="mt-2 text-xs" onClick={() => this.props.router.push(sect.viewAll, "", { shallow: true })} >
             <b className="text-brand mt-2 float-right" style={{ cursor: 'pointer' }}>VIEW ALL</b>
           </span>

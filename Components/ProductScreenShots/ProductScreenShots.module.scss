@@ -8,14 +8,14 @@
     }
     .ImageSize {
         background-repeat: no-repeat;
-        background-size: 600px 400px;
-        height: 400px;
+        background-size: 810px 480px;
+        height: 480px;
     }
     @media screen and (max-width: $mobileViewStart) {
         .ImageSize {
             background-repeat: no-repeat;
-            background-size: 280px 240px;
-            height: 240px;
+            background-size: contain;
+            height: 200px;
             text-align: center;
         }
     }

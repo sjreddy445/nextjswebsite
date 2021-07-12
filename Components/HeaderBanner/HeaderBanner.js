@@ -31,7 +31,7 @@ class HeaderBanner extends Component {
   render() {
     return (
       <div className={this.props.data.bgClr ? this.props.data.bgClr+" " + styles.headerbanner : styles.headerbanner} >
-        <div className={styles.rightbg} style={!this.props.data.bgImg ? { backgroundImage: `url('${this.props.data.bgCover}')` } : { backround: 'auto' }}>
+        <div className={styles.rightbg} style={!this.props.data.bgImg ? { backgroundImage: `url('${this.props.data.bgCover}')` } : { background: 'auto' }}>
           <div className={"container-inner " + styles.content}>
             <Row className="m-0 no-gutters">
               <Col md={6} sm={12} className="d-sm-block d-md-none pb-5">

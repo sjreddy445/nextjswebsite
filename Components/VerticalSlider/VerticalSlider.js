@@ -52,7 +52,7 @@ class VerticalSlider extends Component {
     super();
     this.sliderContainer = React.createRef();
     this.animate = this.animate.bind(this);
-    this.calculate = this.calculate.bind(this);
+    // this.calculate = this.calculate.bind(this);
     this.hidden = false;
     this.isAnimating = false;
   }
@@ -148,7 +148,7 @@ class VerticalSlider extends Component {
 
 
   componentWillUnmount() {
-    document.removeEventListener("wheel", this.calculate, { passive: false })
+    // document.removeEventListener("wheel", this.calculate, { passive: false })
   }
 
 
@@ -158,13 +158,15 @@ class VerticalSlider extends Component {
     const items = this.props.data;
     const settings = {
       dots: true,
-      infinite: false,
+      infinite: true,
       vertical: true,
       verticalSwiping: true,
       arrows: false,
-      speed: 500,
+      // speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1500,
       // afterChange: (current, next) => {
       //   console.log("arguments");
       //   console.log(arguments);
@@ -174,8 +176,8 @@ class VerticalSlider extends Component {
 
     return (
       <div className={`${styles.verticalslider} ${(this.props.dotColor) ? 'dot' + this.props.dotColor : ''}`} >
-        <div className="py-4" ref={this.sliderContainer}>
-          <SliderC className={styles.desktopslider} ref={slider => (this.slider = slider)}  {...settings}>
+        <div className="py-4" >
+          <SliderC className={styles.desktopslider}   {...settings}>
             {items.map((item, index) => (
               <SliderContent key={index + '_slider'} item={item} />
             ))}

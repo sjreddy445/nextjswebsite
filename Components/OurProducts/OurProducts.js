@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Slider from "react-slick";
 import RatioCard from "../../Components/Cards/RatioCard/dynamicRatioCard";
+import styles from '../Cards/RatioCard/ratioCard.module.scss';
+
 const SlideBtn = ({ arrow, direction, ...props }) => (
   <button {...props} className={`slick-arrow slick-${direction}`}><i className={`icon-chevron-${arrow}`}></i></button>
 )
@@ -38,7 +40,7 @@ class OurProducts extends Component {
         <h3 className="mb-3">Our Products.</h3>
 
         <Slider className="arrow-dark arrow-slider gap-10" {...settings}>
-          {this.props.data.map((data, i) => <RatioCard key={i} ratio="seventy_perc" data={data} />)}
+          {this.props.data.map((data, i) => <RatioCard key={i} ratio={styles.seventyperc} data={data} />)}
         </Slider>
       </div>
     );

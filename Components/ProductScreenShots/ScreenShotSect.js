@@ -5,7 +5,7 @@ import styled from "styled-components";
 import styles from './ProductScreenShots.module.scss'
 const StyledSlider = styled(Slider)`
   .slick-list {
-    padding: 0px -74px !important;
+    // padding: 0px 54px !important;
   }
 `;
 class ScreenShotSect extends Component {
@@ -20,8 +20,8 @@ class ScreenShotSect extends Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
+      // autoplay: true,
+      // autoplaySpeed: 2000,
       responsive: [
         {
           breakpoint: 600,

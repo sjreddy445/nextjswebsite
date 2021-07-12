@@ -17,7 +17,7 @@ class AwardImage extends Component {
             slidesToScroll: 1,
             speed: 500,
             dots: true,
-            autoplay: true,
+            // autoplay: true,
             centerMode: true,
             autoplaySpeed: 2000,
             responsive: [
@@ -26,7 +26,7 @@ class AwardImage extends Component {
                     settings: {
                         arrows: false,
                         dots: true,
-                        autoplay: true,
+                        // autoplay: true,
                         slidesToShow: 1,
                         slidesToScroll: 1,
                         centerMode: true,
@@ -40,7 +40,7 @@ class AwardImage extends Component {
                 <StyledSlider {...settings}>
                     {logo.map((list, i) => (
                         <div key={i}>
-                            <img onClick={() => window.open(list.link, "_bank")} src={list.imgUrl} className={styles.img} />
+                            <img onClick={() => window.open(list.link, "_bank")} src={list.imgUrl} alt={list.imgUrl} className={styles.img} />
                         </div>
                     ))}
                 </StyledSlider>

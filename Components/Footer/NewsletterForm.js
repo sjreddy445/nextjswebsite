@@ -81,7 +81,7 @@ const NewsletterForm = () => {
 
       {/* <SuccessModal modal={modal} toggleModal={toggleModal} message={message} /> */}
       <form className="form" onSubmit={handleSubmit}>
-        <input placeholder="Your Email Address" type="email" values={values.EMAIL} name="EMAIL" onChange={handleChange} />
+        <input placeholder="Your Email Address" type="email" value={values.EMAIL} name="EMAIL" onChange={handleChange} />
         <input style={{display:'none'}} type="text" name="b_f659ca1b353586a0c99df3cad_0049088ee0" tabIndex="-1" value="" onChange={handleChange} />
         <button className="btn btn-primary" type="submit">SUBMIT</button>
       </form>

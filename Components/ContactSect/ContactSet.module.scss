@@ -22,4 +22,21 @@
             outline: none;
         }
     }
+    select option[data-default] {
+        color: #888 !important;
+    }
+}
+
+.color {
+    color: #6c757d !important;
+}
+
+.bl {
+    color: black;
+}
+
+@media screen and (max-width: $mobileViewStart) {
+    .color {
+        color: #A8A8A8 !important;
+    }
 }

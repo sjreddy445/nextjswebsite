@@ -1,0 +1,42 @@
+.ratiocard {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 96%;
+    &::after {
+        content: '';
+        display: block;
+        padding-bottom: 40%;
+    }
+    &.seventyperc::after {
+        padding-bottom: 70%;
+    }
+    .contentbox {
+        float: left;
+        margin-left: 1.8rem;
+        margin-top: 19rem;
+        .logo {
+            margin-bottom: .5rem;
+            img {
+                max-width: 12rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .ratiocard {
+        &.seventyperc::after {
+            padding-bottom: 70%;
+        }
+        .contentbox {
+            margin-left: 1.8rem;
+            margin-top: 10rem;
+            font-size: 1rem;
+            .logo {
+                img {
+                    max-width: 9rem;
+                }
+            }
+        }
+    }
+}
