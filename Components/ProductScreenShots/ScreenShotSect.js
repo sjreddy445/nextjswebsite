@@ -20,8 +20,8 @@ class ScreenShotSect extends Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      // autoplay: true,
-      // autoplaySpeed: 2000,
+      autoplay: true,
+      autoplaySpeed: 2000,
       responsive: [
         {
           breakpoint: 600,
@@ -29,7 +29,8 @@ class ScreenShotSect extends Component {
             arrows: false,
             dots: true,
             slidesToShow: 1,
-            
+            autoplay: true,
+            autoplaySpeed: 2000,
             slidesToScroll: 1
           }
         }

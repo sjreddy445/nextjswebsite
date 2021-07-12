@@ -1,7 +1,11 @@
+@import "../../../Assets/css/variable";
 .ratiocard {
     background-repeat: no-repeat;
     background-size: cover;
     background-size: 96%;
+    @media screen and (max-width: $mobileViewStart) {
+        padding-bottom: 10%;
+    }
     &::after {
         content: '';
         display: block;

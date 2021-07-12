@@ -11,7 +11,7 @@ class OurProducts extends Component {
 
   componentDidMount() {
 
-  } 
+  }
 
   render() {
     var settings = {
@@ -23,6 +23,8 @@ class OurProducts extends Component {
       slidesToScroll: 1,
       nextArrow: <SlideBtn arrow="right" direction="next" />,
       prevArrow: <SlideBtn arrow="left" direction="prev" />,
+      autoplay: true,
+      autoplaySpeed: 2000,
       responsive: [
         {
           breakpoint: 600,
@@ -30,7 +32,9 @@ class OurProducts extends Component {
             arrows: false,
             dots: true,
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
           }
         }
       ]

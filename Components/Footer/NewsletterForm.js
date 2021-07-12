@@ -89,7 +89,7 @@ const NewsletterForm = () => {
     </>
   );
 }
-
+ 
 
 
 export default withRouter(NewsletterForm);

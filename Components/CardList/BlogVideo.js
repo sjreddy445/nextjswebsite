@@ -22,7 +22,7 @@ export default class BlogVideo extends Component {
     return (
       <>
         <Col md={4} className="p-3">
-          <div className="embed-responsive embed-responsive-16by9" >
+          <div className="embed-responsive embed-responsive-16by9" style={{ zIndex: -99}} >
             <YouTube videoId={video.url_id} opts={opts} onReady={this._onReady} className="embed-responsive-item" />
           </div>
           <div className={'mt-3'}>
