@@ -1,3 +1,4 @@
+import Api from '../../Config/Api'
 export const payload = [
   {
     title: "Find relevant matches to revised JDs in a click of a button",

@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import Slider from "react-slick";
 import styles from './Awards.module.scss'
 import styled from "styled-components";
+import { AddCmsImgBaseUrl } from '../../Utils/Utils';
 const StyledSlider = styled(Slider)`
   .slick-list {
-    padding: 0px 60px !important;
+    padding: 0px 120px !important;
+    margin:10px -50px;
   }
 `;
 class AwardImage extends Component {
@@ -34,13 +36,12 @@ class AwardImage extends Component {
                 }
             ]
         };
-        let { logo } = this.props.data
         return (
             <div className="container-fluid">
                 <StyledSlider {...settings}>
-                    {logo.map((list, i) => (
+                    {this.props?.data.map((list, i) => (
                         <div key={i}>
-                            <img onClick={() => window.open(list.link, "_bank")} src={list.imgUrl} alt={list.imgUrl} className={styles.img} />
+                            <img onClick={() => window.open(list.link, "_bank")} src={AddCmsImgBaseUrl(list.imgUrl.url)} alt={list.imgUrl} className={styles.img} />
                         </div>
                     ))}
                 </StyledSlider>

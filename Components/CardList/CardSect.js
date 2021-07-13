@@ -9,7 +9,8 @@ import { withRouter } from 'next/router';
 const StyledSlider = styled(Slider)`
   .slick-list {
     min-height:400px;
-    width:370px !important
+    max-width:400px;
+    padding:13px
   }
 `;
 class CardSect extends Component {
@@ -54,7 +55,7 @@ class CardSect extends Component {
             <BlogCard blog={item} key={i} {...this.props} />
           ))}
         </Row>
-        <Row className={"container-fluid "+styles.mobileview}>
+        <Row className={"container-fluid text-center "+styles.mobileview}>
           <StyledSlider {...settings}>
             {sect.items.map((item, i) => (
               <BlogCard blog={item} key={i} {...this.props} />

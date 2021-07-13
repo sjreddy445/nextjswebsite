@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import HeaderBanner from '../../Components/HeaderBanner/HeaderBanner';
-import { payload as HeaderData } from '../../Payloads/Pathfinder/Header'
+import { payload as PathfinderHeaderData } from '../../Payloads/Pathfinder/Header'
 import { payload as sliderData } from '../../Payloads/Pathfinder/Slider'
 import { payload as screenshotData } from '../../Payloads/Pathfinder/screenshots'
 import Contact from '../../Components/ContactSect/Contact';
@@ -17,11 +17,19 @@ import ProductVideo from '../../Components/ProductVideos/ProductVideo';
 import Awards from '../../Components/Awards/Awards';
 import Testimonial from '../../Components/Testimonials/Testimonials';
 import { payload as testimonialData } from '../../Payloads/Testimonials/client'
-import { payload as AwardsData } from '../../Payloads/Awards/logo'
 class Pathfinder extends Component {
+  state = {
+    headerData: {}
+  }
   componentDidMount() {
     setNavColor("transparent-bg text-white");
     window.scrollTo(0, 0)
+    this.headerDataFunc();
+  }
+
+  headerDataFunc = async () => {
+    var headerData = await PathfinderHeaderData();
+    this.setState({ headerData: headerData })
   }
   render() {
     return (
@@ -31,7 +39,7 @@ class Pathfinder extends Component {
           <meta name="description" content="getEdGE pathfinder is a pro-AI-driven product.  Artificial Intelligence-based HR Career Path Tool for finding jobs that suit employee skills, potential  & goals." />
         </Helmet>
         <div className="">
-          <HeaderBanner data={HeaderData} />
+          <HeaderBanner data={this.state.headerData} /> 
         </div>
         <div className="section-margin">
           <VerticalSlider dotColor="grey" data={sliderData} />
@@ -46,7 +54,7 @@ class Pathfinder extends Component {
           <ProductVideo />
         </div>
         <div className="light-sliver-bg">
-          <Awards data={AwardsData} />
+          <Awards />
         </div>
         <div className="section-margin">
           <Contact />

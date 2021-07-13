@@ -39,3 +39,23 @@
         display: none !important;
     }
 }
+
+.slidercontainer {
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: auto;
+    display: flex;
+    &>* {
+        display: inline-block;
+        white-space: normal;
+    }
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: $mobileViewStart) {
+    .slidercontainer {
+        padding: 5px;
+    }
+}

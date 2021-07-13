@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Col } from 'reactstrap';
+import { AddCmsImgBaseUrl } from '../../Utils/Utils';
 import styles from './ProductList.module.scss'
 
 class ProductCard extends Component {
@@ -9,19 +10,19 @@ class ProductCard extends Component {
     this.state = {productImg: ""};
   }
 
-  loadImage = title => {
-    let name = title.slice(0,-1).toLowerCase()
-    let productImg
-    import(`../../Assets/images/Home/${name}.svg`).then(image => {
-      this.setState({
-        productImg: image.default.src
-      });
-    });
-    return productImg
-  };
+  // loadImage = title => {
+  //   let name = title.slice(0,-1).toLowerCase()
+  //   let productImg
+  //   import(`../../Assets/images/Home/${name}.svg`).then(image => {
+  //     this.setState({
+  //       productImg: image.default.src
+  //     });
+  //   });
+  //   return productImg
+  // };
 
   componentDidMount() {
-    this.loadImage(this.props.data.title2)
+    // this.loadImage(this.props.data.title2)
   }
 
   render() {
@@ -29,7 +30,7 @@ class ProductCard extends Component {
       <>
         <Col md={4} sm={12}>
           <div className="d-none d-md-block text-center">
-            <img src={this.state.productImg} alt={this.props.data.imgAlt} className="img-fluid"/>
+            <img src={AddCmsImgBaseUrl(this.props.data.imgUrl?.url)} alt={this.props.data.imgAlt} className="img-fluid"/>
           </div>
           <h2 className={styles.cardTitle+" text-lg mt-4"}>
               <b>{this.props.data.title1}</b> <br/>
@@ -42,7 +43,7 @@ class ProductCard extends Component {
             <a href={this.props.data.url}>SEE MORE</a>
           </div>
           <div className="d-sm-block d-md-none sm-center">
-            <img src={this.state.productImg} alt={this.props.data.title1 + this.props.data.title2} className="img-fluid"/>
+            <img src={AddCmsImgBaseUrl(this.props.data.imgUrl?.url)} alt={this.props.data.title1 + this.props.data.title2} className="img-fluid"/>
           </div>
         </Col>
       </>

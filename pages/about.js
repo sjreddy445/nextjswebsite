@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import BrandList from '../Components/BrandList/BrandList';
-import { payload as HeaderData } from '../Payloads/AboutUs/Header.js'
+import { payload as AboutHeaderData } from '../Payloads/AboutUs/Header.js'
 import { payload as BrandData } from '../Payloads/Home/BrandList'
 import { payload as PeopleData } from '../Payloads/AboutUs/People'
-import { payload as NewsData } from '../Payloads/AboutUs/News'
 import OurStory from "../Components/OurStory/OurStory"
 import Contact from '../Components/ContactSect/Contact';
 import HeaderBanner from '../Components/HeaderBanner/HeaderBanner'
@@ -12,13 +11,23 @@ import Fade from 'react-reveal/Fade';
 import { Helmet } from 'react-helmet'
 import Leadership from '../Components/Leadership/Leadership';
 import EdgeNews from '../Components/EdgeNews/EdgeNews';
-
+import Api from '../Config/Api';
 
 class AboutUs extends Component {
+  state = {
+    headerData: {}
+  }
   componentDidMount() {
     setNavColor("transparent-bg");
     window.scrollTo(0, 0)
   }
+
+  componentDidMount = async () => {
+    var headerData = await AboutHeaderData();
+    this.setState({ headerData: headerData })
+  }
+
+
   render() {
     return (
       <Fade>
@@ -28,16 +37,16 @@ class AboutUs extends Component {
         </Helmet>
         <div className="">
           <div className="">
-            <HeaderBanner data={HeaderData} />
+            <HeaderBanner data={this.state.headerData} />
           </div>
           <div className="section-margin">
             <OurStory />
           </div>
           <div className="section-margin">
-            <Leadership data={PeopleData} />
+            <Leadership />
           </div>
           <div className="section-margin">
-            <EdgeNews data={NewsData}/>
+            <EdgeNews/>
           </div>
           <div className="section-margin">
             <BrandList data={BrandData} />

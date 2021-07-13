@@ -1,3 +1,4 @@
+import Api from '../../Config/Api'
 export const payload = [
     {
         img: require("../../Assets/images/Products/recruit/screenshots/Recruit-1.jpg").default.src,

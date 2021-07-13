@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Pagination from "react-js-pagination";
-import { payload as HeaderData } from '../../Payloads/Blog/Header'
+import { payload as BlogHeaderData } from '../../Payloads/Blog/Header'
 import HeaderBanner from '../../Components/HeaderBanner/HeaderBanner'
 import Api from '../../Config/Api';
 import BlogCard from '../../Components/CardList/BlogCard';
@@ -14,7 +14,8 @@ class resourceViewAll extends Component {
   constructor() {
     super();
     this.state = {
-      activePage: 0
+      activePage: 0,
+      headerData:{}
     };
 
     this.handlePageChange = this.handlePageChange.bind(this);
@@ -40,6 +41,7 @@ class resourceViewAll extends Component {
       this.setState({ ...this.state, ...{ totalItem } })
       // this.scrollWindow()
     });
+    this.headerDataFunc();
   }
 
   handlePageChange(pageNumber) {
@@ -50,6 +52,11 @@ class resourceViewAll extends Component {
     });
   }
 
+  headerDataFunc = async () => {
+    var headerData = await BlogHeaderData();
+    this.setState({ headerData: headerData })
+  }
+
   render() {
     var checkUrl = this.props.router.query.slug;
     if (!this.state.resouceItem) {
@@ -58,7 +65,7 @@ class resourceViewAll extends Component {
     return (
       <div>
         <div>
-          <HeaderBanner data={HeaderData} />
+          <HeaderBanner data={this.state.headerData} />
         </div>
         <div className="mt-5 container-inner">
           <h3>All {this.props.router.query.slug}</h3>

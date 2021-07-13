@@ -2,15 +2,18 @@ import React, { Component } from 'react';
 import Slider from "react-slick";
 import RatioCard from "../../Components/Cards/RatioCard/dynamicRatioCard";
 import styles from '../Cards/RatioCard/ratioCard.module.scss';
-
+import { payload as ourProductsData } from '../../Payloads/Home/OurProducts'
 const SlideBtn = ({ arrow, direction, ...props }) => (
   <button {...props} className={`slick-arrow slick-${direction}`}><i className={`icon-chevron-${arrow}`}></i></button>
 )
 
 class OurProducts extends Component {
-
-  componentDidMount() {
-
+  state = {
+    productData: []
+  }
+  componentDidMount = async () => {
+    var proddata = await ourProductsData();
+    this.setState({ productData: proddata })
   }
 
   render() {
@@ -44,7 +47,7 @@ class OurProducts extends Component {
         <h3 className="mb-3">Our Products.</h3>
 
         <Slider className="arrow-dark arrow-slider gap-10" {...settings}>
-          {this.props.data.map((data, i) => <RatioCard key={i} ratio={styles.seventyperc} data={data} />)}
+          {this.state.productData.map((data, i) => <RatioCard key={i} ratio={styles.seventyperc} data={data} />)}
         </Slider>
       </div>
     );

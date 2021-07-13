@@ -43,7 +43,6 @@ const NewsletterForm = () => {
       //     showError(response.data.msg)
       //   }
       //   // toggleModal()
-      console.lo
       // }).catch((err) => {
 
       // })

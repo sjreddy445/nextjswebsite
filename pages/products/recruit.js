@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import HeaderBanner from '../../Components/HeaderBanner/HeaderBanner';
-import { payload as HeaderData } from '../../Payloads/Recruit/Header';
+import { payload as RecruitHeaderData } from '../../Payloads/Recruit/Header';
 import { payload as sliderData } from '../../Payloads/Recruit/Slider';
 import { payload as screenshotData } from '../../Payloads/Recruit/screenshots';
 import Contact from '../../Components/ContactSect/Contact';
@@ -17,11 +17,19 @@ import ProductVideo from '../../Components/ProductVideos/ProductVideo';
 import Awards from '../../Components/Awards/Awards';
 import Testimonial from '../../Components/Testimonials/Testimonials';
 import { payload as testimonialData } from '../../Payloads/Testimonials/client'
-import { payload as AwardsData } from '../../Payloads/Awards/logo'
 class Recruit extends Component {
+  state = {
+    headerData: {}
+  }
   componentDidMount() {
     setNavColor("transparent-bg")
     window.scrollTo(0, 0)
+    this.headerDataFunc();
+  }
+
+  headerDataFunc = async () => {
+    var headerData = await RecruitHeaderData();
+    this.setState({ headerData: headerData })
   }
   render() {
     return (
@@ -31,7 +39,7 @@ class Recruit extends Component {
           <meta name="description" content="getEdGE Recruit, a talent acquisition platform that helps HR's to find the right talent for auto-sourcing.  AI-based Talent Acquisition Platform for HR visibility." />
         </Helmet>
         <div className="mt-5">
-          <HeaderBanner data={HeaderData} />
+          <HeaderBanner data={this.state.headerData} />
         </div>
         <div className="section-margin dark-grey-bg">
           <VerticalSlider dotColor="light" data={sliderData} />
@@ -46,7 +54,7 @@ class Recruit extends Component {
           <ProductVideo />
         </div>
         <div className="light-sliver-bg">
-          <Awards data={AwardsData} />
+          <Awards />
         </div>
         <div className="section-margin">
           <Contact />

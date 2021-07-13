@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from './banner.module.scss'
 import { Button } from 'reactstrap';
 import Scroll  from 'react-scroll'
-
+import { AddCmsImgBaseUrl } from '../../Utils/Utils'
 class TextSect extends Component {
   constructor(props) {
     super(props);
@@ -32,7 +32,7 @@ class TextSect extends Component {
 
   componentDidMount() {
     if (this.props.data.titleImg) {
-      this.loadImage(this.props.data.titleImg)
+      // this.loadImage(this.props.data.titleImg)
     }
   }
   render() {
@@ -46,7 +46,7 @@ class TextSect extends Component {
                 <h1 className="text-xxl font-weight-bold">{this.props.data.mainTitle2}</h1>
               </>
               :
-              <img src={this.state.titleImg} alt={this.props.data.titleImg}  className="img-fluid" />
+              <img src={AddCmsImgBaseUrl(this.props.data.titleImg.url)} alt={this.props.data.titleImg}  className="img-fluid" />
             }
           </div>
           <div className="mt-4">

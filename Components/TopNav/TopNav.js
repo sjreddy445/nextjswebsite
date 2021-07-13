@@ -15,6 +15,7 @@ class TopNav extends Component {
     this.state = {
       mobileMenuActive: false,
       bgClass: "",
+      TopContainer:{}
     }
 
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
@@ -27,8 +28,25 @@ class TopNav extends Component {
     if (pathname === "/blog") {
       this.setState({ bgClass: 'transparent-bg text-white' });
     }
+    this.TopDataFunc();
+    event.on("setNavColor", (data) => {
+      this.setState({ ...this.state, bgClass: data })
+    });
+    this.setState({ ...this.state, bgState: 0 })
+    window.addEventListener("scroll", () => {
+      if (this.state.bgState === 0 && window.pageYOffset > 100) {
+        this.setState({ ...this.state, bgState: 1 })
+      } else if (this.state.bgState === 1 && window.pageYOffset <= 100) {
+        this.setState({ ...this.state, bgState: 0 })
+      }
+    })
   }
 
+
+  TopDataFunc = async () => {
+    var topContainer = await TopBanner();
+    this.setState({ TopContainer: topContainer })
+  }
 
   toggleMobileMenu() {
     this.setState({
@@ -43,20 +61,7 @@ class TopNav extends Component {
   }
 
 
-  componentDidMount() {
-    event.on("setNavColor", (data) => {
-      this.setState({ ...this.state, bgClass: data })
-    });
-    this.setState({ ...this.state, bgState: 0 })
-    window.addEventListener("scroll", () => {
-      if (this.state.bgState === 0 && window.pageYOffset > 100) {
-        this.setState({ ...this.state, bgState: 1 })
-      } else if (this.state.bgState === 1 && window.pageYOffset <= 100) {
-        this.setState({ ...this.state, bgState: 0 })
-      }
-    })
-  }
-
+  
   scrollToContact = () => {
     let scroller = Scroll.scroller
     scroller.scrollTo('contactWidget', {
@@ -69,7 +74,7 @@ class TopNav extends Component {
 
   handleNavigate = () => {
     const { router: { pathname } } = this.props;
-    if (TopBanner.isContact) {
+    if (this.state.TopContainer.isContact) {
       if (pathname === '/' || pathname.includes('/products')) {
         this.scrollToContact();
       } else {
@@ -77,7 +82,7 @@ class TopNav extends Component {
       }
     }
     else{
-      this.props.router.push(TopBanner.redirectTo)
+      this.props.router.push(this.state.TopContainer.redirectTo)
     }
   };
 
@@ -87,7 +92,7 @@ class TopNav extends Component {
         <Head />
         <div className="text-center" style={{ backgroundColor: '#f4f4f4', height: '30px' }}>
           <p onClick={() => { this.handleNavigate() }} className={`link-no-decor text-xs top-bar${this.state.mobileMenuActive ? ' zindex' : ''}`}>
-            <strong style={{ color: 'black' }}>{TopBanner.strongText}</strong > {TopBanner.normalText}
+            <strong style={{ color: 'black' }}>{this.state.TopContainer.strongText}</strong > {this.state.TopContainer.normalText}
           </p>
         </div>
         <div className={`${this.state.bgClass} ${this.state.bgState === 1 ? 'scrolled' : ''} top-nav`} id="topNav">

@@ -1,3 +1,4 @@
+import Api from '../../Config/Api'
 const Openings = [
   {
     title: " Architect – Machine Learning",

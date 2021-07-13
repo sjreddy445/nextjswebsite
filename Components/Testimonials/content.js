@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Col } from 'reactstrap';
 import styles from './testimonial.module.scss'
-
+import { AddCmsImgBaseUrl } from '../../Utils/Utils'
 class Content extends Component {
 
     componentDidMount()
@@ -14,7 +14,7 @@ class Content extends Component {
             <>
                 <Col md={{offset:1}} sm={{offset:1}} xs={{offset:4,span:10}} className={""}  >
                     <div className="p-2 ml-3">
-                        <img className={styles.img} src={this.props.data.img} alt="new" />
+                        <img className={styles.img} src={AddCmsImgBaseUrl(this.props.data.image.url)} alt="new" />
                     </div>
                 </Col>
                 <Col md={6}  className={styles.desc+" m-1"}>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Slider from 'react-slick'
-import Image from 'next/image';
+import { AddCmsImgBaseUrl } from '../../Utils/Utils'
 export default class ImageSlider extends Component {
   render() {
     const settings = {
@@ -22,16 +22,16 @@ export default class ImageSlider extends Component {
         }
       ]
     };
-    let {imageSet} = this.props.data
+    let { imageSet } = this.props.data
     return (
       <div>
         <Slider {...settings}>
-          {imageSet.map((image, i)=>(
+          {imageSet.map((image, i) => (
             <div key={i}>
-            <img  src={image.imgUrl} alt={image.alt} width={this.props.width} height={this.props.height} />
-          </div>
+              <img src={AddCmsImgBaseUrl(image.imgUrl)} alt={image.alt} width={this.props.width} height={this.props.height} />
+            </div>
           ))}
-          
+
         </Slider>
       </div>
     )

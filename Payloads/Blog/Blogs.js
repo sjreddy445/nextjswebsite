@@ -1,3 +1,4 @@
+import Api from '../../Config/Api'
 export const payload = [
   {
     title: "Brochure",

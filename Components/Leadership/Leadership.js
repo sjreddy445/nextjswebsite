@@ -1,7 +1,17 @@
 import React, { Component } from 'react'
 import { Col, Row } from 'reactstrap'
 import PeopleCard from './PeopleCard'
+import { payload as PeopleData } from '../../Payloads/AboutUs/People'
 export default class Leadership extends Component {
+  state = {
+    people: []
+  }
+  componentDidMount = async () => {
+    var data = await PeopleData();
+    this.setState({ people: data });
+  }
+
+
   render() {
     let people = this.props.data
     return (
@@ -11,11 +21,11 @@ export default class Leadership extends Component {
         </h3>
         <div>
           <Row>
-          {people.map((p, i)=>(
-            <Col key={i} md={4} xs={12}>
-              <PeopleCard data={p} key={i}/>
-            </Col>
-          ))}
+            {this.state.people.map((p, i) => (
+              <Col key={i} md={4} xs={12}>
+                <PeopleCard data={p} key={i} />
+              </Col>
+            ))}
           </Row>
         </div>
       </div>

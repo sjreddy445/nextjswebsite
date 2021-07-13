@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styles from "./StoryCard.module.scss"
 import parse from 'html-react-parser'
 import Image from 'next/image';
+import { AddCmsImgBaseUrl } from '../../Utils/Utils'
 class StoryCard extends Component {
 
   constructor(props) {
@@ -10,6 +11,7 @@ class StoryCard extends Component {
 
 
   render() {
+    console.log("this.props.",this.props.imgUrl)
     return (
       <div className={styles.storycard}>
         <div>
@@ -19,7 +21,7 @@ class StoryCard extends Component {
         </div>
         {this.props.imgUrl ?
           <div>
-            <img className={styles[this.props.imgClass] + " img-fluid image"} alt={this.props.imgAlt} src={this.props.imgUrl} />
+            <img className={styles[this.props.imgClass] + " img-fluid image"} alt={this.props.imgAlt} src={AddCmsImgBaseUrl(this.props.imgUrl.url)} />
           </div>
           :
           ""

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-// import "./ratioCard.scss"
-// import { Redirect } from 'react-router-dom'
-import Router from 'next/router'
+import { AddCmsImgBaseUrl } from '../../../Utils/Utils';
 import styles from './ratioCard.module.scss';
 class RatioCard extends Component {
 
@@ -23,10 +21,10 @@ class RatioCard extends Component {
     //   return <Router to={{pathname: this.state.redirectTo}} />
     // }
     return (
-      <div className={styles.ratiocard + ` pointer ${this.props.ratio}`} style={{ backgroundImage: `url('${data.imgUrl}')`, backgroundColor: data.bgColor }} onClick={() => this.handleClick(data.pageUrl)}>
+      <div className={styles.ratiocard + ` pointer ${this.props.ratio}`} style={{ backgroundImage: `url('${AddCmsImgBaseUrl(data.imgUrl.url)}')`, backgroundColor: data.bgColor }} onClick={() => this.handleClick(data.pageUrl)}>
         <div className={styles.contentbox}>
           <div className={styles.logo}>
-            <img src={data.logo} alt={data.alt} className="img-fluid" />
+            <img src={AddCmsImgBaseUrl(data.logo.url)} alt={data.alt} className="img-fluid" />
           </div>
           <div className={data.captionClass}>
             <span>

@@ -1,34 +1,45 @@
 import React, { Component } from 'react'
 import StoryCard from './StoryCard'
 import styles from "./OurStory.module.scss";
-import payload from "../../Payloads/OurStory/ourStoryContents"
-
+import { payload } from "../../Payloads/OurStory/ourStoryContents"
+import Api from '../../Config/Api'
 class OurStory extends Component {
 
-  constructor(){
+  constructor() {
     super();
     this.sliderContainer = React.createRef();
     this.scrollLeft = this.scrollLeft.bind(this);
-    this.scrollRight = this.scrollRight.bind(this);
+    this.scrollRight = this.scrollRight.bind(this); 
+    this.state = {
+      story: []
+    }
   }
 
-  componentDidMount(){
-    let firstChild = this.sliderContainer.current.children[0];
-    let style = firstChild.currentStyle || window.getComputedStyle(firstChild);
-    this.slideWidth = this.sliderContainer.current.children[0].offsetWidth + parseInt(style.marginRight);
+  componentDidMount() {
+    this.getStory();
+    if (this.state.story.length > 0) {
+      let firstChild = this.sliderContainer.current.children[0];
+      let style = firstChild.currentStyle || window.getComputedStyle(firstChild);
+      this.slideWidth = this.sliderContainer.current.children[0].offsetWidth + parseInt(style.marginRight);
+    }
+
   }
 
-  scrollLeft(){
+  scrollLeft() {
     let container = this.sliderContainer.current;
     container.scrollLeft = container.scrollLeft - this.slideWidth;
   }
 
-  scrollRight(){
+  scrollRight() {
     let container = this.sliderContainer.current;
     container.scrollLeft = container.scrollLeft + this.slideWidth;
   }
+  getStory = async () => {
+    var data = await payload();
+    this.setState({ story: data });
+  }
 
-  
+
   render() {
     return (
       <div className="py-4">
@@ -40,8 +51,8 @@ class OurStory extends Component {
           </div>
         </div>
         <div className={styles.slidercontainer} ref={this.sliderContainer}>
-        {payload.map((data, i)=><StoryCard key={i} {...data}/>)}
-          
+          {this.state.story.map((data, i) => <StoryCard key={i} {...data} />)}
+
         </div>
       </div>
     )

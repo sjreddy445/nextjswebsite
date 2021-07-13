@@ -60,7 +60,6 @@ const FormSect = () => {
   })
 
   const onResolve = (token) => {
-    console.log("token", token)
     setToken(token);
     handleSubmit();
   }
@@ -153,9 +152,9 @@ const FormSect = () => {
                 <option value={"USA"}>{"USA"}</option>
                 <option value={"India"}>{"India"}</option>
                 <hr />
-                {countryList.map(data => {
+                {countryList.map((data,i) => {
                   return (
-                    <option value={data.name}>{data.name}</option>
+                    <option key={i} value={data.name}>{data.name}</option>
                   )
                 })}
               </select>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { payload as HeaderData } from '../../Payloads/Careers/Header.js'
+import { payload as CareerHeaderData } from '../../Payloads/Careers/Header.js'
 import HeaderBanner from '../../Components/HeaderBanner/HeaderBanner'
 import CareerCard from "./CareerCard";
 import Accordion from "../../Components/Accordion/Accordion";
@@ -12,9 +12,18 @@ import { Helmet } from 'react-helmet'
 
 
 export default class Careers extends Component {
+  state={
+    headerData:{}
+  }
   componentDidMount() {
     setNavColor("transparent-bg");
     window.scrollTo(0, 0)
+    this.headerDataFunc();
+  }
+
+  headerDataFunc = async () => {
+    var headerData = await CareerHeaderData();
+    this.setState({ headerData: headerData })
   }
   render() {
     return (
@@ -25,7 +34,7 @@ export default class Careers extends Component {
         </Helmet>
         <Fade>
           <div>
-            <HeaderBanner data={HeaderData} />
+            <HeaderBanner data={this.state.headerData} />
           </div>
           <div className="container-inner">
             <div className={"section-margin "+ styles.aboutedge}>

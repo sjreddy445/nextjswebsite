@@ -9,7 +9,8 @@ import styles from './CardSect.module.scss'
 const StyledSlider = styled(Slider)`
   .slick-list {
     min-height:400px;
-    width:370px
+    max-width:400px;
+    padding:13px
   }
   .slick-slide img {
     display: inline;
@@ -53,7 +54,7 @@ class PodcastSect extends Component {
             <BlogPodcast podcast={item} key={i} {...this.props} />
           ))}
         </Row>
-        <Row className={"container-fluid "+styles.mobileview}>
+        <Row className={"container-fluid text-center " + styles.mobileview}>
           <StyledSlider {...settings}>
             {sect.items.map((item, i) => (
               <BlogPodcast podcast={item} key={i} {...this.props} />

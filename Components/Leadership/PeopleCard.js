@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styles from './Leadership.module.scss'
 import Image from 'next/image';
+import { AddCmsImgBaseUrl } from '../../Utils/Utils';
 export default class PeopleCard extends Component {
   render() {
     let people = this.props.data
@@ -8,7 +9,7 @@ export default class PeopleCard extends Component {
       <div>
         <div className={styles.peopleCard + " mb-5"}>
           <div className="mt-2">
-            <img src={people.imgUrl} alt={people.name} className={styles.peopleImg} />
+            <img src={AddCmsImgBaseUrl(people.imgUrl.url)} alt={people.name} className={styles.peopleImg} />
           </div>
           <h4 className={styles.peopleName + " mt-3 font-weight-bold"}>
             {people.name}

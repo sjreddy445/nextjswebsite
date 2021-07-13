@@ -29,12 +29,12 @@ Api.interceptors.response.use(function (response) {
   return response;
 }, function (error) {
   if (401 === error.response.status || undefined) {
-    console.log("its a 401!");
+    // console.log("its a 401!");
     //return
     // localStorage.clear();
     // return <Redirect to='/auth/login' />;
   } else {
-    console.log("Sorry, something went wrong")
+    // console.log("Sorry, something went wrong")
     return Promise.reject(error);
   }
 });

@@ -2,7 +2,16 @@ import React, { Component } from 'react';
 import { Row, Col } from 'reactstrap';
 import AwardText from './AwardText';
 import AwardImage from './AwardImage';
+import { payload as payloadImage } from '../../Payloads/Awards/logo';
+
 class Awards extends Component {
+    state = {
+        logo: []
+    }
+    componentDidMount = async () => {
+        let data = await payloadImage();
+        this.setState({ logo: data });
+    }
     render() {
         return (
             <>
@@ -12,7 +21,7 @@ class Awards extends Component {
                             <AwardText />
                         </Col>
                         <Col md={8} sm={12}>
-                            <AwardImage {...this.props} />
+                            <AwardImage data={this.state.logo} />
                         </Col>
                     </Row>
                 </div>

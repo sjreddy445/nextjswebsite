@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import HeaderBanner from '../../Components/HeaderBanner/HeaderBanner'
-import { payload as HeaderData } from '../../Payloads/Blog/Header'
+import { payload as BlogHeaderData } from '../../Payloads/Blog/Header'
 import { setNavColor } from '../../Components/TopNav/Utils'
 import SubMenu from '../../Components/SubMenu/SubMenu';
 import { BrowserView } from 'react-device-detect'
@@ -16,9 +16,14 @@ export default class Blog extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      headerData: {}
+    };
   }
   componentDidMount() {
+
+    this.headerDataFunc();
+
     setNavColor("transparent-bg text-white");
     let blogPageSections = JSON.parse(localStorage.getItem("blogPageSections"))
     if (blogPageSections) {
@@ -34,10 +39,16 @@ export default class Blog extends Component {
         blogPageSections: blogPageSections
       });
     })
-
     window.scrollTo(0, 0)
   }
 
+
+
+  headerDataFunc = async () => {
+    var headerData = await BlogHeaderData();
+ 
+    this.setState({ headerData: headerData })
+  }
 
   render() {
     if (!this.state.blogPageSections) {
@@ -48,7 +59,7 @@ export default class Blog extends Component {
     return (
       <Fade>
         <div>
-          <HeaderBanner data={HeaderData} />
+          <HeaderBanner data={this.state.headerData} />
         </div>
         <div className="drop-shadow">
           <BrowserView>
