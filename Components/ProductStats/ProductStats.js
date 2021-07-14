@@ -36,7 +36,7 @@ class ProductStats extends Component {
       <>
         <div className={"container-inner py-4 " + styles.desktopview}>
           <Slider className="gap-50" {...settings}>
-            {this.state.data.map((stats, i) => {
+            {this.props.data.map((stats, i) => {
               return (
                 <StatsBox key={i} data={stats} />
               )

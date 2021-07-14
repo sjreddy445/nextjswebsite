@@ -19,18 +19,38 @@ import Testimonial from '../../Components/Testimonials/Testimonials';
 import { payload as testimonialData } from '../../Payloads/Testimonials/client'
 class Pathfinder extends Component {
   state = {
-    headerData: {}
+    headerData: {},
+    scrrenshots: [],
+    sliders: [],
+    stats: []
   }
   componentDidMount() {
     setNavColor("transparent-bg text-white");
     window.scrollTo(0, 0)
     this.headerDataFunc();
+    this.getSliderFun();
+    this.getSSFunc();
+    this.getStatFunc();
   }
 
   headerDataFunc = async () => {
     var headerData = await PathfinderHeaderData();
     this.setState({ headerData: headerData })
   }
+
+  getSliderFun = async () => {
+    var slidData = await sliderData();
+    this.setState({ sliders: slidData })
+  }
+  getSSFunc = async () => {
+    var ssData = await screenshotData();
+    this.setState({ scrrenshots: ssData })
+  }
+  getStatFunc = async () => {
+    var statData = await StatsData();
+    this.setState({ stats: statData })
+  }
+
   render() {
     return (
       <Fade>
@@ -42,13 +62,13 @@ class Pathfinder extends Component {
           <HeaderBanner data={this.state.headerData} /> 
         </div>
         <div className="section-margin">
-          <VerticalSlider dotColor="grey" data={sliderData} />
+          <VerticalSlider dotColor="grey" data={this.state.sliders} />
         </div>
         <div className="section-margin">
-          <ProductStats data={StatsData} />
+          <ProductStats data={this.state.stats} />
         </div>
         <div className="section-margin">
-          <ProductScreenShot data={screenshotData} />
+          <ProductScreenShot data={this.state.scrrenshots} />
         </div>
         <div className="section-margin" >
           <ProductVideo />

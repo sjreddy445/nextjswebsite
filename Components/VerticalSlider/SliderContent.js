@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Image from 'next/image';
 import styles from './VerticalSlider.module.scss';
+import { AddCmsImgBaseUrl } from '../../Utils/Utils';
 class SliderContent extends Component {
   constructor(props) {
     super();
@@ -17,7 +18,7 @@ class SliderContent extends Component {
             <p className="text-xs text-grey text-line-height-1-6" dangerouslySetInnerHTML={{ __html: item.body }}></p>
           </div>
           <div className={"col-md-12 col-xl-6 order-0 order-xl-1" + styles.imagecontainer}>
-            <img className="img-round img-fluid" alt={item.imgAlt} src={item.img} />
+            <img className="img-round img-fluid" alt={item.imgAlt} src={AddCmsImgBaseUrl(item.img.url)} />
           </div>
         </div>
       </div>

@@ -6,25 +6,32 @@ import Accordion from "../../Components/Accordion/Accordion";
 import Head from "./Head";
 import Fade from 'react-reveal/Fade';
 import { setNavColor } from '../../Components/TopNav/Utils'
-import Openings from "../../Payloads/Careers/Openings"
+import {openingData} from "../../Payloads/Careers/Openings"
 import styles from "./career.module.scss";
 import { Helmet } from 'react-helmet'
 
 
 export default class Careers extends Component {
   state={
-    headerData:{}
+    headerData:{},
+    openings:[]
   }
   componentDidMount() {
     setNavColor("transparent-bg");
     window.scrollTo(0, 0)
     this.headerDataFunc();
+    this.getOpenings();
   }
 
   headerDataFunc = async () => {
     var headerData = await CareerHeaderData();
     this.setState({ headerData: headerData })
   }
+  getOpenings = async () => {
+    var opening = await openingData();
+    this.setState({ openings: opening })
+  }
+
   render() {
     return (
       <div className={styles.careerpage}>
@@ -49,7 +56,7 @@ export default class Careers extends Component {
               <h2 className={styles.boldtitle}>Open Positions:</h2>
             </div>
             <div className="section-margin mt-4">
-              {Openings.map((data, index) => <Accordion key={`jobs_list_${index}`} head={<Head title={data.title} />} body={<CareerCard data={data} />} />)}
+              {this.state.openings.map((data, index) => <Accordion key={`jobs_list_${index}`} head={<Head title={data.title} />} body={<CareerCard data={data} />} />)}
             </div>
           </div>
         </Fade>

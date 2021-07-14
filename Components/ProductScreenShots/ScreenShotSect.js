@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import Image from 'next/image';
 import styled from "styled-components";
 import styles from './ProductScreenShots.module.scss'
+import { AddCmsImgBaseUrl } from '../../Utils/Utils';
 const StyledSlider = styled(Slider)`
   .slick-list {
     // padding: 0px 54px !important;
@@ -40,7 +41,7 @@ class ScreenShotSect extends Component {
       <StyledSlider {...settings}>
         {this.props.data.map((list, i) => (
           <div key={i}>
-            <div className={styles.ImageSize} style={{ backgroundImage: `url('${list.img}')` }}>
+            <div className={styles.ImageSize} style={{ backgroundImage: `url('${AddCmsImgBaseUrl(list.img.url)}')` }}>
 
             </div>
             {/* <img alt={list.imgAlt} className="w-100" style={{height:400}} src={list.img} /> */}

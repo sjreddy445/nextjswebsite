@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import HeaderBanner from '../Components/HeaderBanner/HeaderBanner'
 import { payload as HomeHeaderData } from '../Payloads/Home/Header.js'
 import { payload as SecretData } from '../Payloads/Home/Secret'
@@ -19,7 +19,7 @@ import OurProducts from '../Components/OurProducts/OurProducts';
 import { setNavColor } from '../Components/TopNav/Utils'
 import Fade from 'react-reveal/Fade';
 import { Helmet } from 'react-helmet'
-import { useState } from 'react/cjs/react.development'
+
 
 export default function Home() {
 
@@ -28,7 +28,6 @@ export default function Home() {
   });
   const [HeaderData, setHeaderData] = useState({});
   const [secretData, setSecretData] = useState({});
-  const [ourProdData, setOurProductsData] = useState({});
 
   useEffect(async () => {
     var headerData = await HomeHeaderData();
