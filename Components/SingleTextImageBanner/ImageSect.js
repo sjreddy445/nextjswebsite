@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {YouTubeGetID} from '../../Utils/Utils'
+import {AddCmsImgBaseUrl, YouTubeGetID} from '../../Utils/Utils'
 import YouTube from 'react-youtube'
 
 class ImageSect extends Component {
@@ -18,7 +18,7 @@ class ImageSect extends Component {
             <YouTube videoId={videoId} opts={opts} onReady={this._onReady} className="embed-responsive-item"/>
           </div>
           :
-          <img src={this.props.data.imgUrl} className="img-fluid img-round" alt="edge-news"/>
+          <img src={AddCmsImgBaseUrl(this.props.data.imgUrl)} className="img-fluid img-round" alt="edge-news"/>
         }
       </div>
     );

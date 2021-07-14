@@ -132,7 +132,7 @@ const FormSect = () => {
                 className={!values.no_of_emp ? styles.color : styles.bl}
                 onChange={handleChange}
                 value={values.no_of_emp}>
-                <option value="" disabled selected hidden>No of Employees</option>
+                <option value="" disabled defaultValue hidden>No of Employees</option>
                 <option value="Below 100">Below 100</option>
                 <option value="101-500">101-500</option>
                 <option value="501-2500">501-2500</option>
@@ -148,7 +148,7 @@ const FormSect = () => {
                 className={!values.country ? styles.color : styles.bl}
                 onChange={handleChange}
                 value={values.country}>
-                <option value="" disabled selected hidden>Country</option>
+                <option value="" disabled defaultValue hidden>Country</option>
                 <option value={"USA"}>{"USA"}</option>
                 <option value={"India"}>{"India"}</option>
                 <hr />

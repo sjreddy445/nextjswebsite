@@ -15,7 +15,7 @@ class TopNav extends Component {
     this.state = {
       mobileMenuActive: false,
       bgClass: "",
-      TopContainer:{}
+      TopContainer: {}
     }
 
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
@@ -61,7 +61,7 @@ class TopNav extends Component {
   }
 
 
-  
+
   scrollToContact = () => {
     let scroller = Scroll.scroller
     scroller.scrollTo('contactWidget', {
@@ -81,7 +81,7 @@ class TopNav extends Component {
         this.props.router.push(TopBanner.redirectTo)
       }
     }
-    else{
+    else {
       this.props.router.push(this.state.TopContainer.redirectTo)
     }
   };
@@ -101,13 +101,14 @@ class TopNav extends Component {
               <i style={{ cursor: 'pointer' }} className="icon-edge_logo edge-logo"></i>
             </NavLink>
             <div>
-              <button className="mobile-hamburger" onClick={this.toggleMobileMenu}><i className="icon-menu"></i></button>
-              <div className={`back-drop ${this.state.mobileMenuActive ? "active" : ''}`} onClick={this.hideMobileMenu}></div>
-              <ul className={`top-menu  ${this.state.mobileMenuActive ? "active" : ''}`} onClick={this.hideMobileMenu}>
-                <li className="has-sub-menu nav-item">
-                  <a className="link-no-decor nav-link" href="/#">Products <i className="arrow-down icon-chevron-down"></i></a>
-                  <ul className="sub-menu dropdown-menu ">
-                    <UncontrolledDropdown>
+              <UncontrolledDropdown>
+                <button className="mobile-hamburger" onClick={this.toggleMobileMenu}><i className="icon-menu"></i></button>
+                <div className={`back-drop ${this.state.mobileMenuActive ? "active" : ''}`} onClick={this.hideMobileMenu}></div>
+                <ul className={`top-menu  ${this.state.mobileMenuActive ? "active" : ''}`} onClick={this.hideMobileMenu}>
+                  <li className="has-sub-menu nav-item">
+                    <a className="link-no-decor nav-link" href="/#">Products <i className="arrow-down icon-chevron-down"></i></a>
+                    <ul className="sub-menu dropdown-menu ">
+
                       <li>
                         <DropdownItem>
                           <NavLink activeClassName="selected" href="/products/pathfinder" ><a className="link-no-decor">Pathfinder <i className="mobile-only icon-chevron-right"></i></a></NavLink>
@@ -125,15 +126,16 @@ class TopNav extends Component {
                           <NavLink activeClassName="selected" href="/products/recruit"  ><a className="link-no-decor">Recruit <i className="mobile-only icon-chevron-right"></i></a></NavLink>
                         </DropdownItem>
                       </li>
-                    </UncontrolledDropdown>
-                  </ul>
-                </li>
-                <NavItem><NavLink activeClassName="selected" href="/blog"><a className="link-no-decor">Blog & Resources <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
-                <NavItem><NavLink activeClassName="selected" href="/contact"><a className="link-no-decor">Contact <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
-                <NavItem><NavLink activeClassName="selected" href="/careers" ><a className="link-no-decor">Careers <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
-                <NavItem><NavLink activeClassName="selected" href="/about"><a className="link-no-decor">About Us <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
-              </ul>
+                    </ul>
+                  </li>
+                  <NavItem><NavLink activeClassName="selected" href="/blog"><a className="link-no-decor">Blog & Resources <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
+                  <NavItem><NavLink activeClassName="selected" href="/contact"><a className="link-no-decor">Contact <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
+                  <NavItem><NavLink activeClassName="selected" href="/careers" ><a className="link-no-decor">Careers <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
+                  <NavItem><NavLink activeClassName="selected" href="/about"><a className="link-no-decor">About Us <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
+                </ul>
+              </UncontrolledDropdown>
             </div>
+
           </div >
         </div >
       </>
