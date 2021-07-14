@@ -10,7 +10,7 @@ const BookDemo = (props) => {
         scroller.scrollTo('contactWidget', {
             duration: 800,
             delay: 0,
-            offset: isBrowser ? -10 : 320,
+            offset: -80,
             smooth: 'easeInOutQuart'
         })
     }

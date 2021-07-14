@@ -129,8 +129,7 @@ class Footer extends Component {
               </div>
             </div>
 
-            <hr />
-
+            <hr></hr>
             <div className="py-5 container-inner footer-trio-element d-flex justify-content-between align-items-center">
               <div>
                 <img className="gartner-img" alt='' src={GartnerCoolImg.src} />
@@ -146,7 +145,7 @@ class Footer extends Component {
               <p className="text-xxs text-grey1 box text-line-height-1-6 gartner-details">The Gartner Cool Vendor Logo is a trademark and service mark of Gartner, Inc., and/or its affiliates, and is used herein with permission. All rights reserved. Gartner does not endorse any vendor, product or service depicted in its research publications, and does not advise technology users to select only those vendors with the highest ratings or other designation. Gartner research publications consist of the opinions of Gartners research organization and should not be construed as statements of fact. Gartner disclaims all warranties, expressed or implied, with respect to this research, including any warranties of merchantability or fitness for a particular purpose.</p>
             </div>
 
-            <hr />
+            <hr></hr>
 
             <div className="container-inner py-2">
               <p className="text-right text-grey1 text-xxs sm-text-left m-0 py-2">{year} © EdGE Networks. All Rights Reserved |<NavLink href="/privacy" className="link-no-decor"> Privacy Policy</NavLink> | <span onClick={this.toggleCreditModal} className="pointer">Credits</span></p>

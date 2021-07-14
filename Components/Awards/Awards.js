@@ -15,7 +15,8 @@ class Awards extends Component {
     render() {
         return (
             <>
-                <div className="container-inner py-5" id="contactid" name="contactWidget">
+            
+                <div className="container-inner py-5" id="contactid">
                     <Row className="no-gutters">
                         <Col md={4} sm={12} className="">
                             <AwardText />

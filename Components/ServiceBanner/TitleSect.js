@@ -11,7 +11,7 @@ const TitleSect = (props) => {
     scroller.scrollTo('contactWidget', {
       duration: 800,
       delay: 0,
-      offset: isBrowser ? -20 : 320,
+      offset: -80,
       smooth: 'easeInOutQuart'
     })
   }
