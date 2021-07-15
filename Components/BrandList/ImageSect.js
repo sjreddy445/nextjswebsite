@@ -6,8 +6,8 @@ import { AddCmsImgBaseUrl } from '../../Utils/Utils';
 
 const StyledSlider = styled(Slider)`
   .slick-list {
-    padding: 0px 120px !important;
-    margin:10px -50px;
+    padding: 0px 80px !important;
+    margin:10px -15px;
   }
 `;
 class ImageSect extends Component {

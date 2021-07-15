@@ -5,8 +5,8 @@ import styled from "styled-components";
 import { AddCmsImgBaseUrl } from '../../Utils/Utils';
 const StyledSlider = styled(Slider)`
   .slick-list {
-    padding: 0px 120px !important;
-    margin:10px -50px;
+    padding: 0px 70px !important;
+    margin:10px -10px;
   }
 `;
 class AwardImage extends Component {
