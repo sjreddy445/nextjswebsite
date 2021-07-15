@@ -45,6 +45,7 @@ class TopNav extends Component {
 
   TopDataFunc = async () => {
     var topContainer = await TopBanner();
+    console.log("topCOntainder",topContainer)
     this.setState({ TopContainer: topContainer })
   }
 
@@ -78,7 +79,7 @@ class TopNav extends Component {
       if (pathname === '/' || pathname.includes('/products')) {
         this.scrollToContact();
       } else {
-        this.props.router.push(TopBanner.redirectTo)
+        this.props.router.push(this.state.TopContainer.redirectTo)
       }
     }
     else {
