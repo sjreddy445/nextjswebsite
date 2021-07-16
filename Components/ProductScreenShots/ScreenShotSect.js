@@ -39,7 +39,7 @@ class ScreenShotSect extends Component {
     };
     return (
       <StyledSlider {...settings}>
-        {this.props.data.map((list, i) => (
+        {this.props?.data?.map((list, i) => (
           <div key={i}>
             <div className={styles.ImageSize} style={{ backgroundImage: `url('${AddCmsImgBaseUrl(list.img.url)}')` }}>
 

@@ -41,7 +41,7 @@ class CareerCard extends Component {
           <h4 className={styles.coltitle}>Details</h4>
           <table>
             <tbody>
-              {this.state.details && this.state.details.map((data, index) =>
+              {this.state?.details && this.state?.details?.map((data, index) =>
                 <tr key={`details-table-row-${index}`}>
                   <th>{data.label}</th>
                   <td>{data.text}</td>
@@ -51,13 +51,13 @@ class CareerCard extends Component {
           </table>
         </div>
         <div className={styles.rightcol}>
-          {this.state.responsibilities ?
+          {this.state?.responsibilities ?
             <>
               <h4 className={styles.coltitle}>Job Responsibilities</h4>
               <ul>
-                {this.state.responsibilities.map((data, listIndex) =>
+                {this.state?.responsibilities?.map((data, listIndex) =>
                   <li className={styles.listitem} key={`list-item-${listIndex}`}>{data.text}
-                    {data.sub ? <ul>{data.sub.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem}>{ReactHtmlParser(subData.text)}</li>)}</ul> : ''}
+                    {data?.sub ? <ul>{data?.sub?.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem}>{ReactHtmlParser(subData.text)}</li>)}</ul> : ''}
                   </li>
                 )}
               </ul>
@@ -69,9 +69,9 @@ class CareerCard extends Component {
             <>
               <h4 className={styles.coltitle}>Job Requirements</h4>
               <ul>
-                {this.state.requirements.map((data, listIndex) =>
+                {this.state?.requirements?.map((data, listIndex) =>
                   <li className={styles.listitem} key={`list-item-${listIndex}`}>{ReactHtmlParser(data.text)}
-                    {data.sub ? <ul>{data.sub.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem}>{ReactHtmlParser(subData.text)}</li>)}</ul> : ''}
+                    {data.sub ? <ul>{data?.sub?.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem}>{ReactHtmlParser(subData.text)}</li>)}</ul> : ''}
                   </li>
                 )}
               </ul>
@@ -83,9 +83,9 @@ class CareerCard extends Component {
             <>
               <h4 className={styles.coltitle}>Sales Management</h4>
               <ul>
-                {this.state.salesMmanagement.map((data, listIndex) =>
+                {this.state?.salesMmanagement?.map((data, listIndex) =>
                   <li className={styles.listitem} key={`list-item-${listIndex}`}>{data.text}
-                    {data.sub ? <ul>{data.sub.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem}>{subData.text}</li>)}</ul> : ''}
+                    {data?.sub ? <ul>{data?.sub?.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem}>{subData.text}</li>)}</ul> : ''}
                   </li>
                 )}
               </ul>
@@ -97,9 +97,9 @@ class CareerCard extends Component {
             <>
               <h4 className={styles.coltitle}>Prospects and Pipeline Management</h4>
               <ul>
-                {this.state.prospects.map((data, listIndex) =>
+                {this.state?.prospects?.map((data, listIndex) =>
                   <li className={styles.listitem} key={`list-item-${listIndex}`}>{data.text}
-                    {data.sub ? <ul>{data.sub.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem} > {subData.text}</li>)}</ul> : ''}
+                    {data?.sub ? <ul>{data?.sub?.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem} > {subData.text}</li>)}</ul> : ''}
                   </li>
                 )}
               </ul>
@@ -111,9 +111,9 @@ class CareerCard extends Component {
             <>
               <h4 className={styles.coltitle}>Proposals, forecast, contracts, market, etc.</h4>
               <ul>
-                {this.state.proposals.map((data, listIndex) =>
+                {this.state?.proposals?.map((data, listIndex) =>
                   <li className={styles.listitem} key={`list-item-${listIndex}`}>{data.text}
-                    {data.sub ? <ul>{data.sub.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem}>{subData.text}</li>)}</ul> : ''}
+                    {data?.sub ? <ul>{data?.sub?.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem}>{subData.text}</li>)}</ul> : ''}
                   </li>
                 )}
               </ul>
@@ -125,9 +125,9 @@ class CareerCard extends Component {
             <>
               <h4 className={styles.coltitle}>Product knowledge</h4>
               <ul>
-                {this.state.productKnowledge.map((data, listIndex) =>
+                {this.state?.productKnowledge?.map((data, listIndex) =>
                   <li className={styles.listitem} key={`list-item-${listIndex}`}>{data.text}
-                    {data.sub ? <ul>{data.sub.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem}>{subData.text}</li>)}</ul> : ''}
+                    {data?.sub ? <ul>{data?.sub?.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem}>{subData.text}</li>)}</ul> : ''}
                   </li>
                 )}
               </ul>
@@ -135,13 +135,13 @@ class CareerCard extends Component {
             :
             ""
           }
-          {this.state.skills ?
+          {this.state?.skills ?
             <>
               <h4 className={styles.coltitle}>Role Skills</h4>
               <ul>
-                {this.state.skills.map((data, listIndex) =>
+                {this.state?.skills?.map((data, listIndex) =>
                   <li className={styles.listitem} key={`list-item-${listIndex}`}>{data.text}
-                    {data.sub ? <ul>{data.sub.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem}>{subData.text}</li>)}</ul> : ''}
+                    {data?.sub ? <ul>{data?.sub?.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem}>{subData.text}</li>)}</ul> : ''}
                   </li>
                 )}
               </ul>
@@ -153,9 +153,9 @@ class CareerCard extends Component {
             <>
               <h4 className={styles.coltitle}>Preferred Qualifications</h4>
               <ul>
-                {this.state.qualifications.map((data, listIndex) =>
+                {this.state?.qualifications?.map((data, listIndex) =>
                   <li className={styles.listitem} key={`list-item-${listIndex}`}>{data.text}
-                    {data.sub ? <ul>{data.sub.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem}>{subData.text}</li>)}</ul> : ''}
+                    {data.sub ? <ul>{data?.sub?.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem}>{subData.text}</li>)}</ul> : ''}
                   </li>
                 )}
               </ul>
@@ -168,9 +168,9 @@ class CareerCard extends Component {
               <h4 className={styles.coltitle}>Interview process</h4>
               <h6 className="ml-4">{process.text}</h6>
               <ul>
-                {this.state.process && this.state.process.label && this.state.process.label.map((data, listIndex) =>
+                {this.state.process && this.state.process.label && this.state?.process?.label?.map((data, listIndex) =>
                   <li className={styles.listitem} key={`list-item-${listIndex}`}>{data.text}
-                    {data.sub ? <ul>{data.sub.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem}>{subData.text}</li>)}</ul> : ''}
+                    {data.sub ? <ul>{data?.sub?.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem}>{subData.text}</li>)}</ul> : ''}
                   </li>
                 )}
               </ul>

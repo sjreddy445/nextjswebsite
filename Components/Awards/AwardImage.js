@@ -39,7 +39,7 @@ class AwardImage extends Component {
         return (
             <div className="container-fluid">
                 <StyledSlider {...settings}>
-                    {this.props?.data.map((list, i) => (
+                    {this.props?.data?.map((list, i) => (
                         <div key={i}>
                             <img onClick={() => window.open(list.link, "_bank")} src={AddCmsImgBaseUrl(list.imgUrl.url)} alt={list.imgUrl} className={styles.img} />
                         </div>

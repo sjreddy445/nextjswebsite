@@ -41,7 +41,6 @@ class resourceViewAll extends Component {
       this.setState({ ...this.state, ...{ totalItem } })
       // this.scrollWindow()
     });
-    this.headerDataFunc();
   }
 
   handlePageChange(pageNumber) {
@@ -51,12 +50,6 @@ class resourceViewAll extends Component {
       this.setState({ ...this.state, ...{ resouceItem: dataItems } })
     });
   }
-
-  headerDataFunc = async () => {
-    var headerData = await BlogHeaderData();
-    this.setState({ headerData: headerData })
-  }
-
   render() {
     var checkUrl = this.props.router.query.slug;
     if (!this.state.resouceItem) {
@@ -65,20 +58,20 @@ class resourceViewAll extends Component {
     return (
       <div>
         <div>
-          <HeaderBanner data={this.state.headerData} />
+          <HeaderBanner data={this.props.headerData} />
         </div>
         <div className="mt-5 container-inner">
           <h3>All {this.props.router.query.slug}</h3>
           {checkUrl.includes('blogs') && <div className="row mt-4">
-            {this.state.resouceItem.map(item => <BlogCard blog={item} key={item.id} {...this.props} />)}
+            {this.state?.resouceItem?.map(item => <BlogCard blog={item} key={item.id} {...this.props} />)}
           </div>}
           {checkUrl.includes('podcast') && <div className="row mt-4">
-            {this.state.resouceItem.map(item => <BlogPodcast podcast={item} key={item.id} {...this.props} />)}
+            {this.state?.resouceItem?.map(item => <BlogPodcast podcast={item} key={item.id} {...this.props} />)}
           </div>}
           {checkUrl.includes('video') && <div className="row mt-4">
-            {this.state.resouceItem.map(item => <BlogVideo video={item} key={item.id} {...this.props} />)}
+            {this.state?.resouceItem?.map(item => <BlogVideo video={item} key={item.id} {...this.props} />)}
           </div>}
-          {this.state.totalItem ? <Pagination
+          {this.state?.totalItem ? <Pagination
             itemClass="page-item"
             linkClass="page-link"
             activePage={this.state.activePage}
@@ -95,10 +88,11 @@ class resourceViewAll extends Component {
 }
 
 
-export async function getServerSideProps(context) {
-  return {
-      props: {},
-  };
-}
 
+export async function getServerSideProps(context) {
+  var headerData = await BlogHeaderData(); 
+  return {
+    props: {headerData:headerData}
+  }
+}
 export default withRouter(resourceViewAll)

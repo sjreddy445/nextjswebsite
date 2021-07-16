@@ -22,7 +22,7 @@ class BlogHeaders extends Component {
 							<>
 								<span className="mr-2 text-xxs"><FontAwesomeIcon style={{width:'1.25rem'}} icon={faTags} /></span>
 								<span className="dash-seperator">
-									{categories.map((category, i) =>
+									{categories?.map((category, i) =>
 										<span key={i} className="text-xxs">
 											<a href="#" style={{color:'#007bff'}}>{category.Name} </a>
 										</span>

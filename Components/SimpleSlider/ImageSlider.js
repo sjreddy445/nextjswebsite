@@ -26,7 +26,7 @@ export default class ImageSlider extends Component {
     return (
       <div>
         <Slider {...settings}>
-          {imageSet.map((image, i) => (
+          {imageSet?.map((image, i) => (
             <div key={i}>
               <img src={AddCmsImgBaseUrl(image.imgUrl)} alt={image.alt} width={this.props.width} height={this.props.height} />
             </div>

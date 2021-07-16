@@ -8,18 +8,6 @@ const SlideBtn = ({ arrow, direction, ...props }) => (
     <button {...props} className={`slick-arrow slick-${direction}`}><i className={`icon-chevron-${arrow}`}></i></button>
 )
 class Awards extends Component {
-    state = {
-        data: []
-    }
-    componentWillMount(){
-        this.getTestimonials()
-    }
-
-    getTestimonials = async () => {
-        var testimonialData = await testimonialPayload();
-        this.setState({ data: testimonialData })
-    }
-
     render() {
         var settings = {
 
@@ -55,7 +43,7 @@ class Awards extends Component {
                 <h3 className="mb-3">Testimonials</h3>
 
                 <Slider className="arrow-dark arrow-slider" {...settings}>
-                    {this.state.data.map((list, i) => (
+                    {this.props?.data?.map((list, i) => (
                         <div key={i} className={"card card-body text-xs " + styles.cardborder}>
                             {/* <div className={"text-xs h-100"}> */}
                             <p className={styles.cardheight}>{list.description}</p>

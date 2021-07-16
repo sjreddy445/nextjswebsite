@@ -50,13 +50,13 @@ class PodcastSect extends Component {
           </div>
         </Col>
         <Row className={"container-fluid " + styles.desktopview}>
-          {sect.items.map((item, i) => (
+          {sect?.items?.map((item, i) => (
             <BlogPodcast podcast={item} key={i} {...this.props} />
           ))}
         </Row>
         <Row className={"container-fluid text-center " + styles.mobileview}>
           <StyledSlider {...settings}>
-            {sect.items.map((item, i) => (
+            {sect?.items?.map((item, i) => (
               <BlogPodcast podcast={item} key={i} {...this.props} />
             ))}
           </StyledSlider>
@@ -73,3 +73,9 @@ class PodcastSect extends Component {
 }
 
 export default withRouter(PodcastSect)
+
+export async function getServerSideProps(context) {
+  return {
+    props: {}
+  }
+}

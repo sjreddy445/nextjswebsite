@@ -2,15 +2,7 @@ import React, { Component } from 'react';
 import { Col } from 'reactstrap';
 import TextSect from './TextSect';
 import ImageSect from './ImageSect';
-import { getBrands } from '../../Payloads/Home/BrandList'
 class BrandList extends Component {
-  state = {
-    brandList: []
-  }
-  componentDidMount = async () => {
-    let data = await getBrands();
-    this.setState({ brandList: data });
-  }
   render() {
     return (
       <div className="container-inner d-flex flex-mobile-wrap">
@@ -18,7 +10,7 @@ class BrandList extends Component {
           <TextSect {...this.props} />
         </Col>
         <Col lg={8} md={12} className="p-0">
-          <ImageSect data={this.state.brandList} />
+          <ImageSect data={this.props.brandList} />
         </Col>
       </div>
     );

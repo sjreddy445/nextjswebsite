@@ -15,6 +15,7 @@ import Api from "../Config/Api";
 import { useEffect } from 'react';
 import CookieConsent from "react-cookie-consent";
 import { withRouter } from 'next/router';
+
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     ReactGa.initialize('UA-35684919-1');
@@ -24,6 +25,7 @@ function MyApp({ Component, pageProps }) {
       localStorage.setItem("blogPageSections", JSON.stringify(data));
     })
   })
+  
   return (
     <Layout>
       <Component {...pageProps} />

@@ -5,24 +5,17 @@ import AwardImage from './AwardImage';
 import { payload as payloadImage } from '../../Payloads/Awards/logo';
 
 class Awards extends Component {
-    state = {
-        logo: []
-    }
-    componentDidMount = async () => {
-        let data = await payloadImage();
-        this.setState({ logo: data });
-    }
     render() {
         return (
             <>
-            
+
                 <div className="container-inner py-5" id="contactid">
                     <Row className="no-gutters">
                         <Col md={4} sm={12} className="">
                             <AwardText />
                         </Col>
                         <Col md={8} sm={12}>
-                            <AwardImage data={this.state.logo} />
+                            <AwardImage {...this.props} />
                         </Col>
                     </Row>
                 </div>

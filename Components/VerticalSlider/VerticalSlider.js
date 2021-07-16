@@ -178,12 +178,12 @@ class VerticalSlider extends Component {
       <div className={`${styles.verticalslider} ${(this.props.dotColor) ? 'dot' + this.props.dotColor : ''}`} >
         <div className="py-4" >
           <SliderC className={styles.desktopslider}   {...settings}>
-            {items.map((item, index) => (
+            {items?.map((item, index) => (
               <SliderContent key={index + '_slider'} item={item} />
             ))}
           </SliderC>
           <div className={styles.mobileslider}>
-            {items.map((item, index) => (
+            {items?.map((item, index) => (
               <SliderContent key={index + '_slider'} item={item} total={items.length} currentIndex={index + 1} />
             ))}
           </div>

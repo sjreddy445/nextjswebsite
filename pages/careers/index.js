@@ -19,18 +19,8 @@ export default class Careers extends Component {
   componentDidMount() {
     setNavColor("transparent-bg");
     window.scrollTo(0, 0)
-    this.headerDataFunc();
-    this.getOpenings();
   }
 
-  headerDataFunc = async () => {
-    var headerData = await CareerHeaderData();
-    this.setState({ headerData: headerData })
-  }
-  getOpenings = async () => {
-    var opening = await openingData();
-    this.setState({ openings: opening })
-  }
 
   render() {
     return (
@@ -41,7 +31,7 @@ export default class Careers extends Component {
         </Helmet>
         <Fade>
           <div>
-            <HeaderBanner data={this.state.headerData} />
+            <HeaderBanner data={this.props.headerData} />
           </div>
           <div className="container-inner">
             <div className={"section-margin "+ styles.aboutedge}>
@@ -56,11 +46,18 @@ export default class Careers extends Component {
               <h2 className={styles.boldtitle}>Open Positions:</h2>
             </div>
             <div className="section-margin mt-4">
-              {this.state.openings.map((data, index) => <Accordion key={`jobs_list_${index}`} head={<Head title={data.title} />} body={<CareerCard data={data} />} />)}
+              {this.props?.openings?.map((data, index) => <Accordion key={`jobs_list_${index}`} head={<Head title={data.title} />} body={<CareerCard data={data} />} />)}
             </div>
           </div>
         </Fade>
       </div>
     )
+  }
+}
+export async function getServerSideProps(context) {
+  var headerData = await CareerHeaderData();
+  var opening = await openingData();
+  return {
+    props: {headerData:headerData,openings:opening}
   }
 }

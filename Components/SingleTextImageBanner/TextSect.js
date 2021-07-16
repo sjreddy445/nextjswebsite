@@ -6,10 +6,10 @@ class TextSect extends Component {
     return (
       <div>
         <h4 className="text-sm mb-3 mt-2 pl-2 font-weight-bold">
-          {data.mainTitle}
+          {data?.mainTitle}
         </h4>
         <div className="px-2">
-          <h2 className="text-weight-500 text-xl"> {data.subTitle} </h2>
+          <h2 className="text-weight-500 text-xl"> {data?.subTitle} </h2>
         </div>
       </div>
     );

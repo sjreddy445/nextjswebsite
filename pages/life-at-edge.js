@@ -15,19 +15,8 @@ export default class Life extends Component {
   componentDidMount() {
     setNavColor("transparent-bg text-white");
     window.scrollTo(0, 0)
-    this.headerDataFunc();
-    this.getSliders();
   }
 
-  headerDataFunc = async () => {
-    var headerData = await LifeHeaderData();
-    this.setState({ headerData: headerData })
-  }
-
-  getSliders = async () => {
-    var slider = await SliderData();
-    this.setState({ sliders: slider })
-  }
 
 
   render() {
@@ -38,9 +27,9 @@ export default class Life extends Component {
           <meta name="description" content="According to PwC, 74% of companies will deploy HR tech in 2020. Talent management is an industry that's rapidly growing and you should come work with us at Edge" />
         </Helmet>
         <div className="header-box mb-5">
-          <HeaderBanner data={this.state.headerData} />
+          <HeaderBanner data={this.props.headerData} />
         </div>
-        {this.state.sliders.map((slider, i) => (
+        {this.props?.sliders?.map((slider, i) => (
           <div className="section-margin" key={i}>
             <SimpleSlider data={slider} width="620" height="368" />
           </div>
@@ -50,5 +39,13 @@ export default class Life extends Component {
         </div>
       </Fade>
     )
+  }
+}
+
+export async function getServerSideProps(context) {
+  var headerData = await LifeHeaderData();
+  var slider = await SliderData();
+  return {
+    props: { headerData: headerData,sliders: slider }
   }
 }

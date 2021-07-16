@@ -51,13 +51,13 @@ class CardSect extends Component {
           </div>
         </Col>
         <Row className={"container-fluid "+styles.desktopview}>
-          {sect.items.map((item, i) => (
+          {sect?.items?.map((item, i) => (
             <BlogCard blog={item} key={i} {...this.props} />
           ))}
         </Row>
         <Row className={"container-fluid text-center "+styles.mobileview}>
           <StyledSlider {...settings}>
-            {sect.items.map((item, i) => (
+            {sect?.items?.map((item, i) => (
               <BlogCard blog={item} key={i} {...this.props} />
             ))}
           </StyledSlider>

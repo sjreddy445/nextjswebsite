@@ -6,7 +6,7 @@ export default class CardList extends Component {
     let {blogData} = this.props
     return (
       <div className="container-inner">
-        {blogData.map((blog, i)=>(
+        {blogData?.map((blog, i)=>(
           <CardSect sect={blog} key={i} {...this.props}/>
         ))}
         

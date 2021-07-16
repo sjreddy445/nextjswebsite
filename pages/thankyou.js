@@ -1,4 +1,4 @@
-import { withRouter,Router } from 'next/router';
+import { withRouter, Router } from 'next/router';
 import React, { Component } from 'react'
 import { Modal, ModalHeader, ModalBody, Col, Row } from 'reactstrap';
 import SuccessModalImg from '../Assets/images/Icons/message-modal.svg'
@@ -15,7 +15,7 @@ class SuccessModal extends Component {
   }
   componentDidMount() {
     const { query } = this.props.router;
-    if (query && query.msg && query.isOpen==="true") {
+    if (query && query.msg && query.isOpen === "true") {
       this.setState({ isOpen: true, msg: query.msg })
     }
   }
@@ -27,8 +27,6 @@ class SuccessModal extends Component {
     return (
       <div>
         <Home />
-        {/* <Modal isOpen={this.props.modal} toggle={this.props.toggleModal} className="info-modal" size="lg" >
-          <ModalHeader toggle={()=>this.props.toggleModal()}></ModalHeader> */}
         <Modal isOpen={this.state.isOpen} toggle={() => this.toggleModal()} className="info-modal" size="lg" >
           <ModalHeader toggle={() => this.toggleModal()}></ModalHeader>
           <ModalBody>
@@ -47,16 +45,13 @@ class SuccessModal extends Component {
                       <b>Yay!</b>
                     </div>
                     <div className="subtitle text-xs mb-2">
-                      {/* <span>{this.props.message}</span> */}
                       <span>{this.state.msg}</span>
                     </div>
                   </div>
                 </Col>
               </Row>
             </div>
-
           </ModalBody>
-
         </Modal>
       </div>
     )

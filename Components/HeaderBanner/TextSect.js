@@ -31,7 +31,7 @@ class TextSect extends Component {
   }
 
   componentDidMount() {
-    if (this.props.data.titleImg) {
+    if (this.props.data?.titleImg) {
       // this.loadImage(this.props.data.titleImg)
     }
   }
@@ -40,19 +40,19 @@ class TextSect extends Component {
       <>
         <div className={styles.headerbanner} >
           <div className={styles.headerTitle}>
-            {!this.props.data.titleImg ?
+            {!this.props.data?.titleImg ?
               <>
-                <h1 className="text-xxl font-weight-bold">  {this.props.data.mainTitle1}</h1>
-                <h1 className="text-xxl font-weight-bold">{this.props.data.mainTitle2}</h1>
+                <h1 className="text-xxl font-weight-bold">  {this.props.data?.mainTitle1}</h1>
+                <h1 className="text-xxl font-weight-bold">{this.props.data?.mainTitle2}</h1>
               </>
               :
-              <img src={AddCmsImgBaseUrl(this.props.data.titleImg.url)} alt={this.props.data.titleImg}  className="img-fluid" />
+              <img src={AddCmsImgBaseUrl(this.props.data?.titleImg.url)} alt={this.props.data?.titleImg}  className="img-fluid" />
             }
           </div>
           <div className="mt-4">
-            <h4 className="text-lg text-line-height-1-6 text-weight-400">{this.props.data.subtitle}</h4>
+            <h4 className="text-lg text-line-height-1-6 text-weight-400">{this.props.data?.subtitle}</h4>
           </div>
-          {!this.props.data.hideDemoBtn ?
+          {!this.props.data?.hideDemoBtn ?
             <div className="mt-4">
               <Button color="primary" onClick={this.scrollToContact}>REQUEST DEMO</Button>
             </div>

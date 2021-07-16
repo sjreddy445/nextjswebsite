@@ -16,7 +16,7 @@ class ListSect extends Component {
       <div>
         <div className="">
           <Row> 
-            {serviceList.map((list, i) => (
+            {serviceList?.map((list, i) => (
               <Col md={6} sm={12} key={i}>
                 <div className={styles.serviceList}>{list.title}</div>
               </Col>

@@ -21,3 +21,7 @@
 .pagination {
     padding-left: 40px !important;
 }
+
+.slick-track {
+    left: 0px !important
+}

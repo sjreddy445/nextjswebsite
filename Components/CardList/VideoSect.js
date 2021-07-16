@@ -41,12 +41,12 @@ class VideoSect extends Component {
           </div>
         </Col>
         <Row className={"container-fluid " + styles.desktopview}>
-          {sect.items.map((item, i) => (
+          {sect?.items?.map((item, i) => (
             <BlogVideo video={item} key={i} {...this.props} />
           ))}
         </Row>
         <div className={"container-inner text-center " + styles.mobileview + " " + styles.slidercontainer} ref={this.sliderContainer}>
-          {sect.items.map((item, i) => (
+          {sect?.items?.map((item, i) => (
             <BlogVideo video={item} key={i} {...this.props}  />
           ))}
         </div>

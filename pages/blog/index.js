@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import HeaderBanner from '../../Components/HeaderBanner/HeaderBanner'
 import { payload as BlogHeaderData } from '../../Payloads/Blog/Header'
+import { payload as BlogpageSectionPayload } from '../../Payloads/Blog/Blogs'
+import { blogs as blogPayload, videos as videoPayload, podcast as podcastPayload } from '../../Payloads/Blog/BlogPost'
 import { setNavColor } from '../../Components/TopNav/Utils'
 import SubMenu from '../../Components/SubMenu/SubMenu';
 import { BrowserView } from 'react-device-detect'
@@ -21,9 +23,6 @@ export default class Blog extends Component {
     };
   }
   componentDidMount() {
-
-    this.headerDataFunc();
-
     setNavColor("transparent-bg text-white");
     let blogPageSections = JSON.parse(localStorage.getItem("blogPageSections"))
     if (blogPageSections) {
@@ -33,21 +32,11 @@ export default class Blog extends Component {
       return;
     }
 
-    Api.get("/blog-page-sections").then(({ blogPageSections }) => {
-      localStorage.setItem("blogPageSections", JSON.stringify(blogPageSections));
-      this.setState({
-        blogPageSections: blogPageSections
-      });
+    localStorage.setItem("blogPageSections", JSON.stringify(this.props.blogPageSections));
+    this.setState({
+      blogPageSections: this.props.blogPageSections
     })
     window.scrollTo(0, 0)
-  }
-
-
-
-  headerDataFunc = async () => {
-    var headerData = await BlogHeaderData();
- 
-    this.setState({ headerData: headerData })
   }
 
   render() {
@@ -59,17 +48,17 @@ export default class Blog extends Component {
     return (
       <Fade>
         <div>
-          <HeaderBanner data={this.state.headerData} />
+          <HeaderBanner data={this.props.headerData} />
         </div>
         <div className="drop-shadow">
           <BrowserView>
             <div>
-              <SubMenu menuItems={this.state.blogPageSections.map(item => item.name)} hasSocial={true} menuWidth={6} />
+              <SubMenu menuItems={this.state?.blogPageSections?.map(item => item.name)} hasSocial={true} menuWidth={6} />
             </div>
           </BrowserView>
         </div>
         <div className="xlight-grey-bg section-padding">
-          {this.state.blogPageSections.map((item, i) => {
+          {this.state?.blogPageSections?.map((item, i) => {
             let blogSect = null;
             if (item.resourceUrl === BLOG) {
               blogSect = <BlogItem {...this.props} key={i} title={item.name} resourceUrl={item.resourceUrl} />
@@ -79,7 +68,7 @@ export default class Blog extends Component {
           )}
         </div>
         <div className="xlight-grey-bg section-padding">
-          {this.state.blogPageSections.map((item, i) => {
+          {this.state?.blogPageSections?.map((item, i) => {
             let videoSect = null;
             if (item.resourceUrl === VIDEOS) {
               videoSect = <BlogVideo {...this.props} key={i} title={item.name} resourceUrl={item.resourceUrl} />
@@ -88,10 +77,10 @@ export default class Blog extends Component {
           })}
         </div>
         <div className="xlight-grey-bg section-padding">
-          {this.state.blogPageSections.map((item, i) => {
+          {this.state?.blogPageSections?.map((item, i) => {
             let podcastSect = null;
             if (item.resourceUrl === PODCAST) {
-              podcastSect = <BlogPodcast {...this.props} key={i} title={item.name} resourceUrl={item.resourceUrl} />
+              podcastSect = <BlogPodcast {...this.props} key={i} title={item.name} resourceUrl={item.resourceUrl} data={this.props.podcastList} />
             }
             return podcastSect;
           })}
@@ -101,3 +90,22 @@ export default class Blog extends Component {
   }
 }
 
+export async function getServerSideProps(context) {
+  var headerData = await BlogHeaderData();
+  var pagSection = await BlogpageSectionPayload();
+  var blogData = await blogPayload(BLOG);
+  var videoData = await videoPayload(VIDEOS);
+  var podcastData = await podcastPayload(PODCAST);
+
+  return {
+    props: {
+      headerData: headerData,
+      blogPageSections: pagSection,
+      blogList: blogData,
+      videoList: videoData,
+      podcastList: podcastData
+
+
+    }
+  }
+}

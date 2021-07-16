@@ -18,13 +18,13 @@ class HeaderBanner extends Component {
 
   render() {
     return (
-      <div className={this.props.data.bgClr ? this.props.data.bgClr + " " + styles.headerbanner : styles.headerbanner} >
-        <div className={styles.rightbg} style={!this.props.data.bgImg ? { backgroundImage: `url('${this.props.data.bgCover ? AddCmsImgBaseUrl(this.props.data.bgCover.url) : ''}')` } : { background: 'auto' }}>
+      <div className={this.props.data?.bgClr ? this.props.data?.bgClr + " " + styles.headerbanner : styles.headerbanner} >
+        <div className={styles.rightbg} style={!this.props.data?.bgImg ? { backgroundImage: `url('${this.props.data?.bgCover ? AddCmsImgBaseUrl(this.props.data.bgCover.url) : ''}')` } : { background: 'auto' }}>
           <div className={"container-inner " + styles.content}>
             <Row className="m-0 no-gutters">
               <Col md={6} sm={12} className="d-sm-block d-md-none pb-5">
-                {this.props.data.bgImg ?
-                  <img src={AddCmsImgBaseUrl(this.props.data.bgImg.url)} alt={this.props.data.imgAlt} className="img-fluid" />
+                {this.props.data?.bgImg ?
+                  <img src={AddCmsImgBaseUrl(this.props.data?.bgImg.url)} alt={this.props.data?.imgAlt} className="img-fluid" />
                   :
                   ""
                 }
@@ -33,14 +33,14 @@ class HeaderBanner extends Component {
                 <TextSect {...this.props} />
               </Col>
               <Col md={6} sm={12} className="d-none d-md-block">
-                {this.props.data.bgImg ?
-                  <img src={AddCmsImgBaseUrl(this.props.data.bgImg?.url)} alt={this.props.data.imgAlt} className="img-fluid w-90" />
+                {this.props.data?.bgImg ?
+                  <img src={AddCmsImgBaseUrl(this.props.data?.bgImg?.url)} alt={this.props.data?.imgAlt} className="img-fluid w-90" />
                   :
                   ""
                 }
               </Col>
               <Col md={12}>
-                {this.props.data.subHeader ?
+                {this.props.data?.subHeader ?
                   <div className="sm-mt-5"><SubHeader {...this.props} /></div>
                   :
                   ""

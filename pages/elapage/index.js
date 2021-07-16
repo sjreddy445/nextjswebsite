@@ -21,17 +21,6 @@ export default class ElaPage extends Component {
     this.headerDataFunc();
     this.getELA();
   }
-
-  headerDataFunc = async () => {
-    var headerData = await ELAHeaderData();
-    this.setState({ headerData: headerData })
-  }
-
-  getELA = async () => {
-    var data = await ElaData();
-    this.setState({ ela: data })
-  }
-
   render() {
     return (
       <Fade>
@@ -40,7 +29,7 @@ export default class ElaPage extends Component {
           <meta name="description" content="This Enterprise License Agreement (“ELA”) is a binding legal agreement between the software developer i.e. “EdGE” & its affiliates and the user of the software" />
         </Helmet>
         <div className={styles.elapage}>
-          <HeaderBanner data={this.state.headerData} />
+          <HeaderBanner data={this.props.headerData} />
           <div className={"container-inner " + styles.mt5}>
             <p className="text-xs text-line-height-1-6">
               This Enterprise License Agreement (“ELA”) is a binding legal agreement between the software developer i.e. “EdGE” & its affiliates and the user of the software i.e. customer. This ELA governs a customer’s and/or any third party usage of our application called HIREalchemy and the HIREalchemy Magnet Extension (‘Extension’). By installing, using, copying or distributing the application and the Extension, customers and their employees/agents/representatives hereby agree to the following terms and conditions on which EdGe has agreed to license the application and the Extension. If you DO NOT AGREE WITH ANY OF THE TERMS OF THIS ELA, DO NOT DOWNLOAD, INSTALL, OR USE THE APPLICATION.
@@ -51,7 +40,7 @@ export default class ElaPage extends Component {
           </div>
 
           <div className={"container-inner " + styles.infolisting}>
-            {this.state.ela.map((data, index) => <InfoListCard key={index} data={data} index={index + 1} />)}
+            {this.props?.ela?.map((data, index) => <InfoListCard key={index} data={data} index={index + 1} />)}
           </div>
           <div className={"section-padding xlLight-grey-bg " + styles.elafooter}>
             <Contact />
@@ -59,5 +48,12 @@ export default class ElaPage extends Component {
         </div>
       </Fade>
     )
+  }
+}
+export async function getServerSideProps(context) {
+  var headerData = await ELAHeaderData();
+  var data = await ElaData();
+  return {
+    props: {headerData:headerData,ela:data}
   }
 }

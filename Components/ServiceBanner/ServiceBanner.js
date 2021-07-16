@@ -2,17 +2,8 @@ import React, { Component } from 'react';
 import { Row, Col } from 'reactstrap';
 import TitleSect from './TitleSect';
 import ListSect from './ListSect';
-import { getServices } from '../../Payloads/Home/Services';
 
 class ServiceBanner extends Component {
-  state = {
-    serviceList: []
-  }
-  componentDidMount = async () => {
-    var data = await getServices();
-    this.setState({ serviceList: data })
-    console.log("datra")
-  }
   render() {
     return (
       <div className="dark-grey-bg">
@@ -22,7 +13,7 @@ class ServiceBanner extends Component {
               <TitleSect {...this.props} />
             </Col>
             <Col md={8} sm={12}>
-              <ListSect data={this.state.serviceList} />
+              <ListSect data={this.props.serviceList} />
             </Col>
           </Row>
         </div>

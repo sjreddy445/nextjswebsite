@@ -8,15 +8,14 @@ class VideoList extends Component {
     return (
       <div>
         <Row>
-          {items.map((item, i)=>(
+          {items?.map((item, i)=>(
             <Col md={4} sm={12} key={i} className="mb-4">
               <VideoItem data={item} />
             </Col>
           ))}
-          
         </Row>
       </div>
-    );
+    )
   }
 }
 

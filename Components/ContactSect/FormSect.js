@@ -152,7 +152,7 @@ const FormSect = () => {
                 <option value={"USA"}>{"USA"}</option>
                 <option value={"India"}>{"India"}</option>
                 <hr></hr>
-                {countryList.map((data,i) => {
+                {countryList?.map((data,i) => {
                   return (
                     <option key={i} value={data.name}>{data.name}</option>
                   )

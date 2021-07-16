@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import BrandList from '../Components/BrandList/BrandList';
 import { payload as AboutHeaderData } from '../Payloads/AboutUs/Header.js'
-import { payload as BrandData } from '../Payloads/Home/BrandList'
 import { payload as PeopleData } from '../Payloads/AboutUs/People'
+import { payload as ourStoryPayload } from "../Payloads/OurStory/ourStoryContents"
+import { payload as BrandData, getBrands } from '../Payloads/Home/BrandList'
+import { payload as NewsData } from '../Payloads/AboutUs/News'
+import { payload as VideoData } from '../Payloads/Life/Videos'
 import OurStory from "../Components/OurStory/OurStory"
 import Contact from '../Components/ContactSect/Contact';
 import HeaderBanner from '../Components/HeaderBanner/HeaderBanner'
@@ -22,11 +25,6 @@ class AboutUs extends Component {
     window.scrollTo(0, 0)
   }
 
-  componentDidMount = async () => {
-    var headerData = await AboutHeaderData();
-    this.setState({ headerData: headerData })
-  }
-
 
   render() {
     return (
@@ -37,19 +35,19 @@ class AboutUs extends Component {
         </Helmet>
         <div className="">
           <div className="">
-            <HeaderBanner data={this.state.headerData} />
+            <HeaderBanner data={this.props.headerData} />
           </div>
           <div className="section-margin">
-            <OurStory />
+            <OurStory story={this.props.story} />
           </div>
           <div className="section-margin">
-            <Leadership />
+            <Leadership people={this.props.people} />
           </div>
           <div className="section-margin">
-            <EdgeNews/>
+            <EdgeNews news={this.props.news} videos={this.props.videos} />
           </div>
           <div className="section-margin">
-            <BrandList data={BrandData} />
+            <BrandList data={BrandData} brandList={this.props.brandList} />
           </div>
           <div className="section-margin">
             <Contact />
@@ -61,3 +59,23 @@ class AboutUs extends Component {
 }
 
 export default AboutUs;
+
+export async function getServerSideProps(context) {
+  var headerData = await AboutHeaderData();
+  var vid = await VideoData();
+  var news = await NewsData();
+  let brandData = await getBrands();
+  var storyData = await ourStoryPayload();
+  var peopleData = await PeopleData();
+
+  return {
+    props: {
+      headerData: headerData,
+      videos: vid,
+      news: news,
+      brandList: brandData,
+      story: storyData,
+      people: peopleData
+    }
+  }
+}

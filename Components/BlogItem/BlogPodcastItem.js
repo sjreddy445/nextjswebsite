@@ -9,16 +9,14 @@ export default class BlogItem extends Component {
     this.state = {};
   }
 
-  componentWillMount() {
-    Api.get(this.props.resourceUrl, { params: { _limit: 6 , _sort:"episode:asc" } }).then(({ data: dataItems }) => {
+  componentDidMount() {
       this.setState({
         sect: {
           title: this.props.title,
-          items: dataItems,
+          items: this.props.podcastList,
           viewAll: `/all-resource${this.props.resourceUrl}`
         }
       })
-    })
   }
  
   render() {
@@ -34,3 +32,9 @@ export default class BlogItem extends Component {
     )
   }
 } 
+
+export async function getServerSideProps(context) {
+  return {
+    props: {}
+  }
+}

@@ -7,6 +7,8 @@ import { setNavColor } from '../../Components/TopNav/Utils'
 import Image from 'next/image';
 import { withRouter } from 'next/router';
 import YouTube from 'react-youtube'
+import { singleBlog } from '../../Payloads/Blog/BlogPost';
+
 class BlogPost extends Component {
 
   constructor(props) {
@@ -16,16 +18,10 @@ class BlogPost extends Component {
 
   componentDidMount() {
     setNavColor("transparent-bg");
-
-    Api.get(`blogs/?slug=${this.props.router.query.id}`).then(res => {
-      this.setState({
-        blogPost: res.data[0]
-      })
-      window.scrollTo({
-        top: 200,
-        left: 0,
-        behavior: 'smooth'
-      })
+    window.scrollTo({
+      top: 200,
+      left: 0,
+      behavior: 'smooth'
     })
   }
 
@@ -40,34 +36,35 @@ class BlogPost extends Component {
   }
 
   render() {
+    console.log("this.ptops", this.props)
     return (
       <div className="container-inner">
-        {this.state.blogPost ?
+        {this.props.blogPost ?
           <>
             <Row className="d-flex justify-content-center">
               <Col md={8}>
                 <Row>
                   <Col className="text-center">
-                    <img src={AddCmsImgBaseUrl(this.state.blogPost.featuredImage.url)} alt={this.state.blogPost.title} className="img-fluid" />
+                    <img src={AddCmsImgBaseUrl(this.props.blogPost?.featuredImage.url)} alt={this.props.blogPost.title} className="img-fluid" />
                   </Col>
                 </Row>
                 <Row className=" mt-5">
                   <Col md={12}>
                     <div>
-                      <BlogHeaders categories={this.state.blogPost.categories} date={this.state.blogPost.created_at} />
+                      <BlogHeaders categories={this.props.blogPost.categories} date={this.props.blogPost.created_at} />
                     </div>
                   </Col>
                   <Col md={12}>
                     <div className=".text-xl mt-3">
                       <b>
-                        {this.state.blogPost.title}
+                        {this.props.blogPost.title}
                       </b>
                     </div>
                   </Col>
                 </Row>
                 <Row className=" mt-5">
                   <Col>
-                    <span dangerouslySetInnerHTML={{ __html: this.getCleanText(this.state.blogPost.content) }} className="text-sm" />
+                    <span dangerouslySetInnerHTML={{ __html: this.getCleanText(this.props.blogPost.content) }} className="text-sm" />
                   </Col>
                 </Row>
               </Col>
@@ -80,9 +77,10 @@ class BlogPost extends Component {
     )
   }
 }
-export async function getServerSideProps(context) {
+export async function getServerSideProps({ query }) {
+  var data = await singleBlog(query.id)
   return {
-    props: {},
+    props: { blogPost: data },
   };
 }
 export default withRouter(BlogPost)

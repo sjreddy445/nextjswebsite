@@ -14,13 +14,9 @@ export class ContactUs extends Component {
   componentDidMount() {
     setNavColor("transparent-bg");
     window.scrollTo(0, 0)
-    this.headerDataFunc();
   }
 
-  headerDataFunc = async () => {
-    var headerData = await ContactHeaderData();
-    this.setState({ headerData: headerData })
-  }
+
   render() {
     return (
       <Fade>
@@ -30,7 +26,7 @@ export class ContactUs extends Component {
         </Helmet>
         <div className="contact-page-box">
           <div className="header-box">
-            <HeaderBanner data={this.state.headerData} />
+            <HeaderBanner data={this.props.headerData} />
           </div>
           <div className="container-inner content section-margin">
             <AddressSect />
@@ -46,3 +42,11 @@ export class ContactUs extends Component {
 
 
 export default ContactUs
+
+
+export async function getServerSideProps(context) {
+  var headerData = await ContactHeaderData();
+  return {
+    props: { headerData: headerData }
+  }
+}

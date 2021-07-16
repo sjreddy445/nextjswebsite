@@ -10,21 +10,6 @@ class ProductCard extends Component {
     this.state = {productImg: ""};
   }
 
-  // loadImage = title => {
-  //   let name = title.slice(0,-1).toLowerCase()
-  //   let productImg
-  //   import(`../../Assets/images/Home/${name}.svg`).then(image => {
-  //     this.setState({
-  //       productImg: image.default.src
-  //     });
-  //   });
-  //   return productImg
-  // };
-
-  componentDidMount() {
-    // this.loadImage(this.props.data.title2)
-  }
-
   render() {
     return (
       <>

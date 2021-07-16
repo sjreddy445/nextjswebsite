@@ -36,7 +36,7 @@ class ProductStats extends Component {
       <>
         <div className={"container-inner py-4 " + styles.desktopview}>
           <Slider className="gap-50" {...settings}>
-            {this.props.data.map((stats, i) => {
+            {this.props?.data?.map((stats, i) => { 
               return (
                 <StatsBox key={i} data={stats} />
               )
@@ -46,7 +46,7 @@ class ProductStats extends Component {
 
         <div className={"container-inner justify-content-center " + styles.mobileview}>
           <Row className="no-gutters m-0">
-            {this.state.data.map((stats, i) => (
+            {this.props?.data?.map((stats, i) => (
               <Col md={4} xs={12} className="mt-4" key={i}>
                 <StatsBox key={i} data={stats} />
               </Col>
