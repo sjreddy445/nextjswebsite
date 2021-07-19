@@ -3,7 +3,7 @@ import HeaderBanner from '../../Components/HeaderBanner/HeaderBanner';
 import { payload as RecruitHeaderData } from '../../Payloads/Recruit/Header';
 import { payload as ourProductsData } from '../../Payloads/Home/OurProducts'
 import { payload as testimonialPayload } from '../../Payloads/Testimonials/client'
-import { payload as sliderData } from '../../Payloads/recruit/Slider'
+import { payload as sliderData } from '../../Payloads/Recruit/Slider'
 import { payload as screenshotData } from '../../Payloads/Pathfinder/screenshots'
 import { payload as payloadAwards } from '../../Payloads/Awards/logo';
 import OurProducts from '../../Components/OurProducts/OurProducts';
