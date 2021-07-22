@@ -3,7 +3,7 @@ import { payload as SiteHeaderData } from '../Payloads/Sitemap/Header.js'
 import HeaderBanner from '../Components/HeaderBanner/HeaderBanner'
 import { setNavColor } from '../Components/TopNav/Utils'
 import Fade from 'react-reveal/Fade';
-import { Helmet } from 'react-helmet'
+import Head from 'next/head'
 import SitemalList from '../Components/SitemapList/index.js';
 
 
@@ -20,10 +20,10 @@ class Sitemap extends Component {
   render() {
     return (
       <Fade>
-        <Helmet>
+        <Head>
           <title>getEdGE AI: Strategic Talent Management Career Development Platform</title>
           <meta name="description" content="getEdGE is a global AI-based strategic talent management career development platform/tool. Edge Networks, aim to connect the right person to the right job." />
-        </Helmet>
+        </Head>
         <div className="">
           <HeaderBanner data={this.props.headerData} />
         </div>

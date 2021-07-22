@@ -22,8 +22,7 @@ import Testimonial from '../Components/Testimonials/Testimonials';
 import OurProducts from '../Components/OurProducts/OurProducts';
 import { setNavColor } from '../Components/TopNav/Utils'
 import Fade from 'react-reveal/Fade';
-import { Helmet } from 'react-helmet'
-
+import Head from 'next/head'
 
 export default function Home(props) {
 
@@ -34,10 +33,10 @@ export default function Home(props) {
   return (
     <>
       <Fade>
-        <Helmet>
+        <Head>
           <title>getEdGE AI: HR Strategic Workforce Talent Management Simplified</title>
           <meta name="description" content="getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management. " />
-        </Helmet>
+        </Head>
         <div >
           <HeaderBanner data={props.HeaderData} />
         </div>

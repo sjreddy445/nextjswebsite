@@ -3,12 +3,11 @@ import { payload as CareerHeaderData } from '../../Payloads/Careers/Header.js'
 import HeaderBanner from '../../Components/HeaderBanner/HeaderBanner'
 import CareerCard from "./CareerCard";
 import Accordion from "../../Components/Accordion/Accordion";
-import Head from "./Head";
 import Fade from 'react-reveal/Fade';
 import { setNavColor } from '../../Components/TopNav/Utils'
 import {openingData} from "../../Payloads/Careers/Openings"
 import styles from "./career.module.scss";
-import { Helmet } from 'react-helmet'
+import Head from 'next/head'
 
 
 export default class Careers extends Component {
@@ -25,10 +24,10 @@ export default class Careers extends Component {
   render() {
     return (
       <div className={styles.careerpage}>
-        <Helmet>
+        <Head>
           <title>getEdGE - Career Path Planning and Development | Career Path Tools</title>
           <meta name="description" content="getEdGE is focused on career path planning and development for various industries. Do contact us with your best job from the list!" />
-        </Helmet>
+        </Head>
         <Fade>
           <div>
             <HeaderBanner data={this.props.headerData} />

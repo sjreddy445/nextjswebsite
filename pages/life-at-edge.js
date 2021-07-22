@@ -5,7 +5,7 @@ import { payload as LifeHeaderData } from '../Payloads/Life/Header'
 import { payload as SliderData } from '../Payloads/Life/Slider'
 import { Fade } from 'react-reveal'
 import SimpleSlider from '../Components/SimpleSlider/SimpleSlider';
-import { Helmet } from 'react-helmet'
+import Head from 'next/head'
 
 export default class Life extends Component {
   state = {
@@ -22,10 +22,10 @@ export default class Life extends Component {
   render() {
     return (
       <Fade>
-        <Helmet>
+        <Head>
           <title>Life @Edge - Talent management is an industry that's rapidly growing and you should come work with us at Edge</title>
           <meta name="description" content="According to PwC, 74% of companies will deploy HR tech in 2020. Talent management is an industry that's rapidly growing and you should come work with us at Edge" />
-        </Helmet>
+        </Head>
         <div className="header-box mb-5">
           <HeaderBanner data={this.props.headerData} />
         </div>

@@ -11,9 +11,9 @@ function HeadPage() {
             <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta name="theme-color" content="#000000" />
-            <title>Edge Networks getEdGE AI: HR Strategic Workforce Talent Management Simplified</title>
-            <meta name="title" content="getEdGE AI: HR Strategic Workforce Talent Management Simplified" />
-            <meta name="description" content="getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management." />
+            {/* <title>getEdGE AI: HR Strategic Workforce Talent Management Simplified</title> */}
+            {/* <meta name="title" content="getEdGE AI: HR Strategic Workforce Talent Management Simplified" /> */}
+            {/* <meta name="description" content="getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management." /> */}
             {/* <!-- Open Graph / Facebook --> */}
             <meta property="og:type" content="website" />
             <meta property="og:url" content="https://getedge.ntb.one/" />

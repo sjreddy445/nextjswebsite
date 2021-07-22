@@ -12,7 +12,7 @@ import { payload as StatsData } from '../../Payloads/Pathfinder/stats'
 import VerticalSlider from "../../Components/VerticalSlider/VerticalSlider"
 import { setNavColor } from '../../Components/TopNav/Utils'
 import Fade from 'react-reveal/Fade';
-import { Helmet } from 'react-helmet'
+import Head from 'next/head'
 import ProductStats from '../../Components/ProductStats/ProductStats';
 import ProductScreenShot from '../../Components/ProductScreenShots/ProductScreenShots';
 import ProductVideo from '../../Components/ProductVideos/ProductVideo';
@@ -35,10 +35,10 @@ class Pathfinder extends Component {
   render() {
     return (
       <Fade>
-        <Helmet>
+        <Head>
           <title>getEdGE Pathfinder AI: HR Career Path Tool for Career Development</title>
           <meta name="description" content="getEdGE pathfinder is a pro-AI-driven product.  Artificial Intelligence-based HR Career Path Tool for finding jobs that suit employee skills, potential  & goals." />
-        </Helmet>
+        </Head>
         <div className="">
           <HeaderBanner data={this.props.headerData} />
         </div>

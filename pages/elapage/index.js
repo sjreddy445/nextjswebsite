@@ -7,7 +7,7 @@ import Contact from '../../Components/ContactSect/Contact';
 import styles from './ElaPage.module.scss'
 import { setNavColor } from '../../Components/TopNav/Utils'
 import Fade from 'react-reveal/Fade';
-import { Helmet } from 'react-helmet'
+import Head from 'next/head'
 import Api from '../../Config/Api';
 
 export default class ElaPage extends Component {
@@ -18,16 +18,14 @@ export default class ElaPage extends Component {
   componentDidMount() {
     setNavColor("transparent-bg");
     window.scrollTo(0, 0)
-    this.headerDataFunc();
-    this.getELA();
   }
   render() {
     return (
       <Fade>
-        <Helmet>
+        <Head>
           <title>ELA - Enterprise License Agreement is a legal agreement.</title>
           <meta name="description" content="This Enterprise License Agreement (“ELA”) is a binding legal agreement between the software developer i.e. “EdGE” & its affiliates and the user of the software" />
-        </Helmet>
+        </Head>
         <div className={styles.elapage}>
           <HeaderBanner data={this.props.headerData} />
           <div className={"container-inner " + styles.mt5}>

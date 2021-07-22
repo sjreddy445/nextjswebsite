@@ -11,7 +11,7 @@ import Contact from '../Components/ContactSect/Contact';
 import HeaderBanner from '../Components/HeaderBanner/HeaderBanner'
 import { setNavColor } from '../Components/TopNav/Utils'
 import Fade from 'react-reveal/Fade';
-import { Helmet } from 'react-helmet'
+import Head from 'next/head'
 import Leadership from '../Components/Leadership/Leadership';
 import EdgeNews from '../Components/EdgeNews/EdgeNews';
 import Api from '../Config/Api';
@@ -29,10 +29,10 @@ class AboutUs extends Component {
   render() {
     return (
       <Fade>
-        <Helmet>
+        <Head>
           <title>getEdGE AI: Strategic Talent Management Career Development Platform</title>
           <meta name="description" content="getEdGE is a global AI-based strategic talent management career development platform/tool. Edge Networks, aim to connect the right person to the right job." />
-        </Helmet>
+        </Head>
         <div className="">
           <div className="">
             <HeaderBanner data={this.props.headerData} />

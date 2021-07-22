@@ -12,7 +12,7 @@ import OurProducts from '../../Components/OurProducts/OurProducts';
 import VerticalSlider from "../../Components/VerticalSlider/VerticalSlider"
 import { setNavColor } from '../../Components/TopNav/Utils'
 import Fade from 'react-reveal/Fade';
-import { Helmet } from 'react-helmet'
+import Head from 'next/head'
 import ProductStats from '../../Components/ProductStats/ProductStats';
 import ProductScreenShot from '../../Components/ProductScreenShots/ProductScreenShots';
 import ProductVideo from '../../Components/ProductVideos/ProductVideo';
@@ -33,10 +33,10 @@ class Mobility extends Component {
   render() {
     return (
       <Fade>
-        <Helmet>
+        <Head>
           <title>getEdGE Mobility AI: Internal Smart AI Talent Solutions Platform</title>
           <meta name="description" content="getEdGE Mobility is an AI-driven internal smart job placement talent solutions platform. For the HR team to recruit internal employees based on skillset decisions." />
-        </Helmet>
+        </Head>
         <div className="mt-5">
           <HeaderBanner data={this.props.headerData} />
         </div>

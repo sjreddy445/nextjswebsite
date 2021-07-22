@@ -5,7 +5,7 @@ import Contact from '../Components/ContactSect/Contact';
 import AddressSect from '../Components/AddressSect/AddressSect';
 import { setNavColor } from '../Components/TopNav/Utils'
 import Fade from 'react-reveal/Fade';
-import { Helmet } from 'react-helmet'
+import Head from 'next/head'
 
 export class ContactUs extends Component {
   state = {
@@ -20,10 +20,10 @@ export class ContactUs extends Component {
   render() {
     return (
       <Fade>
-        <Helmet>
+        <Head>
           <title>getEdGE Contact - Strategic Talent Management | Career Management</title>
           <meta name="description" content="Contact getEdGE to help you make strategic talent management decisions. Our AI-driven career management will help you built a futuristic workforce" />
-        </Helmet>
+        </Head>
         <div className="contact-page-box">
           <div className="header-box">
             <HeaderBanner data={this.props.headerData} />

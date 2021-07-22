@@ -12,7 +12,7 @@ import { payload as StatsData } from '../../Payloads/Recruit/stats';
 import VerticalSlider from "../../Components/VerticalSlider/VerticalSlider"
 import { setNavColor } from '../../Components/TopNav/Utils';
 import Fade from 'react-reveal/Fade';
-import { Helmet } from 'react-helmet';
+import Head from 'next/head';
 import ProductStats from '../../Components/ProductStats/ProductStats';
 import ProductScreenShot from '../../Components/ProductScreenShots/ProductScreenShots';
 import ProductVideo from '../../Components/ProductVideos/ProductVideo';
@@ -36,10 +36,10 @@ class Recruit extends Component {
   render() {
     return (
       <Fade>
-        <Helmet>
+        <Head>
           <title>getEdGE Recruit: AI Based Talent Acquisition Platforms for HR Solutions</title>
           <meta name="description" content="getEdGE Recruit, a talent acquisition platform that helps HR's to find the right talent for auto-sourcing.  AI-based Talent Acquisition Platform for HR visibility." />
-        </Helmet>
+        </Head>
         <div className="mt-5">
           <HeaderBanner data={this.props.headerData} />
         </div>
