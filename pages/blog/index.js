@@ -13,6 +13,7 @@ import BlogVideo from "../../Components/BlogItem/BlogVideoItem"
 import BlogPodcast from "../../Components/BlogItem/BlogPodcastItem"
 import { BLOG, VIDEOS, PODCAST } from '../../configs/constants';
 import Head from 'next/head'
+import { pageTitle } from '../../Payloads/pageTitle/title';
 
 export default class Blog extends Component {
 
@@ -48,7 +49,7 @@ export default class Blog extends Component {
     return (
       <Fade>
         <Head>
-          <title>getEdGE AI: HR Strategic Workforce Talent Management Simplified</title>
+        <title>{pageTitle('blog')}</title>
           <meta name="description" content="getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management. " />
         </Head>
         <div>

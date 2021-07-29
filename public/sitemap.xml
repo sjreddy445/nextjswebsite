@@ -65,10 +65,6 @@
   </url>
 
   <url>
-    <loc>https://www.getedge.ntb.one/privacy/index</loc>
-  </url>
-
-  <url>
     <loc>https://www.getedge.ntb.one/products/mobility</loc>
   </url>
 
@@ -78,5 +74,9 @@
 
   <url>
     <loc>https://www.getedge.ntb.one/products/recruit</loc>
+  </url>
+
+  <url>
+    <loc>https://www.getedge.ntb.one/privacy/index</loc>
   </url>
 </urlset>

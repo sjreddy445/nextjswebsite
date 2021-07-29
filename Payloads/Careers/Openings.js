@@ -488,6 +488,5 @@ export const openingData = () => {
     if (result.status == 200) {
       return result.data;
     }
-    return {};
   })
 }

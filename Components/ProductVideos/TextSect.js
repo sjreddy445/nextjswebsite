@@ -5,10 +5,10 @@ class TextSect extends Component {
     return (
       <div>
         <h4 className="text-lg mb-4 mt-2 font-weight-bold">
-          Product screenshot
+          {this.props?.title?.title}
         </h4>
         <h2 className="text-xl font-weight-bold">
-          Placeholder for text Lorem Ipsum is simply dummy textofthe printing
+        {this.props?.title?.description}
         </h2>
       </div>
     );

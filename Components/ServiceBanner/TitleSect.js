@@ -17,8 +17,8 @@ const TitleSect = (props) => {
   }
   return (
     <div>
-      <h4 className="text-lg font-weight-bold">Our Offerings</h4>
-      <h2 className="text-xl mt-4 font-weight-bold">{props.data.title}</h2>
+      <h4 className="text-lg font-weight-bold">{props?.title?.title}</h4>
+      <h2 className="text-xl mt-4 font-weight-bold">{props?.title?.description}</h2>
       <div className="text-sm mt-4 text-brand pointer" onClick={scrollToContact}>LETS DISCUSS YOURS</div>
     </div>
   );

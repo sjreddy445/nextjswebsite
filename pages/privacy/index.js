@@ -9,6 +9,7 @@ import { setNavColor } from '../../Components/TopNav/Utils'
 import Fade from 'react-reveal/Fade';
 import Head from 'next/head'
 import Api from '../../Config/Api'
+import { pageTitle } from '../../Payloads/pageTitle/title';
 export default class PrivacyPolicy extends Component {
   state = {
     headerData: {},
@@ -23,7 +24,7 @@ export default class PrivacyPolicy extends Component {
     return (
       <Fade>
         <Head>
-          <title>Privacy Policy | Edge Networks</title>
+        <title>{pageTitle('privacy')}</title>
           <meta name="description" content="This Enterprise License Agreement (“ELA”) is a binding legal agreement between the software developer i.e. “EdGE” & its affiliates and the user of the software" />
         </Head>
         <div className={styles.elapage}>

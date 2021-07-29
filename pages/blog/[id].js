@@ -28,7 +28,7 @@ class BlogPost extends Component {
   getCleanText = (content) => {
     let filtered = content.replace(/&nbsp;/g, ' ')
     let endpoint = filtered;
-    endpoint = endpoint.replace('oembed url', 'iframe height=280 width=450 allowfullscreen="allowfullscreen" src');
+    endpoint = endpoint.replace('oembed url', 'iframe height=450 width=100% allowfullscreen="allowfullscreen" src');
     // endpoint = endpoint.replace('url', '');
     endpoint = endpoint.replace('watch?v=', 'embed/');
     endpoint = endpoint.replace('oembed', 'iframe');

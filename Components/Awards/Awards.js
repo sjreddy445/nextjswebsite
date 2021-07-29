@@ -12,7 +12,7 @@ class Awards extends Component {
                 <div className="container-inner py-5" id="contactid">
                     <Row className="no-gutters">
                         <Col md={4} sm={12} className="">
-                            <AwardText />
+                            <AwardText {...this.props} />
                         </Col>
                         <Col md={8} sm={12}>
                             <AwardImage {...this.props} />

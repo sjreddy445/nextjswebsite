@@ -10,7 +10,7 @@ class VideoGallery extends Component {
         <Row>
           <Col>
             <h3 className="title mb-4 font-weight-bold text-lg">
-              EDGE in Media
+              {this.props?.title.title}
             </h3>
           </Col>
         </Row>

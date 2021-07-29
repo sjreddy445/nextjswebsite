@@ -6,6 +6,7 @@ import { payload as SliderData } from '../Payloads/Life/Slider'
 import { Fade } from 'react-reveal'
 import SimpleSlider from '../Components/SimpleSlider/SimpleSlider';
 import Head from 'next/head'
+import { pageTitle } from '../Payloads/pageTitle/title';
 
 export default class Life extends Component {
   state = {
@@ -23,7 +24,7 @@ export default class Life extends Component {
     return (
       <Fade>
         <Head>
-          <title>Life @Edge - Talent management is an industry that's rapidly growing and you should come work with us at Edge</title>
+        <title>{pageTitle('life')}</title>
           <meta name="description" content="According to PwC, 74% of companies will deploy HR tech in 2020. Talent management is an industry that's rapidly growing and you should come work with us at Edge" />
         </Head>
         <div className="header-box mb-5">

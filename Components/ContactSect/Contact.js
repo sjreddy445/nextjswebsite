@@ -11,7 +11,7 @@ class Contact extends Component {
         <div className="container-inner mb-5" id="contactid" >
           <Row className="no-gutters">
             <Col md={4} sm={12} className="pr-5">
-              <TextSect />
+              <TextSect {...this.props} />
             </Col>
             <Col md={8} sm={12}>
               <FormSect />

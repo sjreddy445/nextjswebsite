@@ -6,12 +6,14 @@ import Footer from '../Footer/Footer';
 export default class Layout extends Component {
   render () {
     const { children } = this.props
+    console.log("hello,",this.props)
     return (
       <div className='layout'>
         <Header />
         {children}
-        <Footer />
+        <Footer  />
       </div>
     );
   }
 }
+

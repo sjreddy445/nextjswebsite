@@ -8,7 +8,7 @@ class HomeStats extends Component {
       <div className="container-inner home-stats d-flex justify-content-center">
         <Row className="no-gutters m-0">
           <Col md={12}>
-            <div className="title ml-3 text-lg mb-4"><b>Our Impact</b></div>
+            <div className="title ml-3 text-lg mb-4"><b>{this.props?.title?.title}</b></div>
           </Col>
           <StatsBox data={this.props.data} />
         </Row>

@@ -11,7 +11,7 @@ class ProductScreenShots extends Component {
                 <div className={"py-5 " + styles.productscreenshot}>
                     <Row className={"container-inner text-lg mb-4 text-black " + styles.productscreenshotbox}>
                         <Col md={4} sm={12} className="pr-5">
-                            <TextSect />
+                            <TextSect {...this.props} />
                         </Col>
                         <Col md={8} sm={12} >
                             <ScreenshotSect {...this.props} />

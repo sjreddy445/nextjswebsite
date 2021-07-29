@@ -11,9 +11,9 @@ class Content extends Component {
     render() {
 
         return (
-            <>
-                <Col md={{offset:1}} sm={{offset:1}} xs={{offset:4,span:10}} className={""}  >
-                    <div className="p-2 ml-3">
+            <div className={'d-inline-flex'}>
+                <Col md={{offset:0}} sm={{offset:1}} xs={{offset:0,span:10}} className={""}  >
+                    <div className="p-2 ml-4">
                         <img className={styles.img} src={AddCmsImgBaseUrl(this.props.data.image.url)} alt="new" />
                     </div>
                 </Col>
@@ -28,7 +28,7 @@ class Content extends Component {
                         {this.props.data.company}
                     </p>
                 </Col>
-            </>
+            </div>
         );
     }
 }

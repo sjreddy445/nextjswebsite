@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 
 class TextSect extends Component {
   render() {
+    console.log("data",this.props)
     return (
       <div>
         <h4 className="text-lg mb-4 mt-2 font-weight-bold">
-          Intrigued?
+          {this.props?.title?.title}
         </h4>
         <h2 className="text-xl font-weight-bold">
-          Lets discuss how we can find the best talent for you.
+        {this.props?.title?.description}
         </h2>
       </div>
     );

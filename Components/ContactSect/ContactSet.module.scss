@@ -6,6 +6,20 @@
     padding-top: .2rem;
 }
 
+.spinnerbordersm {
+    width: 25px !important;
+    height: 25px !important;
+    border-width: .2em !important;
+    position: relative!important;
+    left: 15px !important;
+}
+
+.btnprimary:disabled {
+    color: #fff;
+    background-color: #ed2012 !important;
+    border-color: #ed2012 !important;
+}
+
 .formSect {
     input,
     textarea,

@@ -6,10 +6,10 @@ class TextSect extends Component {
     return (
       <div>
         <h4 className="text-sm mb-4 mt-2 font-weight-bold">
-          {data?.mainTitle}
+        {this.props?.title?.description}
         </h4>
         <h2 className="text-xl font-weight-bold">
-         {data?.subTitle}
+        {this.props?.title?.description}
         </h2>
         <div className="text-sm mt-4 text-brand">
          {/* <b><a href="#" className="text-brand">VIEW CASE STUDIES</a></b> */}

@@ -6,6 +6,7 @@ import { payload as StatsData } from '../../Payloads/Mobility/stats'
 import { payload as ourProductsData } from '../../Payloads/Home/OurProducts'
 import { payload as testimonialPayload } from '../../Payloads/Testimonials/client'
 import { payload as payloadAwards } from '../../Payloads/Awards/logo';
+import { payload as sectionTitle } from '../../Payloads/sectionTitle/title'
 import Contact from '../../Components/ContactSect/Contact';
 import { payload as screenshotData } from '../../Payloads/Mobility/screenshots'
 import OurProducts from '../../Components/OurProducts/OurProducts';
@@ -18,6 +19,7 @@ import ProductScreenShot from '../../Components/ProductScreenShots/ProductScreen
 import ProductVideo from '../../Components/ProductVideos/ProductVideo';
 import Awards from '../../Components/Awards/Awards';
 import Testimonial from '../../Components/Testimonials/Testimonials';
+import { pageTitle } from '../../Payloads/pageTitle/title';
 class Mobility extends Component {
   state = {
     headerData: {},
@@ -34,7 +36,7 @@ class Mobility extends Component {
     return (
       <Fade>
         <Head>
-          <title>getEdGE Mobility AI: Internal Smart AI Talent Solutions Platform</title>
+          <title>{pageTitle('mobility')}</title>
           <meta name="description" content="getEdGE Mobility is an AI-driven internal smart job placement talent solutions platform. For the HR team to recruit internal employees based on skillset decisions." />
         </Head>
         <div className="mt-5">
@@ -47,19 +49,19 @@ class Mobility extends Component {
           <ProductStats data={this.props.stats} />
         </div>
         <div className="section-margin">
-          <ProductScreenShot data={this.props.scrrenshots} />
+          <ProductScreenShot data={this.props.scrrenshots} title={this.props.scrrenshotSecTitle} />
         </div>
         <div className="section-margin" >
-          <ProductVideo />
+          <ProductVideo title={this.props.videoSectTitle} />
         </div>
         <div className="light-sliver-bg">
-        <Awards data={this.props.awardsList} />
+          <Awards data={this.props.awardsList} title={this.props.AwardTitle} />
         </div>
         <div className="section-margin">
-          <Contact />
+          <Contact title={this.props.contactTitle} />
         </div>
         <div className="section-margin light-sliver-bg">
-          <Testimonial data={this.props.testimonialService} />
+          <Testimonial data={this.props.testimonialService} title={this.props.TestimonialTitle} />
         </div>
         <div className="section-margin">
           <OurProducts data={this.props.ourProductData} />
@@ -78,7 +80,12 @@ export async function getServerSideProps(context) {
   var statData = await StatsData();
   var testimonialData = await testimonialPayload();
   var proddata = await ourProductsData();
-  let awardsData = await payloadAwards();
+  var awardsData = await payloadAwards();
+  var contactTitle = await sectionTitle('contact');
+  var AwardTitle = await sectionTitle('awards');
+  var TestimonialTitle = await sectionTitle('testimonial');
+  var scrrenshotSecTitle = await sectionTitle('mobilitySS');
+  var videoSectTitle = await sectionTitle('mobilityVid');
   return {
     props: {
       headerData: headerData,
@@ -88,6 +95,11 @@ export async function getServerSideProps(context) {
       testimonialService: testimonialData,
       ourProductData: proddata,
       awardsList: awardsData,
+      contactTitle: contactTitle,
+      AwardTitle: AwardTitle,
+      TestimonialTitle: TestimonialTitle,
+      scrrenshotSecTitle: scrrenshotSecTitle,
+      videoSectTitle: videoSectTitle
     }
   }
 }

@@ -13,7 +13,7 @@ export default class EdgeNews extends Component {
           <Row>
             <Col>
               <h3 className="title mb-4 font-weight-bold text-lg">
-                Edge in News
+                {this.props?.newsTitle?.title}
               </h3>
             </Col> 
           </Row>
@@ -26,7 +26,7 @@ export default class EdgeNews extends Component {
           </Row>
           <div className="mt-5">
             <Row>
-              <VideoGallery data={this.props.videos} />
+              <VideoGallery data={this.props.videos} title={this.props.mediaTitle} />
             </Row>
           </div>
         </div>

@@ -5,6 +5,7 @@ import { setNavColor } from '../Components/TopNav/Utils'
 import Fade from 'react-reveal/Fade';
 import Head from 'next/head'
 import SitemalList from '../Components/SitemapList/index.js';
+import { pageTitle } from '../Payloads/pageTitle/title';
 
 
 class Sitemap extends Component {
@@ -21,7 +22,7 @@ class Sitemap extends Component {
     return (
       <Fade>
         <Head>
-          <title>getEdGE AI: Strategic Talent Management Career Development Platform</title>
+        <title>{pageTitle('sitemap')}</title>
           <meta name="description" content="getEdGE is a global AI-based strategic talent management career development platform/tool. Edge Networks, aim to connect the right person to the right job." />
         </Head>
         <div className="">

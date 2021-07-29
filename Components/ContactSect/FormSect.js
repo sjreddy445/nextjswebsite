@@ -6,10 +6,12 @@ import { Col, Button, Row } from 'reactstrap';
 import styles from './ContactSet.module.scss'
 import axios from "axios";
 // import SuccessModal from './SuccessModal';
-import Recaptcha from 'react-google-invisible-recaptcha';
+// import Recaptcha from 'react-google-invisible-recaptcha';
+import Recaptcha from "react-google-recaptcha";
 import { useRouter } from 'next/router';
 import { countries as countryList } from '../../Payloads/country'
-
+import { Spinner } from 'reactstrap';
+import {FORM_URL} from '../../configs/constants';
 const phoneRegExp = /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
@@ -26,6 +28,8 @@ const validationSchema = Yup.object({
 
 const FormSect = () => {
   const [modal, setModal] = useState(false);
+  const recaptchaRef = React.createRef();
+  const [isDisable, setDisable] = useState(false);
   const router = useRouter();
   const toggleModal = (val) => setModal(val);
   const [token, setToken] = useState("");
@@ -47,13 +51,18 @@ const FormSect = () => {
     validateOnChange: false,
     validationSchema,
     async onSubmit(values) {
+      setDisable(true);
       if (!token) {
-        await recaptcha.execute();
+         recaptchaRef.current.execute();;
       } else {
-        axios.post("https://formspree.io/f/xdopaedp", values).then((response) => {
-          router.replace({ pathname: '/thankyou', query: { msg: msg, isOpen: true } }, '/thankyou', { shallow: true });
+        axios.post(FORM_URL, values).then((response) => {
+          console.log("response",response)
+          setDisable(false);
+        router.replace({ pathname: '/thankyou', query: { msg: msg, isOpen: true } }, '/thankyou', { shallow: true });
           // callThank()
         }).catch((err) => {
+          console.log("errr",err)
+          setDisable(false);
         })
       }
     }
@@ -71,7 +80,7 @@ const FormSect = () => {
     })
   }
 
-
+console.log("token",token)
 
   return (
     <>
@@ -152,7 +161,7 @@ const FormSect = () => {
                 <option value={"USA"}>{"USA"}</option>
                 <option value={"India"}>{"India"}</option>
                 <hr></hr>
-                {countryList?.map((data,i) => {
+                {countryList?.map((data, i) => {
                   return (
                     <option key={i} value={data.name}>{data.name}</option>
                   )
@@ -172,13 +181,24 @@ const FormSect = () => {
             <span className={styles.error}>{errors.message ? errors.message : null}</span>
           </Col>
           <Col md={12} className="mt-4">
-            <Button color="primary" type="submit" className="sm-w-100">Book A Demo</Button>
+            <Button disabled={isDisable} color="primary" type="submit" className={"sm-w-100 "+styles.btnprimary}>
+              Book A Demo
+              {isDisable && <Spinner
+                className={styles.spinnerbordersm}
+                as="span"
+                animation="border"
+                size="sm"
+              />}
+            </Button>
           </Col>
           <div style={{ visibility: 'hidden' }}>
             <Recaptcha
-              ref={ref => recaptcha = ref}
+                ref={recaptchaRef}
+                size="invisible"
               sitekey={TEST_SITE_KEY}
-              onResolved={(X) => onResolve(X)} />
+              onChange={onResolve}
+              // onResolved={(X) => onResolve(X)}
+               />
           </div>
         </form>
       </div>

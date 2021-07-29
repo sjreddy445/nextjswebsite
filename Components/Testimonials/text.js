@@ -4,11 +4,9 @@ class AwardText extends Component {
     render() {
         return (
             <div>
-                <h4 className="text-lg mb-4 mt-2 font-weight-bold">
-                    {this.props?.title?.title}
-                </h4>
+                <h3 className="mb-5">{this.props?.title?.title}</h3>
                 <h2 className="text-xl font-weight-bold">
-                {this.props?.title?.description}
+                    {this.props?.title?.description}
                 </h2>
             </div>
         );

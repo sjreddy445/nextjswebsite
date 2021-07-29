@@ -45,7 +45,6 @@ class TopNav extends Component {
 
   TopDataFunc = async () => {
     var topContainer = await TopBanner();
-    console.log("topCOntainder",topContainer)
     this.setState({ TopContainer: topContainer })
   }
 

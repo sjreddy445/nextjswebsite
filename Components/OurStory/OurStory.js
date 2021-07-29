@@ -35,7 +35,7 @@ class OurStory extends Component {
     return (
       <div className="py-4">
         <div className="container-inner d-flex justify-content-between">
-          <h3 className="mb-4 text-weight-800">Our Story</h3>
+          <h3 className="mb-4 text-weight-800">{this.props?.title?.title}</h3>
           <div>
             <button className="bg-transparent border-0 btn-no-outline" onClick={this.scrollLeft}><i className="icon-arrow-left"></i></button>
             <button className="bg-transparent border-0 btn-no-outline" onClick={this.scrollRight}><i className="icon-arrow-right"></i></button>

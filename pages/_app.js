@@ -16,18 +16,20 @@ import { useEffect } from 'react';
 import CookieConsent from "react-cookie-consent";
 import { withRouter } from 'next/router';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }, props) {
   useEffect(() => {
     ReactGa.initialize('UA-35684919-1');
     ReactGa.pageview(window.location.pathname + window.location.search);
-
     Api.get("/blog-page-sections").then(({ data }) => {
       localStorage.setItem("blogPageSections", JSON.stringify(data));
     })
-  })
-  
+    Api.get("/page-titles").then(({ data }) => {
+      localStorage.setItem("pageTitle", JSON.stringify(data));
+    })
+  }, [])
+
   return (
-    <Layout>
+    <Layout {...props}>
       <Component {...pageProps} />
       <CookieConsent
         location="bottom"
@@ -37,10 +39,8 @@ function MyApp({ Component, pageProps }) {
         buttonStyle={{ color: "#4e503b", fontSize: "10px", margin: "10px" }}
         expires={150}
       >
-
         <span style={{ fontSize: "10px" }}>We use cookies to enhance the user experience.{" "}</span>
       </CookieConsent>
     </Layout>)
 }
-
 export default withRouter(MyApp)

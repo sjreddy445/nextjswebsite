@@ -16,3 +16,12 @@ export const payload = () => {
     return {};
   })
 }
+
+export const contactAddress = () => {
+  return Api.get('contact-uses').then(result => {
+    if (result.status == 200) {
+      return result.data[0];
+    }
+    return {};
+  })
+}

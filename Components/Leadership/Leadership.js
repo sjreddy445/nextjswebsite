@@ -8,7 +8,7 @@ export default class Leadership extends Component {
     return (
       <div className="container-inner">
         <h3 className="text-xl mb-5 font-weight-bold">
-          Our Leadership
+          {this.props?.title?.title}
         </h3>
         <div>
           <Row>

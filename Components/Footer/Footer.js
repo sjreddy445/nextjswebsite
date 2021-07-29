@@ -8,18 +8,30 @@ import GartnerCoolImg from "../../Assets/images/Gartner_Cool_Vendor.png"
 import { Modal, ModalHeader, ModalBody, Col, Row } from 'reactstrap';
 import NewsletterForm from './NewsletterForm';
 import BookDemo from './BookDemo';
-
+import { payload as sectionTitle,  } from '../../Payloads/sectionTitle/title'
+import { payload as footerData,socialLinks  } from '../../Payloads/Footer/footer'
+import ReactHtmlParser from 'react-html-parser';
+import { AddCmsImgBaseUrl } from '../../Utils/Utils';
 const year = new Date().getFullYear()
-
 class Footer extends Component {
-
   constructor(props) {
     super()
     this.state = {
-      modal: false
+      modal: false,
+      data: {},
+      newsLetterTitle: {},
+      demoTitle: {},
+      socialLinks: {}
     }
   }
 
+  async componentDidMount() {
+    var newsLetterTitle = await sectionTitle('newsletter');
+    var demoTitle = await sectionTitle('bookdemo');
+    var footData = await footerData();
+    var links = await socialLinks();
+    this.setState({ newsLetterTitle: newsLetterTitle, data: footData, demoTitle: demoTitle, socialLinks: links });
+  }
   toggleCreditModal = () => {
     this.setState({
       modal: !this.state.modal,
@@ -27,6 +39,7 @@ class Footer extends Component {
   }
 
   render() {
+
     return (
       <>
         <Modal isOpen={this.state.modal} toggle={this.toggleCreditModal} className="info-modal" size="lg" >
@@ -52,10 +65,10 @@ class Footer extends Component {
                     <div className="msg text-xs mb-4">
                       <div className="msg-text mb-1">
                         Life@Edge Header: Pexels | Andrea Piacquadio
-                        </div>
+                      </div>
                       <div className="msg-text">
                         Homepage Header: Freepik | Drobotdean
-                        </div>
+                      </div>
                     </div>
                     <div className="subtitle text-xs mb-2">
                       <b>All Illustrations:</b>
@@ -63,44 +76,39 @@ class Footer extends Component {
                     <div className="msg text-xs mb-2">
                       <div className="msg-text mb-1">
                         Life@Edge Header: Pexels | Andrea Piacquadio
-                        </div>
+                      </div>
                       <div className="msg-text">
                         Homepage Header: Freepik | Drobotdean
-                        </div>
+                      </div>
                     </div>
                   </div>
                 </Col>
               </Row>
             </div>
-
           </ModalBody>
-
         </Modal>
-
         <div className="footer">
           <div className="py-5 book-demo-form">
             <div className="container-inner book-demo-box">
-              <h4 className="text-white ma-0 title">Text Placeholder - Lorem Ipsum is simply dummy text.</h4>
-              <BookDemo/>
+              <h4 className="text-white ma-0 title">{this.state?.demoTitle?.title}</h4>
+              <BookDemo />
             </div>
           </div>
           <div className="py-5 news-letter-form">
             <div className="container-inner news-letter-box">
-              <h4 className="text-white ma-0 title">Sign up for our newsletter.</h4>
+              <h4 className="text-white ma-0 title">{this.state?.newsLetterTitle?.title}</h4>
               <NewsletterForm />
             </div>
           </div>
-
           <div className="bold-grey-bg">
             <div className="py-5">
               <div className="container-inner">
-                <img src={LogoWhite.src} alt='' />
+                <img alt='' src={AddCmsImgBaseUrl(this.state?.data?.logo?.url)} />
               </div>
               <div className="mt-5 container-inner footer-quarter-element d-flex justify-content-between">
                 <div className="about-edge">
-                  <p className="text-xs text-grey1 text-line-height-1-6 edge-details">Edge Networks is a talent decision platform powered by Artificial Intelligence. We aim to simplify decisions in talent management to help organizations build the workforce of the future.</p>
+                  <p className="text-xs text-grey1 text-line-height-1-6 edge-details">{this.state?.data.description1}</p>
                 </div>
-
                 <div className="footer-link-1">
                   <ul className="text-white footer-v-nav">
                     <li className="text-line-height-1-6"><NavLink href="/elapage" className="link-no-decor">ELA</NavLink></li>
@@ -108,7 +116,6 @@ class Footer extends Component {
                     <li className="text-line-height-1-6"><NavLink href="/careers" className="link-no-decor">Careers</NavLink></li>
                   </ul>
                 </div>
-
                 <div className="footer-link-2">
                   <ul className="text-white footer-v-nav">
                     {/* <li className="text-line-height-1-6">Our Products </li> */}
@@ -118,12 +125,11 @@ class Footer extends Component {
                     {/* <li className="text-line-height-1-6 pointer" >Credits</li> */}
                   </ul>
                 </div>
-
                 <div className="social-icons">
-                  <a href="https://www.facebook.com/edgenetworkspvtltd" rel="noopener noreferrer"  target="_blank" className="link-no-decor"><i className="icon-facebook icon"></i></a>
-                  <a href="https://twitter.com/getedge_ai" rel="noopener noreferrer"  className="link-no-decor" target="_blank"><i className="icon-twitter icon"></i></a>
-                  <a href="https://www.linkedin.com/company/avr-edge-networks-pvt--ltd-/" rel="noopener noreferrer"  className="link-no-decor" target="_blank"><i className="icon-linkedin icon"></i></a>
-                  <a href="https://www.youtube.com/channel/UCrceycnUns21KLXYubEZuTA" rel="noopener noreferrer"  className="link-no-decor" target="_blank"><i className="icon-youtube icon"></i></a>
+                  <a href={this.state?.socialLinks?.facebook} rel="noopener noreferrer" target="_blank" className="link-no-decor"><i className="icon-facebook icon"></i></a>
+                  <a href={this.state?.socialLinks?.twitter} rel="noopener noreferrer" className="link-no-decor" target="_blank"><i className="icon-twitter icon"></i></a>
+                  <a href={this.state?.socialLinks?.linkedIn}rel="noopener noreferrer" className="link-no-decor" target="_blank"><i className="icon-linkedin icon"></i></a>
+                  <a href={this.state?.socialLinks?.youtube} rel="noopener noreferrer" className="link-no-decor" target="_blank"><i className="icon-youtube icon"></i></a>
                 </div>
 
               </div>
@@ -132,23 +138,21 @@ class Footer extends Component {
             <hr></hr>
             <div className="py-5 container-inner footer-trio-element d-flex justify-content-between align-items-center">
               <div>
-                <img className="gartner-img" alt='' src={GartnerCoolImg.src} />
+                <img className="gartner-img" alt='' src={AddCmsImgBaseUrl(this.state?.data?.logo2?.url)} />
               </div>
               <div className="text-grey1 box gartner-title">
                 <h3 className="gartner">
-                  Gartner,<br />
-              Cool Vendors in Human<br />
-              Capital Management.
-            </h3>
-                <h5 className="text-xs text-white">2016, May 9, 2016</h5>
+                  {ReactHtmlParser(this.state?.data.description2)}
+                </h3>
+                <h5 className="text-xs text-white">{this.state?.data.date}</h5>
               </div>
-              <p className="text-xxs text-grey1 box text-line-height-1-6 gartner-details">The Gartner Cool Vendor Logo is a trademark and service mark of Gartner, Inc., and/or its affiliates, and is used herein with permission. All rights reserved. Gartner does not endorse any vendor, product or service depicted in its research publications, and does not advise technology users to select only those vendors with the highest ratings or other designation. Gartner research publications consist of the opinions of Gartners research organization and should not be construed as statements of fact. Gartner disclaims all warranties, expressed or implied, with respect to this research, including any warranties of merchantability or fitness for a particular purpose.</p>
+              <p className="text-xxs text-grey1 box text-line-height-1-6 gartner-details">T{this.state?.data.description3}</p>
             </div>
 
             <hr></hr>
 
             <div className="container-inner py-2">
-              <p className="text-right text-grey1 text-xxs sm-text-left m-0 py-2">{year} © EdGE Networks. All Rights Reserved |<NavLink href="/privacy" className="link-no-decor"> Privacy Policy</NavLink> | <span onClick={this.toggleCreditModal} className="pointer">Credits</span></p>
+              <p className="text-right text-grey1 text-xxs sm-text-left m-0 py-2">{year} {this.state?.data.description4}|<NavLink href="/privacy" className="link-no-decor"> Privacy Policy</NavLink> | <span onClick={this.toggleCreditModal} className="pointer">Credits</span></p>
             </div>
           </div>
         </div>

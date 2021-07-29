@@ -9,11 +9,11 @@ class AddressSect extends Component {
         <Row>
           <Col md={4} sm={12}>
             <h2 className="text-xl mb-4 mt-2 font-weight-bold">
-              We would love to know you better.
+              {this.props?.data?.title1}
             </h2>
           </Col>
           <Col md={8} sm={12} className="pl-4">
-            <DetailSect />
+            <DetailSect {...this.props} />
           </Col>
         </Row>
       </div>
