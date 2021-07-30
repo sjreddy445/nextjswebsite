@@ -10,7 +10,7 @@ import {openingData} from "../../Payloads/Careers/Openings"
 import styles from "./career.module.scss";
 import Head from 'next/head'
 import { pageTitle } from '../../Payloads/pageTitle/title';
-import Header from './head'
+import Header from './Header'
 import ReactHtmlParser from 'react-html-parser';
 export default class Careers extends Component {
   state={
