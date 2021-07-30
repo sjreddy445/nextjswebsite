@@ -6,7 +6,7 @@ import styles from './ProductStats.module.scss';
 class ProductStats extends Component {
   state = {
     data: []
-  }
+  }   
   componentDidMount() {
     this.setState({ data: this.props.data })
   }

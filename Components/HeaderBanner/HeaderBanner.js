@@ -11,14 +11,15 @@ class HeaderBanner extends Component {
 
 
   componentDidMount() {
-    if (this.props.data.bgImg) {
+    if (this.props?.data?.bgImg) {
       // this.loadImage(this.props.data.bgImg, this.props.data.imgAlt)
     }
   }
 
   render() {
+    console.log("headerData", this.props)
     return (
-      <div className={this.props?.data?.bgClr ? this.props.data?.bgClr + " " + styles.headerbanner : styles.headerbanner} >
+      <div className={this.props?.data?.bgClr ? this.props?.data?.bgClr + " " + styles.headerbanner : styles.headerbanner} >
         <div className={styles.rightbg} style={!this.props?.data?.bgImg ? { backgroundImage: `url('${this.props?.data?.bgCover ? AddCmsImgBaseUrl(this.props.data.bgCover.url) : ''}')` } : { background: 'auto' }}>
           <div className={"container-inner " + styles.content}>
             <Row className="m-0 no-gutters">
@@ -40,7 +41,7 @@ class HeaderBanner extends Component {
                 }
               </Col>
               <Col md={12}>
-                {this.props.data?.subHeader ?
+                {this.props.data?.sub_headers.length > 0 ?
                   <div className="sm-mt-5"><SubHeader {...this.props} /></div>
                   :
                   ""

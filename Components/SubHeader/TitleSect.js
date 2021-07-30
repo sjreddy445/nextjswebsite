@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 class TitleSect extends Component {
   render() {
-    let {subHeader} = this.props.data
+    let {subTitleHeader} = this.props.data;
     return (
       <div>
         <h4 className="text-xl font-weight-bold">
-          {subHeader.title}
+          {subTitleHeader}
         </h4>
       </div>
     );

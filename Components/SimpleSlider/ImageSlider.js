@@ -22,13 +22,13 @@ export default class ImageSlider extends Component {
         }
       ]
     };
-    let { imageSet } = this.props.data
+    let { life_images } = this.props?.data
     return (
       <div>
         <Slider {...settings}>
-          {imageSet?.map((image, i) => (
+          {life_images?.map((image, i) => (
             <div key={i}>
-              <img src={AddCmsImgBaseUrl(image.imgUrl)} alt={image.alt} width={this.props.width} height={this.props.height} />
+              <img src={AddCmsImgBaseUrl(image?.img?.url)} alt={''} width={this.props.width} height={this.props.height} />
             </div>
           ))}
 
