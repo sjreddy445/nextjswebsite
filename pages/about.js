@@ -40,10 +40,14 @@ class AboutUs extends Component {
             <HeaderBanner data={this.props.headerData} />
           </div>
           <div className="section-margin">
-            <OurStory story={this.props.story}  title={this.props.storyTitle} />
+            <OurStory story={this.props.story} title={this.props.storyTitle} />
           </div>
           <div className="section-margin">
-            <Leadership people={this.props.people} title={this.props.leadershipTitle} />
+            <Leadership people={this.props.leadershipData} title={this.props.leadershipTitle} />
+          </div>
+          {/* advisory-section */}
+          <div className="section-margin">
+            <Leadership people={this.props.advisoryData} title={this.props.advisoryTitle} />
           </div>
           <div className="section-margin">
             <EdgeNews news={this.props.news} videos={this.props.videos} newsTitle={this.props.newsTitle} mediaTitle={this.props.mediaTitle} />
@@ -68,11 +72,13 @@ export async function getServerSideProps(context) {
   var news = await NewsData();
   let brandData = await getBrands();
   var storyData = await ourStoryPayload();
-  var peopleData = await PeopleData();
+  var leadershipData = await PeopleData('leadership');
+  var advisoryData = await PeopleData('advisory');
   var storyTitle = await sectionTitle('about-story');
   var mediaTitle = await sectionTitle('about-media');
   var newsTitle = await sectionTitle('about-news');
   var leadershipTitle = await sectionTitle('about-leadership');
+  var advisoryTitle = await sectionTitle('about-advisory');
   var brandTitle = await sectionTitle('brands');
   var contactTitle = await sectionTitle('contact');
 
@@ -83,9 +89,11 @@ export async function getServerSideProps(context) {
       news: news,
       brandList: brandData,
       story: storyData,
-      people: peopleData,
+      leadershipData: leadershipData,
+      advisoryData: advisoryData,
       brandTitle: brandTitle,
       contactTitle: contactTitle,
+      advisoryTitle: advisoryTitle,
       storyTitle: storyTitle,
       mediaTitle: mediaTitle,
       newsTitle: newsTitle,

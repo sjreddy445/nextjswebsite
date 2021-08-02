@@ -40,8 +40,8 @@ import Api from '../../Config/Api'
 //   } 
 // ]
 
-export const payload = () => {
-  return Api.get('people').then(result => {
+export const payload = (type) => {
+  return Api.get(`people/?type=${type}`).then(result => {
     if (result.status == 200) {
       return result.data;
     }
