@@ -46,9 +46,9 @@ class AboutUs extends Component {
             <Leadership people={this.props.leadershipData} title={this.props.leadershipTitle} />
           </div>
           {/* advisory-section */}
-          <div className="section-margin">
+          {/* <div className="section-margin">
             <Leadership people={this.props.advisoryData} title={this.props.advisoryTitle} />
-          </div>
+          </div> */}
           <div className="section-margin">
             <EdgeNews news={this.props.news} videos={this.props.videos} newsTitle={this.props.newsTitle} mediaTitle={this.props.mediaTitle} />
           </div>

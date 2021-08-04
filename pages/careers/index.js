@@ -21,10 +21,7 @@ export default class Careers extends Component {
     setNavColor("transparent-bg");
     window.scrollTo(0, 0)
   }
-
-
   render() {
-    console.log("props",this.props)
     return (
       <div className={styles.careerpage}>
         <Head>

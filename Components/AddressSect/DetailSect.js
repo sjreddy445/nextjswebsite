@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Col, Row } from 'reactstrap';
 import ReactHtmlParser from 'react-html-parser';
+import { data } from 'jquery';
 
 class DetailSect extends Component {
   render() {
@@ -23,13 +24,13 @@ class DetailSect extends Component {
             {this.props?.data?.title3}
             </h4>
             <div className=" text-md line175 mt-2 text-brand">
-              <a href="tel:+918041148049">+ 91 80 4114 8049</a>
+              <a href="tel:+918041148049">{this.props?.data?.phone}</a>
             </div>
             <h4 className="text-lg mt-4 font-weight-bold">
             {this.props?.data?.title5}
             </h4>
             <div className=" text-md line175 mt-2 text-brand">
-              <a href="mailto:info@edgenetworks.in">info@edgenetworks.in</a>
+              <a href={`mailto:${this.props?.data?.email}`}>{this.props?.data?.email}</a>
             </div>
           </Col>
         </Row>

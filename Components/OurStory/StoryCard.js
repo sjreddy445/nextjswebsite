@@ -11,7 +11,6 @@ class StoryCard extends Component {
 
 
   render() {
-    console.log("this.props.",this.props.imgUrl)
     return (
       <div className={styles.storycard}>
         <div>

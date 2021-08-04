@@ -9,7 +9,6 @@ class VideoItem extends Component {
     // event.target.
   }
   render() {
-    console.log
     let videoId = YouTubeGetID(this.props.data.url)
     const opts  = {
       playerVars : {rel: 0},

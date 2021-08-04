@@ -36,7 +36,6 @@ class BlogPost extends Component {
   }
 
   render() {
-    console.log("this.ptops", this.props)
     return (
       <div className="container-inner">
         {this.props.blogPost ?

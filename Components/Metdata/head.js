@@ -10,6 +10,7 @@ function HeadPage() {
             <link rel="icon" href="/favicon-16x16.png" sizes="16x16" />
             <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
             <meta name="theme-color" content="#000000" />
             {/* <title>getEdGE AI: HR Strategic Workforce Talent Management Simplified</title> */}
             {/* <meta name="title" content="getEdGE AI: HR Strategic Workforce Talent Management Simplified" /> */}

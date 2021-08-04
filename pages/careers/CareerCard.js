@@ -24,7 +24,6 @@ class CareerCard extends Component {
   }
 
   render() {
-    console.log("this.propscareere", this.props)
     return (
       <div className={styles.careercard}>
         <div className={styles.leftcol}>

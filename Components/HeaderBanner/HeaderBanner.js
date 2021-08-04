@@ -17,7 +17,7 @@ class HeaderBanner extends Component {
   }
 
   render() {
-    console.log("headerData", this.props)
+
     return (
       <div className={this.props?.data?.bgClr ? this.props?.data?.bgClr + " " + styles.headerbanner : styles.headerbanner} >
         <div className={styles.rightbg} style={!this.props?.data?.bgImg ? { backgroundImage: `url('${this.props?.data?.bgCover ? AddCmsImgBaseUrl(this.props.data.bgCover.url) : ''}')` } : { background: 'auto' }}>

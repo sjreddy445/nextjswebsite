@@ -7,11 +7,13 @@ import styles from './ContactSet.module.scss'
 import axios from "axios";
 // import SuccessModal from './SuccessModal';
 // import Recaptcha from 'react-google-invisible-recaptcha';
-import Recaptcha from "react-google-recaptcha";
+// import Recaptcha from "react-google-recaptcha";
+import Recaptcha from 'react-google-invisible-recaptcha';
+
 import { useRouter } from 'next/router';
 import { countries as countryList } from '../../Payloads/country'
 import { Spinner } from 'reactstrap';
-import {FORM_URL} from '../../configs/constants';
+import { FORM_URL } from '../../configs/constants';
 const phoneRegExp = /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
@@ -28,13 +30,12 @@ const validationSchema = Yup.object({
 
 const FormSect = () => {
   const [modal, setModal] = useState(false);
-  const recaptchaRef = React.createRef();
+  const refRecaptcha = React.useRef(null)
   const [isDisable, setDisable] = useState(false);
   const router = useRouter();
   const toggleModal = (val) => setModal(val);
   const [token, setToken] = useState("");
-  let recaptcha = null;
-  const TEST_SITE_KEY = "6LcsyyobAAAAAPUXq6-8DiWB8ZoJoD5LdLqUB1p-";
+  const TEST_SITE_KEY = "6Lcp29sbAAAAABOxCTB4s47Dtb_v07NtaTwuS8pN";
   let msg = "Your message has been sent. The team will get in touch with you shortly."
   const { handleSubmit, handleChange, values, errors } = useFormik({
     enableReinitialize: true,
@@ -53,15 +54,15 @@ const FormSect = () => {
     async onSubmit(values) {
       setDisable(true);
       if (!token) {
-         recaptchaRef.current.execute();;
+        await refRecaptcha.current.execute();
       } else {
         axios.post(FORM_URL, values).then((response) => {
-          console.log("response",response)
+          // console.log("response", response)
           setDisable(false);
-        router.replace({ pathname: '/thankyou', query: { msg: msg, isOpen: true } }, '/thankyou', { shallow: true });
+          router.replace({ pathname: '/thankyou', query: { msg: msg, isOpen: true } }, '/thankyou', { shallow: true });
           // callThank()
         }).catch((err) => {
-          console.log("errr",err)
+          console.log("errr", err)
           setDisable(false);
         })
       }
@@ -80,7 +81,7 @@ const FormSect = () => {
     })
   }
 
-console.log("token",token)
+
 
   return (
     <>
@@ -181,7 +182,7 @@ console.log("token",token)
             <span className={styles.error}>{errors.message ? errors.message : null}</span>
           </Col>
           <Col md={12} className="mt-4">
-            <Button disabled={isDisable} color="primary" type="submit" className={"sm-w-100 "+styles.btnprimary}>
+            <Button disabled={isDisable} color="primary" type="submit" className={"sm-w-100 " + styles.btnprimary}>
               Book A Demo
               {isDisable && <Spinner
                 className={styles.spinnerbordersm}
@@ -193,12 +194,11 @@ console.log("token",token)
           </Col>
           <div style={{ visibility: 'hidden' }}>
             <Recaptcha
-                ref={recaptchaRef}
-                size="invisible"
+              ref={refRecaptcha}
               sitekey={TEST_SITE_KEY}
               onChange={onResolve}
-              // onResolved={(X) => onResolve(X)}
-               />
+              onResolved={(X) => onResolve(X)}
+            />
           </div>
         </form>
       </div>
