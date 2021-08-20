@@ -1,8 +1,29 @@
 import { withRouter, Router } from 'next/router';
 import React, { Component } from 'react'
-import { Modal, ModalHeader, ModalBody, Col, Row } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, Col, Row, Fade } from 'reactstrap';
 import SuccessModalImg from '../Assets/images/Icons/message-modal.svg'
 import Home from './index';
+import HeaderBanner from '../Components/HeaderBanner/HeaderBanner'
+import { payload as HomeHeaderData } from '../Payloads/Home/Header.js'
+import { payload as SecretData } from '../Payloads/Home/Secret'
+import { getBrands } from '../Payloads/Home/BrandList'
+import { payload as payloadAwards } from '../Payloads/Awards/logo';
+import { payload as StatsData } from '../Payloads/Home/Stats'
+import { payload as sectionTitle } from '../Payloads/sectionTitle/title'
+import { payload as ProductListData } from '../Payloads/Home/ProductList'
+import { payload as ourProductsData } from '../Payloads/Home/OurProducts'
+import { payload as testimonialPayload } from '../Payloads/Testimonials/client'
+import { getServices } from '../Payloads/Home/Services';
+
+import ProductList from '../Components/ProductList/ProductList'
+import SingleTextImageBanner from '../Components/SingleTextImageBanner/SingleTextImageBanner';
+import HomeStats from '../Components/HomeStats/HomeStats';
+import BrandList from '../Components/BrandList/BrandList';
+import ServiceBanner from '../Components/ServiceBanner/ServiceBanner';
+import Awards from '../Components/Awards/Awards';
+import Contact from '../Components/ContactSect/Contact';
+import Testimonial from '../Components/Testimonials/Testimonials';
+import OurProducts from '../Components/OurProducts/OurProducts';
 
 class SuccessModal extends Component {
 
@@ -15,6 +36,7 @@ class SuccessModal extends Component {
   }
   componentDidMount() {
     const { query } = this.props.router;
+    console.log("query", query)
     if (query && query.msg && query.isOpen === "true") {
       this.setState({ isOpen: true, msg: query.msg })
     }
@@ -26,7 +48,36 @@ class SuccessModal extends Component {
   render() {
     return (
       <div>
-        <Home />
+        <div >
+          <HeaderBanner data={this.props.HeaderData} />
+        </div>
+        <div className="section-margin">
+          <HomeStats data={this.props.statsData} title={this.props.statsTitle} />
+        </div>
+        <div className="section-margin">
+          <ProductList data={this.props.productData} title={this.props.productsTitle} />
+        </div>
+        <div className="section-margin">
+          <SingleTextImageBanner data={this.props.secretData} title={this.props.ServiceTitle} />
+        </div>
+        <div className="section-margin">
+          <BrandList brandList={this.props.brandList} title={this.props.brandTitle} />
+        </div>
+        <div className="section-margin">
+          <ServiceBanner serviceList={this.props.serviceList} title={this.props.ServiceTitle} />
+        </div>
+        <div className="light-sliver-bg">
+          <Awards data={this.props.awardsList} title={this.props.AwardTitle} />
+        </div>
+        <div className="section-margin" >
+          <Contact title={this.props.contactTitle} />
+        </div>
+        <div className="section-margin light-sliver-bg">
+          <Testimonial data={this.props.testimonialService} title={this.props.TestimonialTitle} />
+        </div>
+        <div className="section-margin">
+          <OurProducts data={this.props.ourProductData} />
+        </div>
         <Modal isOpen={this.state.isOpen} toggle={() => this.toggleModal()} className="info-modal" size="lg" >
           <ModalHeader toggle={() => this.toggleModal()}></ModalHeader>
           <ModalBody>
@@ -57,4 +108,44 @@ class SuccessModal extends Component {
     )
   }
 }
+export async function getServerSideProps(context) {
+  var headerData = await HomeHeaderData();
+  var secretData = await SecretData();
+  let awardsData = await payloadAwards();
+  var statData = await StatsData();
+  let productData = await ProductListData();
+  let brandData = await getBrands();
+  var serviceData = await getServices();
+  var testimonialData = await testimonialPayload();
+  var proddata = await ourProductsData();
+  var brandTitle = await sectionTitle('brands');
+  var contactTitle = await sectionTitle('contact');
+  var AwardTitle = await sectionTitle('awards');
+  var TestimonialTitle = await sectionTitle('testimonial');
+  var ServiceTitle = await sectionTitle('offers');
+  var statsTitle = await sectionTitle('stats');
+  var productsTitle = await sectionTitle('3products');
+
+  return {
+    props: {
+      HeaderData: headerData,
+      awardsList: awardsData,
+      secretData: secretData,
+      statsData: statData,
+      productData: productData,
+      brandList: brandData,
+      serviceList: serviceData,
+      testimonialService: testimonialData,
+      ourProductData: proddata,
+      brandTitle: brandTitle,
+      contactTitle: contactTitle,
+      AwardTitle: AwardTitle,
+      TestimonialTitle: TestimonialTitle,
+      ServiceTitle: ServiceTitle,
+      statsTitle: statsTitle,
+      productsTitle: productsTitle,
+    }
+  }
+}
+
 export default withRouter(SuccessModal);

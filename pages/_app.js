@@ -48,7 +48,7 @@ function MyApp({ Component, pageProps }, props) {
         buttonText="I Accept"
         cookieName="myAwesomeCookieName2"
         style={{ background: "#2B373B", margin: "0px" }}
-        buttonStyle={{ color: "#4e503b", fontSize: "10px", margin: "10px" }}
+        buttonStyle={{ color: "#4e503b", fontSize: "10px", margin: "10px" ,marginRight: 100}}
         expires={150}
       >
         <span style={{ fontSize: "10px" }}>We use cookies to enhance the user experience.{" "}</span>

@@ -57,12 +57,10 @@ const FormSect = () => {
         await refRecaptcha.current.execute();
       } else {
         axios.post(FORM_URL, values).then((response) => {
-          // console.log("response", response)
+          router.replace({ pathname: '/thankyou', query: { msg: msg, isOpen: true } }, 'thankyou', { shallow: true });
           setDisable(false);
-          router.replace({ pathname: '/thankyou', query: { msg: msg, isOpen: true } }, '/thankyou', { shallow: true });
-          // callThank()
         }).catch((err) => {
-          console.log("errr", err)
+          console.log("err", err)
           setDisable(false);
         })
       }

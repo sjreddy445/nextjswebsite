@@ -1,6 +1,7 @@
 @import "../../Assets/css/variable";
 .desc {
     color: $textGrey1;
+    width: 100%;
 }
 
 .designation {
@@ -8,7 +9,7 @@
 }
 
 .cardheight {
-    min-height: 235px !important;
+    min-height: 150px !important;
     color: $textGrey1;
     padding: 20px;
     font-size: 14px;
@@ -24,11 +25,9 @@
 .cardborder {
     border-radius: 10px !important;
     border: none !important;
-    // margin: 45.2px 4px;
-    // padding: 47.9px 41.2px;
     border-radius: 10px;
     width: 400px !important;
-    min-height: 400px !important;
+    // min-height: 100px !important;
 }
 
 .img {

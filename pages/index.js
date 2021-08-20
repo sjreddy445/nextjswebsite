@@ -33,65 +33,7 @@ export default function Home(props) {
     setNavColor("transparent-bg");
   });
 
-  var data = [
-    {
-      page: 'home',
-      title: 'getEdGE AI: HR Strategic Workforce Talent Management Simplified'
-    },
-    {
-      page: 'contact',
-      title: 'getEdGE Contact - Strategic Talent Management | Career Management'
-    },
-    {
-      page: 'career',
-      title: 'getEdGE - Career Path Planning and Development | Career Path Tools'
-    },
-    {
-      page: 'blog',
-      title: 'getEdGE AI: HR Strategic Workforce Talent Management Simplified'
-    },
-    {
-      page: 'ela',
-      title: 'ELA - Enterprise License Agreement is a legal agreement.'
-    },
-    {
-      page: 'privacy',
-      title: 'Privacy Policy | Edge Networks'
-    },
-    {
-      page: 'mobility',
-      title: 'getEdGE Mobility AI: Internal Smart AI Talent Solutions Platform'
-    },
-    {
-      page: 'pathfinder',
-      title: 'getEdGE Pathfinder AI: HR Career Path Tool for Career Development'
-    },
-    {
-      page: 'recruit',
-      title: 'getEdGE Recruit: AI Based Talent Acquisition Platforms for HR Solutions'
-    },
-    {
-      page: 'about',
-      title: 'getEdGE AI: Strategic Talent Management Career Development Platform'
-    },
-    {
-      page: 'life',
-      title: "Life @Edge - Talent management is an industry that's rapidly growing and you should come work with us at Edge"
-    },
-    {
-      page: 'sitemap',
-      title: "getEdGE AI: Strategic Talent Management Career Development Platform"
-    }
-
-  ]
-  const AddTitle = () => {
-    data.map(res => {
-      Api.post('/page-titles', res);
-    })
-  }
-  useEffect(() => {
-    // AddTitle();
-  }, [])
+  
   return (
     <>
       <Fade>

@@ -62,17 +62,14 @@ class CareerCard extends Component {
           {this.state?.openingData.length > 0 ?
             <>
               {this.checkTitleExist('responsibilities') !== -1 && <h4 className={styles.coltitle}>Job Responsibilities</h4>}
-              <ul>
-                {this.state?.openingData.map((data, listIndex) => {
-                  var res = null;
-                  if (data.responsibilities) {
-                    var res = <li className={styles.listitem} key={`list-item-${listIndex}`}>{data.responsibilities}
-                    </li>
-                  }
-                  return res;
-                })}
-
-              </ul>
+              {this.state?.openingData.map((data, listIndex) => {
+                var res = null;
+                if (data.responsibilities) {
+                  var res = <div className={styles.listitem} key={`list-item-${listIndex}`}>{ReactHtmlParser(data.responsibilities)}
+                  </div>
+                }
+                return res;
+              })}
             </>
             :
             ""
@@ -80,16 +77,14 @@ class CareerCard extends Component {
           {this.state.openingData.length > 0 ?
             <>
               {this.checkTitleExist('requirements') !== -1 && <h4 className={styles.coltitle}>Job Requirements</h4>}
-              <ul>
-                {this.state?.openingData.map((data, listIndex) => {
-                  var res = null;
-                  if (data.requirements) {
-                    res = <li className={styles.listitem} key={`list-item-${listIndex}`}>{ReactHtmlParser(data.requirements)}
-                    </li>
-                  }
-                  return res;
-                })}
-              </ul>
+              {this.state?.openingData.map((data, listIndex) => {
+                var res = null;
+                if (data.requirements) {
+                  res = <div className={styles.listitem} key={`list-item-${listIndex}`}>{ReactHtmlParser(data.requirements)}
+                  </div>
+                }
+                return res;
+              })}
             </>
             :
             ""
@@ -97,13 +92,10 @@ class CareerCard extends Component {
           {this.state.salesMmanagement ?
             <>
               {checkTitleExist('salesMmanagement') !== -1 && <h4 className={styles.coltitle}>Sales Management</h4>}
-              <ul>
-                {this.state?.salesMmanagement?.map((data, listIndex) =>
-                  <li className={styles.listitem} key={`list-item-${listIndex}`}>{data.text}
-                    {data?.sub ? <ul>{data?.sub?.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem}>{subData.text}</li>)}</ul> : ''}
-                  </li>
-                )}
-              </ul>
+              {this.state?.salesMmanagement?.map((data, listIndex) =>
+                <div className={styles.listitem} key={`list-item-${listIndex}`}>{ReactHtmlParser(data.text)}
+                </div>
+              )}
             </>
             :
             ""
@@ -111,13 +103,11 @@ class CareerCard extends Component {
           {this.state.prospects ?
             <>
               <h4 className={styles.coltitle}>Prospects and Pipeline Management</h4>
-              <ul>
-                {this.state?.prospects?.map((data, listIndex) =>
-                  <li className={styles.listitem} key={`list-item-${listIndex}`}>{data.text}
-                    {data?.sub ? <ul>{data?.sub?.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem} > {subData.text}</li>)}</ul> : ''}
-                  </li>
-                )}
-              </ul>
+
+              {this.state?.prospects?.map((data, listIndex) =>
+                <div className={styles.listitem} key={`list-item-${listIndex}`}>{ReactHtmlParser(data.text)}
+                </div>
+              )}
             </>
             :
             ""
@@ -125,13 +115,10 @@ class CareerCard extends Component {
           {this.state.proposals ?
             <>
               <h4 className={styles.coltitle}>Proposals, forecast, contracts, market, etc.</h4>
-              <ul>
-                {this.state?.proposals?.map((data, listIndex) =>
-                  <li className={styles.listitem} key={`list-item-${listIndex}`}>{data.text}
-                    {data?.sub ? <ul>{data?.sub?.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem}>{subData.text}</li>)}</ul> : ''}
-                  </li>
-                )}
-              </ul>
+              {this.state?.proposals?.map((data, listIndex) =>
+                <div className={styles.listitem} key={`list-item-${listIndex}`}>{ReactHtmlParser(data.text)}
+                </div>
+              )}
             </>
             :
             ""
@@ -139,13 +126,10 @@ class CareerCard extends Component {
           {this.state.productKnowledge ?
             <>
               <h4 className={styles.coltitle}>Product knowledge</h4>
-              <ul>
-                {this.state?.productKnowledge?.map((data, listIndex) =>
-                  <li className={styles.listitem} key={`list-item-${listIndex}`}>{data.text}
-                    {data?.sub ? <ul>{data?.sub?.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem}>{subData.text}</li>)}</ul> : ''}
-                  </li>
-                )}
-              </ul>
+              {this.state?.productKnowledge?.map((data, listIndex) =>
+                <div className={styles.listitem} key={`list-item-${listIndex}`}>{ReactHtmlParser(data.text)}
+                </div>
+              )}
             </>
             :
             ""
@@ -153,16 +137,14 @@ class CareerCard extends Component {
           {this.state.openingData.length > 0 ?
             <>
               {this.checkTitleExist('skills') !== -1 && <h4 className={styles.coltitle}>Role Skills</h4>}
-              <ul>
-                {this.state?.openingData?.map((data, listIndex) => {
-                  var res = null;
-                  if (data.skills) {
-                    res = <li className={styles.listitem} key={`list-item-${listIndex}`}>{data.skills}
-                    </li>
-                  }
-                  return res;
-                })}
-              </ul>
+              {this.state?.openingData?.map((data, listIndex) => {
+                var res = null;
+                if (data.skills) {
+                  res = <div className={styles.listitem} key={`list-item-${listIndex}`}>{ReactHtmlParser(data.skills)}
+                  </div>
+                }
+                return res;
+              })}
             </>
             :
             ""
@@ -170,17 +152,15 @@ class CareerCard extends Component {
           {this.state.openingData.length > 0 ?
             <>
               {this.checkTitleExist('qualifications') !== -1 && <h4 className={styles.coltitle}>Preferred Qualifications</h4>}
-              <ul>
-                {this.state?.openingData?.map((data, listIndex) => {
-                  var res = null;
-                  if (data.qualifications) {
+              {this.state?.openingData?.map((data, listIndex) => {
+                var res = null;
+                if (data.qualifications) {
 
-                    res = <li className={styles.listitem} key={`list-item-${listIndex}`}>{data.qualifications}
-                    </li>
-                  }
-                  return res;
-                })}
-              </ul>
+                  res = <div className={styles.listitem} key={`list-item-${listIndex}`}>{ReactHtmlParser(data.qualifications)}
+                  </div>
+                }
+                return res;
+              })}
             </>
             :
             ""
@@ -189,17 +169,15 @@ class CareerCard extends Component {
             <>
               {this.checkTitleExist('interviewProcess') !== -1 && <h4 className={styles.coltitle}>Interview process</h4>}
               <h6 className="ml-4">{process.text}</h6>
-              <ul>
-                {this.state.openingData?.map((data, listIndex) => {
-                  var res = null;
-                  if (data.interviewProcess) {
-                    res = <li className={styles.listitem} key={`list-item-${listIndex}`}>{data.interviewProcess}
-                      {/* {data.sub ? <ul>{data?.sub?.map((subData, index) => <li key={`sub_list_${index}`} className={styles.sublistitem}>{subData.text}</li>)}</ul> : ''} */}
-                    </li>
-                  }
-                  return res;
-                })}
-              </ul>
+              {this.state.openingData?.map((data, listIndex) => {
+                var res = null;
+                if (data.interviewProcess) {
+                  res = <div className={styles.listitem} key={`list-item-${listIndex}`}>{ReactHtmlParser(data.interviewProcess)}
+                  </div>
+                }
+                return res;
+              })}
+
             </>
             :
             ""
@@ -207,16 +185,14 @@ class CareerCard extends Component {
           {this.state.openingData.length > 0 ?
             <>
               {this.checkTitleExist('joinus') !== -1 && <h4 className={styles.coltitle}>{'Why should you join us'}</h4>}
-              <ul>
                 {this.state.openingData?.map((data, listIndex) => {
                   var res = null;
                   if (data.joinus) {
-                    res = <li key={listIndex} className={styles.listitem}>{data.joinus}
-                    </li>
+                    res = <div key={listIndex} className={styles.listitem}>{ReactHtmlParser(data.joinus)}
+                    </div>
                   }
                   return res;
                 })}
-              </ul>
             </>
             :
             ""
