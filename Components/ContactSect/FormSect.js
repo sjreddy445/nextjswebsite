@@ -2,14 +2,10 @@ import React, { useState } from 'react';
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { Col, Button, Row } from 'reactstrap';
-// import { Redirect } from 'react-router-dom';
 import styles from './ContactSet.module.scss'
 import axios from "axios";
-// import SuccessModal from './SuccessModal';
-// import Recaptcha from 'react-google-invisible-recaptcha';
-// import Recaptcha from "react-google-recaptcha";
+import Link from 'next/link';
 import Recaptcha from 'react-google-invisible-recaptcha';
-
 import { useRouter } from 'next/router';
 import { countries as countryList } from '../../Payloads/country'
 import { Spinner } from 'reactstrap';
@@ -24,6 +20,7 @@ const validationSchema = Yup.object({
   phone: Yup.string().matches(phoneRegExp, "Phone number is not valid").required("Phone number is required"),
   country: Yup.string().required("Country is required"),
   no_of_emp: Yup.string().required("No of Employees is required"),
+  check: Yup.string().required("check the box")
 })
 
 
@@ -47,7 +44,8 @@ const FormSect = () => {
       phone: "",
       message: "",
       country: "",
-      no_of_emp: ""
+      no_of_emp: "",
+      check: ""
     },
     validateOnChange: false,
     validationSchema,
@@ -79,7 +77,7 @@ const FormSect = () => {
     })
   }
 
-
+console.log("abc",errors)
 
   return (
     <>
@@ -172,13 +170,18 @@ const FormSect = () => {
           <Col md={12} className={styles.formSect}>
             <textarea
               name="message"
-
               placeholder="Tell us how we can help you?"
               onChange={handleChange}
               value={values.message}
             />
             <span className={styles.error}>{errors.message ? errors.message : null}</span>
           </Col>
+          <Col md={12} >
+            <input name="check" onChange={handleChange} type="checkbox" style={{ height: 14, width: 20 }} />
+            <span className="text-md" >I accept the <span className={styles.link}><Link href="/privacy"  >Privacy Policy</Link></span>, and authorize EDGE to contact me.</span>
+            <span className={styles.error}>{errors.check ? errors.check : null}</span>
+          </Col>
+
           <Col md={12} className="mt-4">
             <Button disabled={isDisable} color="primary" type="submit" className={"sm-w-100 " + styles.btnprimary}>
               Book A Demo
