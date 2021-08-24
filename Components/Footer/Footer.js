@@ -146,7 +146,7 @@ class Footer extends Component {
                 </h3>
                 <h5 className="text-xs text-white">{this.state?.data.date}</h5>
               </div>
-              <p className="text-xxs text-grey1 box text-line-height-1-6 gartner-details">T{this.state?.data.description3}</p>
+              <p className="text-xxs text-grey1 box text-line-height-1-6 gartner-details">{this.state?.data.description3}</p>
             </div>
 
             <hr></hr>

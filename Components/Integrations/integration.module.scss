@@ -1,0 +1,57 @@
+@import "../../Assets/css/variable";
+.logo {
+    height: 200px;
+}
+
+.bggray {
+    height: 200px;
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+}
+
+.title {
+    font-family: Montserrat;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 4px;
+    margin-right: 40px;
+    text-align: left;
+    color: #ed2012;
+}
+
+.desc {
+    font-family: Montserrat;
+    font-size: 18px;
+    margin-right: 40px;
+    line-height: 1.4;
+    text-align: left;
+    color: #888;
+}
+
+@media screen and (max-width: $mobileViewStart) {
+    .logo {
+        height: 200px;
+    }
+    .bggray {
+        height: 200px;
+        // margin: 30px;
+        display: flex;
+        border-radius: 10px;
+        margin-right: 2px;
+        background-color: #f4f4f4;
+    }
+    .title {
+        font-family: Montserrat;
+        font-size: 20px;
+        color: #ed2012;
+    }
+    .desc {
+        font-family: Montserrat;
+        font-size: 18px;
+        line-height: 1.4;
+        color: #888;
+    }
+}

@@ -90,7 +90,7 @@ class TopNav extends Component {
     return (
       <>
         <Head />
-        <div className="text-center" style={{ backgroundColor: '#f4f4f4', height: '30px' }}>
+        <div className="text-center" className="adv">
           <p onClick={() => { this.handleNavigate() }} className={`link-no-decor text-xs top-bar${this.state.mobileMenuActive ? ' zindex' : ''}`}>
             <strong style={{ color: 'black' }}>{this.state.TopContainer.strongText}</strong > {this.state.TopContainer.normalText}
           </p>

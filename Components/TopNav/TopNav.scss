@@ -12,6 +12,13 @@
     z-index: 0
 }
 
+.adv {
+    background-color: #f4f4f4;
+    min-height: 30px;
+    height: auto;
+    text-align: center;
+}
+
 .top-nav {
     padding: 20px;
     position: fixed;
@@ -19,6 +26,7 @@
     left: 0px;
     width: 100%;
     z-index: 10;
+    height: auto;
     transition: background 0.3s;
     &.scrolled {
         background-color: rgba(255, 255, 255, 0.78);
@@ -161,5 +169,11 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: $mobileViewStart) {
+    .top-nav {
+        margin-top: 20px;
     }
 }

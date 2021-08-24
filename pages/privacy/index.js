@@ -29,7 +29,7 @@ export default class PrivacyPolicy extends Component {
         </Head>
         <div className={styles.elapage}>
           <HeaderBanner data={this.props.headerData} />
-          <div className={"container-inner section-margin mt-5" + styles.infolisting}>
+          <div className={"container-inner section-margin " + styles.infolisting}>
             {this.props?.privacyData?.map((data, index) => <InfoListCard key={index} data={data} index={index + 1} />)}
           </div>
           <div className={"section-padding xlLight-grey-bg " + styles.elafooter}>
