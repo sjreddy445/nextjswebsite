@@ -34,7 +34,7 @@ export default function Home(props) {
                     <meta name="description" content="getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management. " />
                 </Head>
                 <div >
-                    <HeaderBanner data={props.HeaderData} />
+                    <HeaderBanner data={props.HeaderData} btnTitle={"SEE OUR INTEGRATIONS"} />
                 </div>
                 <div className="section-margin container-inner" style={{ marginTop: 100, marginBottom: 100 }}>
                     <div>

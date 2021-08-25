@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './banner.module.scss'
 import { Button } from 'reactstrap';
-import Scroll  from 'react-scroll'
+import Scroll from 'react-scroll'
 import { AddCmsImgBaseUrl } from '../../Utils/Utils'
 class TextSect extends Component {
   constructor(props) {
@@ -20,13 +20,13 @@ class TextSect extends Component {
     return productImg
   };
 
-  scrollToContact=()=>{
+  scrollToContact = () => {
     let scroller = Scroll.scroller
     scroller.scrollTo('contactWidget', {
       duration: 800,
       delay: 0,
-      offset: -80,
-      smooth: 'easeInOutQuart' 
+      offset: this.props.btnTitle ? -800 : -80,
+      smooth: 'easeInOutQuart'
     })
   }
 
@@ -46,7 +46,7 @@ class TextSect extends Component {
                 <h1 className="text-xxl font-weight-bold">{this.props.data?.mainTitle2}</h1>
               </>
               :
-              <img src={AddCmsImgBaseUrl(this.props.data?.titleImg.url)} alt={this.props.data?.titleImg}  className="img-fluid" />
+              <img src={AddCmsImgBaseUrl(this.props.data?.titleImg.url)} alt={this.props.data?.titleImg} className="img-fluid" />
             }
           </div>
           <div className="mt-4">
@@ -54,7 +54,7 @@ class TextSect extends Component {
           </div>
           {!this.props.data?.hideDemoBtn ?
             <div className="mt-4">
-              <Button color="primary" onClick={this.scrollToContact}>REQUEST DEMO</Button>
+              <Button color="primary" onClick={this.scrollToContact}>{this.props.btnTitle ? this.props.btnTitle : 'REQUEST DEMO'}</Button>
             </div>
             :
             ""
