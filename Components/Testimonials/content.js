@@ -11,7 +11,7 @@ class Content extends Component {
     render() {
 
         return (
-            <div className={'d-inline-flex'}>
+            <div className={'d-inline-flex '+styles.user}>
                 <Col md={{offset:0}} sm={{offset:1}} xs={{offset:0,span:10}} className={""}  >
                     <div className="p-2 ml-4">
                         <img className={styles.img} src={AddCmsImgBaseUrl(this.props.data.image.url)} alt="new" />

@@ -9,13 +9,20 @@
 }
 
 .cardheight {
-    min-height: 150px !important;
+    min-height: 250px !important;
+    max-height: 250px !important;
+    height: 100%;
     color: $textGrey1;
     padding: 20px;
     font-size: 14px;
     text-align: left;
     letter-spacing: normal;
     line-height: 1.38;
+}
+
+.user {
+    min-height: 110px !important;
+    max-height: 110px !important;
 }
 
 .slick-list {
@@ -27,7 +34,7 @@
     border: none !important;
     border-radius: 10px;
     width: 400px !important;
-    // min-height: 100px !important;
+    padding: 0;
 }
 
 .img {
