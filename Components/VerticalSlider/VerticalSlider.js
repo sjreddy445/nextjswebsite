@@ -52,7 +52,7 @@ class VerticalSlider extends Component {
     super();
     this.sliderContainer = React.createRef();
     this.animate = this.animate.bind(this);
-    // this.calculate = this.calculate.bind(this);
+    this.calculate = this.calculate.bind(this);
     this.hidden = false;
     this.isAnimating = false;
   }
@@ -137,23 +137,11 @@ class VerticalSlider extends Component {
 
 
   componentDidMount() {
-
-
     // const container = this.sliderContainer.current;
     this.currentSlide = 0;
     window.scrollTo(0, 0);
     // document.addEventListener("wheel", this.calculate, { passive: false })
-
   }
-
-
-  componentWillUnmount() {
-    // document.removeEventListener("wheel", this.calculate, { passive: false })
-  }
-
-
-
-
   render() {
     const items = this.props.data;
     const settings = {
@@ -173,6 +161,8 @@ class VerticalSlider extends Component {
       //   this.currentSlide = current + 1;
       // }
     };
+
+    
 
     return (
       <div className={`${styles.verticalslider} ${(this.props.dotColor) ? 'dot' + this.props.dotColor : ''}`} >

@@ -5,6 +5,7 @@ import { payload as integrationData } from '../Payloads/Integrations/integration
 import { payload as payloadAwards } from '../Payloads/Awards/logo';
 import { payload as sectionTitle } from '../Payloads/sectionTitle/title'
 import { payload as testimonialPayload } from '../Payloads/Testimonials/client'
+import { payload as ourProductsData } from '../Payloads/Home/OurProducts'
 import Accordion from '../Components/Accordion/Accordion';
 import Integratio from '../Components/Integrations/integration';
 import Awards from '../Components/Awards/Awards';
@@ -71,6 +72,7 @@ export async function getServerSideProps(context) {
     var integrationTitle = await sectionTitle('integrate');
     var TestimonialTitle = await sectionTitle('testimonial');
     var integratData = await integrationData();
+    var proddata = await ourProductsData();
 
     return {
         props: {
@@ -81,7 +83,8 @@ export async function getServerSideProps(context) {
             AwardTitle: AwardTitle,
             TestimonialTitle: TestimonialTitle,
             integrationData: integratData,
-            integrationTitle: integrationTitle
+            integrationTitle: integrationTitle,
+            ourProductData: proddata,
         }
     }
 }

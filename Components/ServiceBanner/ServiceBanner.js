@@ -13,7 +13,7 @@ class ServiceBanner extends Component {
               <TitleSect {...this.props} />
             </Col>
             <Col md={8} sm={12}>
-              <ListSect data={this.props.serviceList} />
+              <ListSect data={this.props.serviceList} video={this.props.video} />
             </Col>
           </Row>
         </div>

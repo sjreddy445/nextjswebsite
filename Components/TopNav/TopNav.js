@@ -129,10 +129,10 @@ class TopNav extends Component {
                     </ul>
                   </li>
                   <NavItem><NavLink activeClassName="selected" href="/blog"><a className="link-no-decor">Blog & Resources <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
+                  <NavItem><NavLink activeClassName="selected" href="/integrations"><a className="link-no-decor">Integrations <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
                   <NavItem><NavLink activeClassName="selected" href="/contact"><a className="link-no-decor">Contact <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
                   <NavItem><NavLink activeClassName="selected" href="/careers" ><a className="link-no-decor">Careers <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
                   <NavItem><NavLink activeClassName="selected" href="/about"><a className="link-no-decor">About Us <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
-                  <NavItem><NavLink activeClassName="selected" href="/integrations"><a className="link-no-decor">Integrations <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
                 </ul>
               </UncontrolledDropdown>
             </div>

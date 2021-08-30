@@ -18,7 +18,7 @@ export default class Accordion extends Component {
             {this.props?.data.map((data, i) => (
               <Col md={4} sm={4}>
                 <div className={styles.bggray} >
-                  <img src={AddCmsImgBaseUrl(data?.logo?.url)} className={styles.logo} />
+                  <img onClick={() => { data?.link ? window.open(data?.link, "_bank") : '' }} src={AddCmsImgBaseUrl(data?.logo?.url)} className={styles.logo} />
                 </div>
                 <div>
                   <p className={styles.title}>{data?.title}</p>

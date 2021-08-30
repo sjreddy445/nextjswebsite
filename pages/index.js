@@ -9,7 +9,7 @@ import { payload as sectionTitle } from '../Payloads/sectionTitle/title'
 import { payload as ProductListData } from '../Payloads/Home/ProductList'
 import { payload as ourProductsData } from '../Payloads/Home/OurProducts'
 import { payload as testimonialPayload } from '../Payloads/Testimonials/client'
-import { getServices } from '../Payloads/Home/Services';
+import { getServices, getServiceVideo } from '../Payloads/Home/Services';
 
 import ProductList from '../Components/ProductList/ProductList'
 import SingleTextImageBanner from '../Components/SingleTextImageBanner/SingleTextImageBanner';
@@ -33,7 +33,7 @@ export default function Home(props) {
     setNavColor("transparent-bg");
   });
 
-  
+  console.log("this.props",props)
   return (
     <>
       <Fade>
@@ -57,7 +57,7 @@ export default function Home(props) {
           <BrandList brandList={props.brandList} title={props.brandTitle} />
         </div>
         <div className="section-margin">
-          <ServiceBanner  serviceList={props.serviceList} title={props.ServiceTitle} />
+          <ServiceBanner video={props.serviceVideo} serviceList={props.serviceList} title={props.ServiceTitle} />
         </div>
         <div className="light-sliver-bg">
           <Awards data={props.awardsList} title={props.AwardTitle} />
@@ -94,6 +94,7 @@ export async function getServerSideProps(context) {
   var ServiceTitle = await sectionTitle('offers');
   var statsTitle = await sectionTitle('stats');
   var productsTitle = await sectionTitle('3products');
+  var serVideo = await getServiceVideo();
 
   return {
     props: {
@@ -113,6 +114,7 @@ export async function getServerSideProps(context) {
       ServiceTitle: ServiceTitle,
       statsTitle: statsTitle,
       productsTitle: productsTitle,
+      serviceVideo:serVideo
     }
   }
 }

@@ -46,7 +46,7 @@ class Recruit extends Component {
           <HeaderBanner data={this.props.headerData} />
         </div>
         <div className="section-margin dark-grey-bg">
-          <VerticalSlider dotColor="light" data={this.state.sliders} />
+          <VerticalSlider dotColor="light" data={this.props.sliders} />
         </div>
         <div className="section-margin">
           <ProductStats data={this.props.stats} />
