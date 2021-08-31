@@ -37,14 +37,6 @@
   </url>
 
   <url>
-    <loc>https://www.getedge.ntb.one/blog/[id]</loc>
-  </url>
-
-  <url>
-    <loc>https://www.getedge.ntb.one/blog/index</loc>
-  </url>
-
-  <url>
     <loc>https://www.getedge.ntb.one/careers/ApplyForm</loc>
   </url>
 
@@ -65,7 +57,11 @@
   </url>
 
   <url>
-    <loc>https://www.getedge.ntb.one/elapage/index</loc>
+    <loc>https://www.getedge.ntb.one/blog/index</loc>
+  </url>
+
+  <url>
+    <loc>https://www.getedge.ntb.one/blog/[id]</loc>
   </url>
 
   <url>
@@ -82,5 +78,9 @@
 
   <url>
     <loc>https://www.getedge.ntb.one/products/recruit</loc>
+  </url>
+
+  <url>
+    <loc>https://www.getedge.ntb.one/elapage/index</loc>
   </url>
 </urlset>

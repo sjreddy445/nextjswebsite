@@ -1,3 +1,4 @@
+import moment from 'moment';
 import { withRouter } from 'next/router';
 import React, { Component } from 'react'
 import { Modal, ModalHeader, ModalBody, Col, Row } from 'reactstrap';
@@ -22,14 +23,18 @@ class FormModal extends Component {
         return (
             <div>
 
-                <Modal isOpen={this.props.modal} toggle={this.props.toggleModal} className="info-modal" size="md"  >
-                    <ModalHeader toggle={this.props.toggleModal}></ModalHeader>
+                <Modal isOpen={this.props.modal} className="info-modal" size="md"  >
+                    <ModalHeader toggle={() => {
+                        const expiresIn = moment().add(1, 'hour').format('lll');
+                        this.props.toggleModal(expiresIn);
+                    }
+                    }></ModalHeader>
                     <ModalBody>
                         <div className="info-modal-body text-left">
                             <Row>
                                 <Col xm={12} className="text-center">
                                     <div className="info-modal-text mb-4">
-                                        <FormSect hide={true} />
+                                        <FormSect hide={true} {...this.props} />
                                     </div>
                                 </Col>
                             </Row>

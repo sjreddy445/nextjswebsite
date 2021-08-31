@@ -9,6 +9,7 @@ import { withRouter } from 'next/router';
 import YouTube from 'react-youtube'
 import { singleBlog } from '../../Payloads/Blog/BlogPost';
 import FormModal from '../../Components/Model/FormModel';
+import moment from 'moment';
 
 class BlogPost extends Component {
 
@@ -34,7 +35,8 @@ class BlogPost extends Component {
     window.removeEventListener("scroll", this.handleScroll, false);
   }
 
-  toggleModal = () => {
+  toggleModal = (expiresIn) => {
+    document.cookie = `blogModelExpires=${expiresIn};${document.cookie}`
     this.setState({ isModal: !this.state.isModal });
   };
 
@@ -50,7 +52,12 @@ class BlogPost extends Component {
 
 
   handleScroll = (e) => {
-
+    var regex = /blogModelExpires=(.[^;]*)/ig;
+    var match = regex.exec(document.cookie);
+    var value = match && match.length > 0 ? match[1] : '';
+    if (value && moment(value).isAfter(moment())) {
+      return;
+    }
     if (window.scrollY > 450) {
       this.setState({ isModal: true })
     }

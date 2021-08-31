@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 import { countries as countryList } from '../../Payloads/country'
 import { Spinner } from 'reactstrap';
 import { FORM_URL } from '../../configs/constants';
+import moment from 'moment';
 
 
 
@@ -22,10 +23,10 @@ const FormSect = (props) => {
     email: Yup.string().email("Please enter valid email").required("Email is required"),
     designation: Yup.string(),
     organization: Yup.string().required("Organization is required"),
-    message: Yup.string().required("Message is required"),
+    message: !props.hide ?Yup.string().required("Message is required") : '',
     phone: Yup.string().matches(phoneRegExp, "Phone number is not valid").required("Phone number is required"),
     country: Yup.string().required("Country is required"),
-    no_of_emp: !props.hide ? Yup.string().required("No of Employees is required") : '',
+    no_of_emp:  Yup.string().required("No of Employees is required"),
     check: Yup.string().required("check the box")
   })
   const [modal, setModal] = useState(false);
@@ -57,7 +58,13 @@ const FormSect = (props) => {
         await refRecaptcha.current.execute();
       } else {
         axios.post(FORM_URL, values).then((response) => {
-          router.replace({ pathname: '/thankyou', query: { msg: msg, isOpen: true } }, 'thankyou', { shallow: true });
+          if(!props.hide)
+          {
+            router.replace({ pathname: '/thankyou', query: { msg: msg, isOpen: true } }, 'thankyou', { shallow: true });
+          } else {
+            const expiresIn = moment().add(60, 'days').format('lll');
+            props.toggleModal(expiresIn);
+          }
           setDisable(false);
         }).catch((err) => {
           console.log("err", err)
