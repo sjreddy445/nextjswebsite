@@ -9,15 +9,15 @@
 }
 
 .cardheight {
-    min-height: 250px !important;
-    max-height: 250px !important;
-    height: 100%;
+    min-height: 150px !important;
+    max-height: 150px !important;
     color: $textGrey1;
     padding: 20px;
     font-size: 14px;
     text-align: left;
     letter-spacing: normal;
     line-height: 1.38;
+    overflow-y: scroll;
 }
 
 .user {
