@@ -13,7 +13,7 @@ class TestimonialSlider extends Component {
             arrows: false,
             speed: 500,
             slidesToShow: 2,
-            // autoplay: true,
+            autoplay: true,
             autoplaySpeed: 2000,
             slidesToScroll: 1,
             responsive: [
@@ -22,7 +22,7 @@ class TestimonialSlider extends Component {
                     settings: {
                         arrows: false,
                         dots: true,
-                        // autoplay: true,
+                        autoplay: true,
                         slidesToShow: 1,
                         slidesToScroll: 1,
                         // centerMode: true,

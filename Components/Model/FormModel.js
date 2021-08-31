@@ -22,15 +22,15 @@ class FormModal extends Component {
         console.log("sdfsd",this.props)
         return (
             <div>
-
                 <Modal isOpen={this.props.modal} className="info-modal" size="md"  >
                     <ModalHeader toggle={() => {
                         const expiresIn = moment().add(1, 'hour').format('lll');
                         this.props.toggleModal(expiresIn);
                     }
                     }></ModalHeader>
+                    <div className="mb-4"></div>
                     <ModalBody>
-                        <div className="info-modal-body text-left">
+                        <div className="info-modal-body text-left ">
                             <Row>
                                 <Col xm={12} className="text-center">
                                     <div className="info-modal-text mb-4">
