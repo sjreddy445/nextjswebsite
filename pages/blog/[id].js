@@ -8,12 +8,16 @@ import Image from 'next/image';
 import { withRouter } from 'next/router';
 import YouTube from 'react-youtube'
 import { singleBlog } from '../../Payloads/Blog/BlogPost';
+import FormModal from '../../Components/Model/FormModel';
 
 class BlogPost extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      isModal: false
+    };
+
   }
 
   componentDidMount() {
@@ -23,7 +27,16 @@ class BlogPost extends Component {
       left: 0,
       behavior: 'smooth'
     })
+    window.addEventListener("scroll", this.handleScroll, false);
   }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll, false);
+  }
+
+  toggleModal = () => {
+    this.setState({ isModal: !this.state.isModal });
+  };
 
   getCleanText = (content) => {
     let filtered = content.replace(/&nbsp;/g, ' ')
@@ -35,9 +48,19 @@ class BlogPost extends Component {
     return endpoint;
   }
 
+
+  handleScroll = (e) => {
+
+    if (window.scrollY > 450) {
+      this.setState({ isModal: true })
+    }
+  }
+
   render() {
+    console.log("this.tate", this.state.isModal)
     return (
       <div className="container-inner">
+        <FormModal modal={this.state.isModal} toggleModal={this.toggleModal} />
         {this.props.blogPost ?
           <>
             <Row className="d-flex justify-content-center">

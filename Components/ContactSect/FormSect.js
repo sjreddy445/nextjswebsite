@@ -10,22 +10,24 @@ import { useRouter } from 'next/router';
 import { countries as countryList } from '../../Payloads/country'
 import { Spinner } from 'reactstrap';
 import { FORM_URL } from '../../configs/constants';
-const phoneRegExp = /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/
-const validationSchema = Yup.object({
-  name: Yup.string().required("Name is required"),
-  email: Yup.string().email("Please enter valid email").required("Email is required"),
-  designation: Yup.string(),
-  organization: Yup.string().required("Organization is required"),
-  message: Yup.string().required("Message is required"),
-  phone: Yup.string().matches(phoneRegExp, "Phone number is not valid").required("Phone number is required"),
-  country: Yup.string().required("Country is required"),
-  no_of_emp: Yup.string().required("No of Employees is required"),
-  check: Yup.string().required("check the box")
-})
 
 
 
-const FormSect = () => {
+
+
+const FormSect = (props) => {
+  const phoneRegExp = /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/
+  const validationSchema = Yup.object({
+    name: Yup.string().required("Name is required"),
+    email: Yup.string().email("Please enter valid email").required("Email is required"),
+    designation: Yup.string(),
+    organization: Yup.string().required("Organization is required"),
+    message: Yup.string().required("Message is required"),
+    phone: Yup.string().matches(phoneRegExp, "Phone number is not valid").required("Phone number is required"),
+    country: Yup.string().required("Country is required"),
+    no_of_emp: !props.hide ? Yup.string().required("No of Employees is required") : '',
+    check: Yup.string().required("check the box")
+  })
   const [modal, setModal] = useState(false);
   const refRecaptcha = React.useRef(null)
   const [isDisable, setDisable] = useState(false);
@@ -77,7 +79,7 @@ const FormSect = () => {
     })
   }
 
-console.log("abc",errors)
+  console.log("abc", errors)
 
   return (
     <>
@@ -167,7 +169,7 @@ console.log("abc",errors)
               <span className={styles.error}>{errors.country ? errors.country : null}</span>
             </Col>
           </Row>
-          <Col md={12} className={styles.formSect}>
+          {!props.hide && <Col md={12} className={styles.formSect}>
             <textarea
               name="message"
               placeholder="Tell us how we can help you?"
@@ -175,7 +177,7 @@ console.log("abc",errors)
               value={values.message}
             />
             <span className={styles.error}>{errors.message ? errors.message : null}</span>
-          </Col>
+          </Col>}
           <Col md={12} >
             <input name="check" onChange={handleChange} type="checkbox" style={{ height: 14, width: 20 }} />
             <span className="text-md" >I accept the <span className={styles.link}><Link href="/privacy"  >Privacy Policy</Link></span>, and authorize EDGE to contact me.</span>
@@ -190,7 +192,7 @@ console.log("abc",errors)
                 as="span"
                 animation="border"
                 size="sm"
-              />}     
+              />}
             </Button>
           </Col>
           <div style={{ visibility: 'hidden' }}>
