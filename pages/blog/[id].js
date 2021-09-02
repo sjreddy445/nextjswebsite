@@ -24,7 +24,7 @@ class BlogPost extends Component {
   componentDidMount() {
     setNavColor("transparent-bg");
     window.scrollTo({
-      top: 200,
+      top: 0,
       left: 0,
       behavior: 'smooth'
     })
