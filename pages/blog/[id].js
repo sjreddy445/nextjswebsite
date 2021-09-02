@@ -28,11 +28,11 @@ class BlogPost extends Component {
       left: 0,
       behavior: 'smooth'
     })
-    window.addEventListener("scroll", this.handleScroll, false);
+    // window.addEventListener("scroll", this.handleScroll, false);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll, false);
+    // window.removeEventListener("scroll", this.handleScroll, false);
   }
 
   toggleModal = (expiresIn) => {
