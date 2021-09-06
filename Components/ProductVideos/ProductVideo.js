@@ -15,7 +15,7 @@ class ProductVideo extends Component {
                                 <TextSect {...this.props} />
                             </Col>
                             <Col md={7} sm={12} >
-                                <VideoSect />
+                                <VideoSect url={this.props.video} />
                             </Col>
 
                         </Row>

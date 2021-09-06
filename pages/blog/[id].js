@@ -1,17 +1,13 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'reactstrap';
 import BlogHeaders from '../../Components/BlogItem/BlogHeaders';
-import Api from '../../Config/Api'
 import { AddCmsImgBaseUrl } from '../../Utils/Utils'
 import { setNavColor } from '../../Components/TopNav/Utils'
-import Image from 'next/image';
 import { withRouter } from 'next/router';
-import YouTube from 'react-youtube'
 import { singleBlog, blogPopup } from '../../Payloads/Blog/BlogPost';
 import FormModal from '../../Components/Model/FormModel';
 import moment from 'moment';
 import Head from '../../Components/Metdata/head';
-
 class BlogPost extends Component {
 
   constructor(props) {
@@ -84,22 +80,15 @@ class BlogPost extends Component {
     if (value && moment(value).isAfter(moment())) {
       return;
     }
-    if (window.scrollY > 450) {
+    if (window.scrollY > 550) {
       this.setState({ isModal: true })
     }
   }
   render() {
     return (
       <div className="container-inner">
-        <Head {...this.props} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://getedge.ntb.one/blog/${this.props.blogPost.title}`} />
-        <meta property="og:title" content={this.props.blogPost.title} />
-        <meta property="og:description" content="getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management." />
-        <meta property="og:image" content={AddCmsImgBaseUrl(this.props.blogPost?.featuredImage.url)} />
-        <meta property="og:image:width" content="500" />
-        <meta property="og:image:height" content="500" />
-        {/* </Head> */}
+        <Head {...this.props}  />
+      
         <FormModal modal={this.state.isModal} toggleModal={this.toggleModal} />
         {this.props.blogPost ?
           <>

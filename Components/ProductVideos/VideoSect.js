@@ -4,17 +4,16 @@ import { YouTubeGetID } from '../../Utils/Utils'
 class VideoSect extends Component {
 
   render() {
-    let videoId = YouTubeGetID("https://www.youtube.com/watch?v=uR_FJl6WyKM")
+    console.log("props123",this.props)
+    let videoId = YouTubeGetID(this.props?.url?.url)
     const opts = {
       playerVars: { rel: 0 }
     }
     return (
       <div className="section-margin">
-        {/* <div className="d-flex justify-content-center"> */}
           <div className="embed-responsive embed-responsive-16by9">
             <YouTube videoId={videoId} opts={opts} onReady={this._onReady} className="embed-responsive-item" />
           </div>
-        {/* </diyov> */}
       </div>
     );
   }
