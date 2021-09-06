@@ -86,7 +86,7 @@ class BlogPost extends Component {
   }
   render() {
     return (
-      <div className="container-inner">
+      <div className="container-inner" >
         <Head {...this.props}  />
       
         <FormModal modal={this.state.isModal} toggleModal={this.toggleModal} />

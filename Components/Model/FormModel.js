@@ -18,8 +18,7 @@ class FormModal extends Component {
     toggleModal = () => {
         this.setState({ isOpen: false, msg: '' })
     }
-    render() {
-        console.log("sdfsd",this.props)
+    render() {        
         return (
             <div>
                 <Modal isOpen={this.props.modal} className="info-modal" size="md"  >

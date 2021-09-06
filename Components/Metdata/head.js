@@ -4,7 +4,7 @@ import parse from 'html-react-parser'
 function HeadPage(props) {
     const { blogPost} = props;
     return (
-        <Head>
+        <Head >
             <meta name="google-site-verification" content="EiX1HxWJfBm1Db6kI8be_kno-5tqucCTkb1EC3IE0iM" />
             <meta charSet="utf-8" />
             <link rel="icon" href="/favicon.ico" />

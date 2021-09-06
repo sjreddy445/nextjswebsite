@@ -39,7 +39,9 @@ function MyApp({ Component, pageProps }, props) {
       s0.parentNode.insertBefore(s1, s0);
     })();
   }, [])
-
+  var console = {};
+  console.log = function(){};
+  
   return (
     <Layout {...props}>
       <Component {...pageProps} />

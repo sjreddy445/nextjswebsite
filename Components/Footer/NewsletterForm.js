@@ -33,20 +33,6 @@ const NewsletterForm = () => {
     validationSchema,
     onSubmit(values) {
       let url = getFormattedUrl(values)
-      // console.log("success", url);
-      // axios.get(url).then((response) => {
-      // 	//console.log("success", response.data);
-      //   if (response.data.result === "success") {
-      //     toggleModal( )
-      //     callThank()
-      //   } else {
-      //     showError(response.data.msg)
-      //   }
-      //   // toggleModal()
-      // }).catch((err) => {
-
-      // })
-
       jsonp(url, { param: "c" }, (err, data) => {
         if (err) {
           showError(data.msg)
@@ -54,8 +40,6 @@ const NewsletterForm = () => {
           showError(data.msg)
         } else {
           router.replace({ pathname: '/thankyou', query: { msg: msg, isOpen: true } }, '/thankyou', { shallow: true });
-          // toggleModal()
-          // callThank()
         }
       });
     }

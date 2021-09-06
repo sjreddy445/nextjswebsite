@@ -32,8 +32,6 @@ export default function Home(props) {
   useEffect(() => {
     setNavColor("transparent-bg");
   });
-
-  console.log("this.props",props)
   return (
     <>
       <Fade>

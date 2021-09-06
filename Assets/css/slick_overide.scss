@@ -1,61 +1,51 @@
 @import "./variable";
-
 .slick-slider {
-  &.arrow-dark {
-
-    $arrowSize: 35px;
-
-    .slick-prev:before,
-    .slick-next:before {
-      display: none;
+    &.arrow-dark {
+        $arrowSize: 35px;
+        .slick-prev:before,
+        .slick-next:before {
+            display: none;
+        }
+        .slick-prev,
+        .slick-next {
+            // background-image: url("../images/chevron-forward-outline.svg");
+            background-size: contain;
+            width: $arrowSize;
+            height: 40px;
+            right: -$arrowSize;
+            background-repeat: no-repeat;
+            z-index: 2;
+            font-size: 40px;
+            color: #444;
+        }
+        .slick-prev {
+            // transform: rotate(-180deg);
+            left: -$arrowSize;
+            right: unset;
+        }
     }
-
-    .slick-prev,
-    .slick-next {
-      // background-image: url("../images/chevron-forward-outline.svg");
-      background-size: contain;
-      width: $arrowSize;
-      height: 40px;
-      right: -$arrowSize;
-      background-repeat: no-repeat;
-      z-index: 2;
-      font-size: 40px;
-      color: #444;
+    &.gap-10 {
+        .slick-slide {
+            padding: 0px 5px;
+            @media screen and (max-width: 990px) {
+                padding: 0px;
+            }
+        }
     }
-
-    .slick-prev {
-      // transform: rotate(-180deg);
-      left: -$arrowSize;
-      right: unset;
+    &.arrow-slider {
+        @media screen and (max-width: 1400px) {
+            .slick-prev {
+                left: 0px;
+            }
+            .slick-next {
+                right: 0px;
+            }
+        }
+        @media screen and (max-width: 990px) {
+            .slick-prev,
+            .slick-next {
+                display: none;
+            }
+        }
     }
-  }
-
-
-  &.gap-10 {
-    .slick-slide {
-      padding: 0px 5px;
-      @media screen and (max-width: 990px) {
-        padding: 0px;
-      }
-    }
-  }
-
-  &.arrow-slider {
-    @media screen and (max-width: 1400px) {
-      .slick-prev {
-        left: 0px;
-      }
-      .slick-next {
-        right: 0px;
-      }
-    }
-
-    @media screen and (max-width: 990px) {
-      .slick-prev,
-      .slick-next {
-        display: none;
-      }
-    }
-  }
-
 }

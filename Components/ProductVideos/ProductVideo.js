@@ -5,7 +5,6 @@ import VideoSect from './VideoSect';
 import styles from "./ProductVideos.module.scss";
 class ProductVideo extends Component {
     render() {
-        console.log("this.props", this.props.video)
         if (this.props?.video !== null) {
             return (
                 <>

@@ -15,7 +15,6 @@ class Sitemap extends Component {
   componentDidMount() {
     setNavColor("transparent-bg");
     window.scrollTo(0, 0)
-
   }
 
   render() {
@@ -26,7 +25,7 @@ class Sitemap extends Component {
           <meta name="description" content="getEdGE is a global AI-based strategic talent management career development platform/tool. Edge Networks, aim to connect the right person to the right job." />
         </Head>
         <div className="">
-          <HeaderBanner data={this.props.headerData} />
+          {/* <HeaderBanner data={this.props.headerData} /> */}
         </div>
         <div className="section-margin">
           <SitemalList />

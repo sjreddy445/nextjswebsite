@@ -77,16 +77,11 @@ const FormSect = (props) => {
     setToken(token);
     handleSubmit();
   }
-
-
-
+  
   const callThank = () => {
     axios.get("/thankyouContact.html").then((response) => {
     })
   }
-
-  console.log("abc", errors)
-
   return (
     <>
       {/* <SuccessModal modal={modal} toggleModal={toggleModal} message={message} /> */}
@@ -165,7 +160,7 @@ const FormSect = (props) => {
                 <option value="" disabled defaultValue hidden>Country</option>
                 <option value={"USA"}>{"USA"}</option>
                 <option value={"India"}>{"India"}</option>
-                <hr></hr>
+                <option disabled>{'-------------------------------------------------------'}</option>
                 {countryList?.map((data, i) => {
                   return (
                     <option key={i} value={data.name}>{data.name}</option>

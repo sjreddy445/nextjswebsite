@@ -16,7 +16,7 @@ class StoryCard extends Component {
         <div>
           <h5 className="text-weight-800">{this.props.smallTitle}</h5>
           <h4 className={"text-lg " + styles.headerText}>{this.props.title}</h4>
-          <p className="text-xs">{parse(this.props.body)}</p>
+          <span className="text-xs">{parse(this.props.body)}</span>
         </div>
         {this.props.imgUrl ?
           <div>

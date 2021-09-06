@@ -25,7 +25,6 @@ export default class Accordion extends Component {
   }
 
   render() {
-    console.log("this.props", this.props)
     return (
       <div className={styles.accordion + " container-inner"}>
         <div className={styles.head} onClick={this.toggleExpansion}>

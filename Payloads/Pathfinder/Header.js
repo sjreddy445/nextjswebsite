@@ -11,7 +11,6 @@ export const payload = () => {
 
 export const getServiceVideo = () => {
   return Api.get('service-videos/?type=pathfinder').then(result => {
-    console.log("result"), result
     if (result.status == 200) {
       if (result.data.length > 0) {
         return result.data[0];

@@ -155,11 +155,6 @@ class VerticalSlider extends Component {
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 1500,
-      // afterChange: (current, next) => {
-      //   console.log("arguments");
-      //   console.log(arguments);
-      //   this.currentSlide = current + 1;
-      // }
     };
 
     

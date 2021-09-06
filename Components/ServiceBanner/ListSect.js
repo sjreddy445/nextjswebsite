@@ -8,7 +8,6 @@ import Image from 'next/image';
 class ListSect extends Component {
   render() {
     let serviceList = this.props.data
-    console.log("this.prop",this.props)
     let videoId = YouTubeGetID(this.props?.video?.url)
     const opts  = {
       playerVars : {rel: 0}

@@ -4,7 +4,6 @@ import { YouTubeGetID } from '../../Utils/Utils'
 class VideoSect extends Component {
 
   render() {
-    console.log("props123",this.props)
     let videoId = YouTubeGetID(this.props?.url?.url)
     const opts = {
       playerVars: { rel: 0 }
