@@ -11,7 +11,7 @@ export const getServices = () => {
 }
 
 export const getServiceVideo = () => {
-  return Api.get('service-videos').then(result => {
+  return Api.get('service-videos/?type=home').then(result => {
     if (result.status == 200) {
       return result.data[0];
     }

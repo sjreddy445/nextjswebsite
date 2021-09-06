@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import HeaderBanner from '../../Components/HeaderBanner/HeaderBanner';
-import { payload as RecruitHeaderData } from '../../Payloads/Recruit/Header';
+import { payload as RecruitHeaderData, getServiceVideo } from '../../Payloads/Recruit/Header';
 import { payload as ourProductsData } from '../../Payloads/Home/OurProducts'
 import { payload as testimonialPayload } from '../../Payloads/Testimonials/client'
 import { payload as sliderData } from '../../Payloads/Recruit/Slider'
@@ -55,7 +55,7 @@ class Recruit extends Component {
           <ProductScreenShot data={this.props.scrrenshots} title={this.props.scrrenshotSecTitle} />
         </div>
         <div className="section-margin" >
-          <ProductVideo title={this.props.videoSectTitle} />
+          <ProductVideo title={this.props.videoSectTitle} video={this.props.serviceVideo} />
         </div>
         <div className="light-sliver-bg">
           <Awards data={this.props.awardsList} title={this.props.AwardTitle} />
@@ -89,6 +89,7 @@ export async function getServerSideProps(context) {
   var TestimonialTitle = await sectionTitle('testimonial');
   var scrrenshotSecTitle = await sectionTitle('recruitSS');
   var videoSectTitle = await sectionTitle('recruitVid');
+  var serviceVideo = await getServiceVideo();
   return {
     props: {
       headerData: headerData,
@@ -102,7 +103,8 @@ export async function getServerSideProps(context) {
       AwardTitle: AwardTitle,
       TestimonialTitle: TestimonialTitle,
       scrrenshotSecTitle: scrrenshotSecTitle,
-      videoSectTitle: videoSectTitle
+      videoSectTitle: videoSectTitle,
+      serviceVideo: serviceVideo
     }
   }
 }

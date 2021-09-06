@@ -33,3 +33,15 @@ export const singleBlog = (id) => {
         return {};
     })
 }
+
+
+export const blogPopup = () => {
+    return Api.get(`blog-popups`).then(result => {
+        if (result.status == 200) {
+            return result.data[0];
+        }
+        return {};
+    })
+}
+
+

@@ -7,9 +7,10 @@ import { setNavColor } from '../../Components/TopNav/Utils'
 import Image from 'next/image';
 import { withRouter } from 'next/router';
 import YouTube from 'react-youtube'
-import { singleBlog } from '../../Payloads/Blog/BlogPost';
+import { singleBlog, blogPopup } from '../../Payloads/Blog/BlogPost';
 import FormModal from '../../Components/Model/FormModel';
 import moment from 'moment';
+import Head from 'next/head';
 
 class BlogPost extends Component {
 
@@ -28,11 +29,23 @@ class BlogPost extends Component {
       left: 0,
       behavior: 'smooth'
     })
-    // window.addEventListener("scroll", this.handleScroll, false);
+    const { setting } = this.props;
+    if (setting?.onScroll) {
+      window.addEventListener("scroll", this.handleScroll, false);
+    }
+    else if (setting?.timeBound) {
+      this.onTimeBound(setting.seconds)
+    }
+    else {
+
+    }
   }
 
   componentWillUnmount() {
-    // window.removeEventListener("scroll", this.handleScroll, false);
+    const { setting } = this.props;
+    if (setting?.onScroll) {
+      window.removeEventListener("scroll", this.handleScroll, false);
+    }
   }
 
   toggleModal = (expiresIn) => {
@@ -50,6 +63,19 @@ class BlogPost extends Component {
     return endpoint;
   }
 
+  onTimeBound = (no) => {
+    var regex = /blogModelExpires=(.[^;]*)/ig;
+    var match = regex.exec(document.cookie);
+    var value = match && match.length > 0 ? match[1] : '';
+    if (value && moment(value).isAfter(moment())) {
+      return;
+    }
+    setTimeout(() => {
+      this.setState({ isModal: true })
+    }, no * 1000)
+  }
+
+
 
   handleScroll = (e) => {
     var regex = /blogModelExpires=(.[^;]*)/ig;
@@ -62,11 +88,18 @@ class BlogPost extends Component {
       this.setState({ isModal: true })
     }
   }
-
   render() {
-    console.log("this.tate", this.state.isModal)
     return (
       <div className="container-inner">
+        <Head>
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content={`https://getedge.ntb.one/blog/${this.props.blogPost.title}`} />
+          <meta property="og:title" content={this.props.blogPost.title} />
+          <meta property="og:description" content="getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management." />
+          <meta property="og:image" content={AddCmsImgBaseUrl(this.props.blogPost?.featuredImage.url)} />
+          <meta property="og:image:width" content="500" />
+          <meta property="og:image:height" content="500" />
+        </Head>
         <FormModal modal={this.state.isModal} toggleModal={this.toggleModal} />
         {this.props.blogPost ?
           <>
@@ -108,8 +141,12 @@ class BlogPost extends Component {
 }
 export async function getServerSideProps({ query }) {
   var data = await singleBlog(query.id)
+  var settings = await blogPopup();
   return {
-    props: { blogPost: data },
+    props: {
+      blogPost: data,
+      setting: settings
+    },
   };
 }
 export default withRouter(BlogPost)
