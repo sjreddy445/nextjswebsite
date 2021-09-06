@@ -13,10 +13,6 @@ function HeadPage(props) {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <script src="https://www.google.com/recaptcha/api.js" async defer></script>
             <meta name="theme-color" content="#000000" />
-            {/* <title>getEdGE AI: HR Strategic Workforce Talent Management Simplified</title> */}
-            {/* <meta name="title" content="getEdGE AI: HR Strategic Workforce Talent Management Simplified" /> */}
-            {/* <meta name="description" content="getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management." /> */}
-            {/* <!-- Open Graph / Facebook --> */}
             <meta property="og:type" content="website" />
             <meta property="og:url" content={blogPost ? `https://getedge.ntb.one/blog/${blogPost.title}` : "https://getedge.ntb.one/"} />
             <meta property="og:title" content={blogPost ? blogPost.title : "getEdGE AI: HR Strategic Workforce Talent Management Simplified"} />

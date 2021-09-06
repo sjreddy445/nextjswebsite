@@ -89,7 +89,7 @@ class TopNav extends Component {
   render() {
     return (
       <>
-        <Head />
+        {/* <Head /> */}
         <div className="text-center" className="adv">
           <p onClick={() => { this.handleNavigate() }} className={`link-no-decor text-xs top-bar${this.state.mobileMenuActive ? ' zindex' : ''}`}>
             <strong style={{ color: 'black' }}>{this.state.TopContainer.strongText}</strong > {this.state.TopContainer.normalText}
