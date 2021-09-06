@@ -19,6 +19,8 @@ export const DashToUpper = (str) => {
 
 export const AddCmsImgBaseUrl = (img) => {
   // const baseUrl  = "https://api.getedge.ai"
-  const baseUrl = "https://api.getedge.ai"
-  return baseUrl + img
+  if (img) {
+    const baseUrl = "https://api.getedge.ai"
+    return baseUrl + img
+  }
 }
