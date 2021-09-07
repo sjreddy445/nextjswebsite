@@ -142,17 +142,17 @@ class Footer extends Component {
               </div>
               <div className="text-grey1 box gartner-title">
                 <h3 className="gartner">
-                  {ReactHtmlParser(this.state?.data.description2)}
+                  {ReactHtmlParser(this.state?.data?.description2)}
                 </h3>
-                <h5 className="text-xs text-white">{this.state?.data.date}</h5>
+                <h5 className="text-xs text-white">{this.state?.data?.date}</h5>
               </div>
-              <p className="text-xxs text-grey1 box text-line-height-1-6 gartner-details">{this.state?.data.description3}</p>
+              <p className="text-xxs text-grey1 box text-line-height-1-6 gartner-details">{this.state?.data?.description3}</p>
             </div>
 
             <hr></hr>
 
             <div className="container-inner py-2">
-              <p className="text-right text-grey1 text-xxs sm-text-left m-0 py-2">{year} {this.state?.data.description4}|<NavLink href="/privacy" className="link-no-decor"> Privacy Policy</NavLink> | <span onClick={this.toggleCreditModal} className="pointer">Credits</span></p>
+              <p className="text-right text-grey1 text-xxs sm-text-left m-0 py-2">{year} {this.state?.data?.description4}|<NavLink href="/privacy" className="link-no-decor"> Privacy Policy</NavLink> | <span onClick={this.toggleCreditModal} className="pointer">Credits</span></p>
             </div>
           </div>
         </div>
