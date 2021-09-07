@@ -13,13 +13,7 @@ class SuccessModal extends Component {
       msg: ''
     }
   }
-  componentWillMount() {
-    // const { location } = this.props;
-    // if (location && location.data) {
-    //   this.setState({ isOpen: location.data.isOpen, msg: location.data.message })
-    // }
-
-  }
+ 
   toggleModal = () => {
     this.setState({ isOpen: false, msg: '' })
     this.props.router.push("/", "", { shallow: true })

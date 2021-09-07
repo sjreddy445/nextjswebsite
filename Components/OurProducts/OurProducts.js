@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import RatioCard from "../../Components/Cards/RatioCard/dynamicRatioCard";
 import styles from '../Cards/RatioCard/ratioCard.module.scss';
 
-const SlideBtn = ({ arrow, direction, ...props }) => (
+const SlideBtn = ({currentSlide, slideCount, arrow, direction, ...props }) => (
   <button {...props} className={`slick-arrow slick-${direction}`}><i className={`icon-chevron-${arrow}`}></i></button>
 )
 

@@ -10,7 +10,7 @@ export default class BlogVideoItem extends Component {
   }
 
 
-  componentWillMount() {
+  componentDidMount() {
 
     Api.get(this.props.resourceUrl, { params: { _limit: 6, _sort: "created_at:desc" } }).then(({ data: dataItems }) => {
       this.setState({

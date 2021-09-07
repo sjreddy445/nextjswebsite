@@ -7,13 +7,7 @@ export default class BlogVideo extends Component {
     super();
     this.state = {}
   }
-
-  componentWillMount() {
-
-  }
-
-
-
+  
   render() {
     const opts = {
       height: '390',

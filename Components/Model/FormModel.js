@@ -13,8 +13,6 @@ class FormModal extends Component {
             msg: ''
         }
     }
-    componentWillMount() {
-    }
     toggleModal = () => {
         this.setState({ isOpen: false, msg: '' })
     }
