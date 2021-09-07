@@ -21,8 +21,8 @@ class FormModal extends Component {
             <div>
                 <Modal isOpen={this.props.modal} className="info-modal" size="md"  >
                     <ModalHeader className="ml-3" toggle={() => {
-                        const expiresIn = moment().add(1, 'hour').format('lll');
-                        this.props.toggleModal(expiresIn);
+                        const expiresIn = moment().add(1, 'hour');
+                        this.props.toggleModal(expiresIn.toDate());
                     }
                     }>Let us help you with your Talent Decisions</ModalHeader>
                     <div className="mb-4 "></div>

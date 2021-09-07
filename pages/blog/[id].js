@@ -19,6 +19,7 @@ class BlogPost extends Component {
   }
 
   componentDidMount() {
+
     setNavColor("transparent-bg");
     window.scrollTo({
       top: 0,
@@ -26,26 +27,34 @@ class BlogPost extends Component {
       behavior: 'smooth'
     })
     const { setting } = this.props;
+    document.documentElement.addEventListener("mouseenter", () => { }, false);
+
     if (setting?.onScroll) {
       window.addEventListener("scroll", this.handleScroll, false);
+      return
     }
-    else if (setting?.timeBound) {
+    if (setting?.timeBound) {
       this.onTimeBound(setting.seconds)
+      return
     }
-    else {
+    if (setting.userLeaving) {
+      document.documentElement.addEventListener("mouseleave", () => this.onuserLeaving(setting.userLeaving), false);
+      return
+    }
 
-    }
   }
 
   componentWillUnmount() {
+
     const { setting } = this.props;
     if (setting?.onScroll) {
       window.removeEventListener("scroll", this.handleScroll, false);
     }
   }
 
+
   toggleModal = (expiresIn) => {
-    document.cookie = `blogModelExpires=${expiresIn};${document.cookie}`
+    document.cookie = `blogModelExpires=${expiresIn.toUTCString()};${document.cookie}`
     this.setState({ isModal: !this.state.isModal });
   };
 
@@ -71,7 +80,15 @@ class BlogPost extends Component {
     }, no * 1000)
   }
 
-
+  onuserLeaving = () => {
+    var regex = /blogModelExpires=(.[^;]*)/ig;
+    var match = regex.exec(document.cookie);
+    var value = match && match.length > 0 ? match[1] : '';
+    if (value && moment(value).isAfter(moment())) {
+      return;
+    }
+    this.setState({ isModal: true })
+  }
 
   handleScroll = (e) => {
     var regex = /blogModelExpires=(.[^;]*)/ig;
@@ -84,11 +101,12 @@ class BlogPost extends Component {
       this.setState({ isModal: true })
     }
   }
+
   render() {
     return (
       <div className="container-inner" >
-        <Head {...this.props}  />
-      
+        <Head {...this.props} />
+
         <FormModal modal={this.state.isModal} toggleModal={this.toggleModal} />
         {this.props.blogPost ?
           <>

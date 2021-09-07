@@ -61,8 +61,8 @@ const FormSect = (props) => {
           if (!props.hide) {
             router.replace({ pathname: '/thankyou', query: { msg: msg, isOpen: true } }, 'thankyou', { shallow: true });
           } else {
-            const expiresIn = moment().add(60, 'days').format('lll');
-            props.toggleModal(expiresIn);
+            const expiresIn = moment().add(60, 'days');
+            props.toggleModal(expiresIn.toDate());
           }
           setDisable(false);
         }).catch((err) => {
