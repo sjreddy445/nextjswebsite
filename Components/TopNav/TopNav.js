@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavLink from 'next/link';
-import { withRouter, Router } from 'next/router'
+import { withRouter } from 'next/router'
 import { event } from "../../Utils/Utils";
 // import "./TopNav.scss";
 import { DropdownItem, NavItem, UncontrolledDropdown } from 'reactstrap';

@@ -1,25 +1,15 @@
 import React, { Component } from 'react';
 import { AddCmsImgBaseUrl } from '../../../Utils/Utils';
 import styles from './ratioCard.module.scss';
+import { withRouter } from 'next/router'
 class RatioCard extends Component {
 
-  state = {
-    redirectTo: ""
-  }
-
   handleClick = (url) => {
-    this.setState({
-      redirectTo: "/products/" + url
-    })
-    // return <Redirect to={{pathname:`/${url}`}} />
-    // this.props.history.push("/"+url)
+    this.props.router.push("/products/"+url)
   }
 
   render() {
     let { data } = this.props
-    // if (this.state.redirectTo) {
-    //   return <Router to={{pathname: this.state.redirectTo}} />
-    // }
     return (
       <div className={styles.ratiocard + ` pointer ${this.props.ratio}`} style={{ backgroundImage: `url('${AddCmsImgBaseUrl(data.imgUrl.url)}')`, backgroundColor: data.bgColor }} onClick={() => this.handleClick(data.pageUrl)}>
         <div className={styles.contentbox}>
@@ -37,4 +27,4 @@ class RatioCard extends Component {
   }
 }
 
-export default RatioCard;
+export default withRouter(RatioCard);
