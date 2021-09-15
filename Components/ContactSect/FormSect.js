@@ -55,8 +55,10 @@ const FormSect = (props) => {
     async onSubmit(values) {
       setDisable(true);
       if (!token) {
+        console.log("no token");
         await refRecaptcha.current.execute();
       } else {
+        console.log("yes token", token);
         axios.post(FORM_URL, values).then((response) => {
           if (!props.hide) {
             router.replace({ pathname: '/thankyou', query: { msg: msg, isOpen: true } }, 'thankyou', { shallow: true });
@@ -66,7 +68,7 @@ const FormSect = (props) => {
           }
           setDisable(false);
         }).catch((err) => {
-          console.log("err", err)
+          console.log("error is", err)
           setDisable(false);
         })
       }
@@ -74,6 +76,7 @@ const FormSect = (props) => {
   })
 
   const onResolve = (token) => {
+    console.log("token", token);
     setToken(token);
     handleSubmit();
   }
