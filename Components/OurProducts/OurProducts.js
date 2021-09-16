@@ -4,7 +4,7 @@ import RatioCard from "../../Components/Cards/RatioCard/dynamicRatioCard";
 import styles from '../Cards/RatioCard/ratioCard.module.scss';
 
 const SlideBtn = ({currentSlide, slideCount, arrow, direction, ...props }) => (
-  <button {...props} className={`slick-arrow slick-${direction}`}><i className={`icon-chevron-${arrow}`}></i></button>
+  <button {...props} ><i className={`icon-chevron-${arrow}`}></i></button>
 )
 
 class OurProducts extends Component {

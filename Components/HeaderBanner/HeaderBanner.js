@@ -45,8 +45,8 @@ class HeaderBanner extends Component {
                     loader={() => this.myLoader(this.props.data?.bgImg?.url)}
                     src={AddCmsImgBaseUrl(this.props.data?.bgImg?.url)}
                     alt={this.props.data?.imgAlt}
-                    width={600}
-                    height={520}
+                    width={735}
+                    height={624}
                     layout="fixed"
                   />
                   :
