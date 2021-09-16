@@ -4,6 +4,8 @@ import ReactHtmlParser from 'react-html-parser';
 function HeadPage(props) {
     const { blogPost} = props;
     let title=blogPost?.title?.replace(/\s/g, "-")
+    const strippedString = blogPost?.content?.replace(/(<([^>]+)>)/gi, "");
+    console.log("Stripped String",strippedString)
     return (
         <Head >
             <meta name="google-site-verification" content="EiX1HxWJfBm1Db6kI8be_kno-5tqucCTkb1EC3IE0iM" />
@@ -20,7 +22,7 @@ function HeadPage(props) {
             {blogPost && <title>{`getEDGE Blog : ${blogPost?.title}`}</title>}
             <meta property="og:url" content={blogPost ? `https://getedge.ntb.one/blog/${title}` : "https://getedge.ntb.one/"} />
             <meta property="og:title" content={blogPost ? blogPost?.title : "getEdGE AI: HR Strategic Workforce Talent Management Simplified"} />
-            <meta property="og:description" content={blogPost ? blogPost?.content : "getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management."} />
+            <meta property="og:description" content={blogPost ? strippedString : "getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management."} />
             <meta property="og:image" content={blogPost ? AddCmsImgBaseUrl(blogPost?.featuredImage?.url) : "https://getedge.ntb.one/images/Home/product1.jpg"} />
             <meta property="og:image:width" content="500" />
             <meta property="og:image:height" content="500" />
@@ -28,7 +30,7 @@ function HeadPage(props) {
             <meta property="twitter:card" content="summary_large_image" />
             <meta property="twitter:url" content={blogPost ? `https://getedge.ntb.one/blog/${title}` : "https://getedge.ntb.one/"} />
             <meta property="twitter:title" content={blogPost ? blogPost?.title : "getEdGE AI: HR Strategic Workforce Talent Management Simplified"} />
-            <meta property="twitter:description" content={blogPost && blogPost?.content ? blogPost?.content : "getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management."} />
+            <meta property="twitter:description" content={blogPost ? strippedString : "getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management."} />
             <meta property="twitter:image" content={blogPost ? AddCmsImgBaseUrl(blogPost?.featuredImage?.url) : "https://getedge.ntb.one/images/Home/product1.jpg"} />
             <meta property="twitter:image:width" content="550" />
             <meta property="twitter:image:height" content="550" />
