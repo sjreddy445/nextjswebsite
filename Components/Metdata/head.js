@@ -20,6 +20,7 @@ function HeadPage(props) {
             <meta name="theme-color" content="#000000" />
             <meta property="og:type" content="website" />
             {blogPost && <title>{`getEDGE Blog : ${blogPost?.title}`}</title>}
+            <meta property="fb:app_id" content="461794585182726" />
             <meta property="og:url" content={blogPost ? `https://getedge.ntb.one/blog/${title}` : "https://getedge.ntb.one/"} />
             <meta property="og:title" content={blogPost ? blogPost?.title : "getEdGE AI: HR Strategic Workforce Talent Management Simplified"} />
             <meta property="og:description" content={blogPost ? blogPost?.content?.replace(/(<([^>]+)>)/gi, "") : "getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management."} />
