@@ -60,7 +60,7 @@ export default function Home(props) {
         <div className="light-sliver-bg">
           <Awards data={props.awardsList} title={props.AwardTitle} />
         </div>
-        <div className="section-margin" >
+        <div className="section-margin" > 
           <Contact title={props.contactTitle} />
         </div>
         <div className="section-margin light-sliver-bg">
