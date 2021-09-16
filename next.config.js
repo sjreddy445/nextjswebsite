@@ -20,4 +20,10 @@ module.exports = {
     return config;
   }
 };
-
+module.exports = {
+  images: {
+    minimumCacheTTL: 60,
+    loader: 'imgix',
+    path: 'api.getedge.ai',
+  }
+}
