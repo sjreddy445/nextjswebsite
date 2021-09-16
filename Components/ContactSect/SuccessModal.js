@@ -19,16 +19,9 @@ class SuccessModal extends Component {
     this.props.router.push("/", "", { shallow: true })
   }
   render() {
-    if (!this.state.isOpen || !this.state.msg) {
-      // return (
-      //   <Redirect to="/" />
-      // )
-    }
     return (
       <div>
         <Home />
-        {/* <Modal isOpen={this.props.modal} toggle={this.props.toggleModal} className="info-modal" size="lg" >
-          <ModalHeader toggle={()=>this.props.toggleModal()}></ModalHeader> */}
         <Modal isOpen={this.state.isOpen} toggle={() => this.toggleModal()} className="info-modal" size="lg" >
           <ModalHeader toggle={() => this.toggleModal()}></ModalHeader>
           <ModalBody>
@@ -54,9 +47,7 @@ class SuccessModal extends Component {
                 </Col>
               </Row>
             </div>
-
           </ModalBody>
-
         </Modal>
       </div>
     )
