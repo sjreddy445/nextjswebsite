@@ -27,7 +27,7 @@ function HeadPage(props) {
             <meta property="og:image" content={blogPost ? AddCmsImgBaseUrl(blogPost?.featuredImage?.url) : "https://getedge.ntb.one/images/Home/product1.jpg"} />
             <meta property="og:image:width" content="500" />
             <meta property="og:image:height" content="500" />
-            <meta property="og:description" content={strippedString ? strippedString : "getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management."} />
+            <meta property="og:description" content={blogPost ? blogPost?.content?.replace(/(<([^>]+)>)/gi, "") : "getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management."} />
             {/* <!-- Twitter --> */}
             <meta property="twitter:card" content="summary_large_image" />
             <meta property="twitter:url" content={blogPost ? `https://getedge.ntb.one/blog/${title}` : "https://getedge.ntb.one/"} />
