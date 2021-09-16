@@ -106,7 +106,6 @@ class BlogPost extends Component {
     return (
       <div className="container-inner" >
         <Head {...this.props} />
-
         <FormModal modal={this.state.isModal} toggleModal={this.toggleModal} />
         {this.props.blogPost ?
           <>
@@ -147,7 +146,7 @@ class BlogPost extends Component {
   }
 }
 export async function getServerSideProps({ query }) {
-  var data = await singleBlog(query.id)
+  var data = await singleBlog(query?.id?.toLowerCase())
   var settings = await blogPopup();
   return {
     props: {
@@ -156,4 +155,5 @@ export async function getServerSideProps({ query }) {
     },
   };
 }
+
 export default withRouter(BlogPost)
