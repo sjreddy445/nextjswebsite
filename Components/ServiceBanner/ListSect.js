@@ -29,8 +29,6 @@ class ListSect extends Component {
               <YouTube videoId={videoId} opts={opts} onReady={this._onReady} className="embed-responsive-item"/>
             </div>
           </div>
-          
-          {/* <imgsrc="https://picsum.photos/844/339" alt="" className="img-fluid img-round-top" /> */}
         </div>
       </div>
     );
