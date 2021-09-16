@@ -5,7 +5,6 @@ function HeadPage(props) {
     const { blogPost} = props;
     let title=blogPost?.title?.replace(/\s/g, "-")
     const strippedString = blogPost?.content?.replace(/(<([^>]+)>)/gi, "");
-    console.log("Stripped String",strippedString)
     return (
         <Head >
             <meta name="google-site-verification" content="EiX1HxWJfBm1Db6kI8be_kno-5tqucCTkb1EC3IE0iM" />

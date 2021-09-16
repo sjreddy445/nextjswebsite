@@ -54,9 +54,9 @@ export default function Home(props) {
         <div className="section-margin">
           <BrandList brandList={props.brandList} title={props.brandTitle} />
         </div>
-        <div className="section-margin">
+        {/* <div className="section-margin">
           <ServiceBanner video={props.serviceVideo} serviceList={props.serviceList} title={props.ServiceTitle} />
-        </div>
+        </div> */}
         <div className="light-sliver-bg">
           <Awards data={props.awardsList} title={props.AwardTitle} />
         </div>
