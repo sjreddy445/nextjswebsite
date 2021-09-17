@@ -10,7 +10,7 @@ class BrandList extends Component {
           <TextSect {...this.props} />
         </Col>
         <Col lg={8} md={12} className="p-0">
-          <ImageSect data={this.props.brandList} />
+          <ImageSect data={this.props.brandList} /> 
         </Col>
       </div>
     );
