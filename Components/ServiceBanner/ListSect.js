@@ -3,15 +3,21 @@ import { Col, Row } from 'reactstrap';
 import dynamic from "next/dynamic";
 import styles from './ServiceBanner.module.scss'
 import {YouTubeGetID} from '../../Utils/Utils'
-const YouTube = dynamic(() => import("react-youtube"), {
-  ssr: false
-});
-
-
+import YouTube from"react-youtube"
+  
 class ListSect extends Component {
   render() {
     let serviceList = this.props.data
-    let videoId = YouTubeGetID(this.props?.video?.url)
+    // let videoId = YouTubeGetID(this.props?.video?.url)
+    let videoId
+    if (this.props?.video?.url) {
+      videoId = YouTubeGetID(this.props.data?.youtube)
+    }
+    else{
+      return(
+        <p>Loading....</p>
+      )
+    }
     const opts  = {
       playerVars : {rel: 0}
     }
