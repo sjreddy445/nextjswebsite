@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Col, Row } from 'reactstrap';
+import dynamic from "next/dynamic";
 import styles from './ServiceBanner.module.scss'
 import {YouTubeGetID} from '../../Utils/Utils'
 const YouTube = dynamic(() => import("react-youtube"), {

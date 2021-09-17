@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import dynamic from "next/dynamic";
 import {AddCmsImgBaseUrl, YouTubeGetID} from '../../Utils/Utils'
 const YouTube = dynamic(() => import("react-youtube"), {
   ssr: false
