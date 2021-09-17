@@ -126,10 +126,10 @@ class Footer extends Component {
                   </ul>
                 </div>
                 <div className="social-icons">
-                  <a href={this.state?.socialLinks?.facebook} rel="noopener noreferrer" target="_blank" className="link-no-decor"><i className="icon-facebook icon"></i></a>
-                  <a href={this.state?.socialLinks?.twitter} rel="noopener noreferrer" className="link-no-decor" target="_blank"><i className="icon-twitter icon"></i></a>
-                  <a href={this.state?.socialLinks?.linkedIn}rel="noopener noreferrer" className="link-no-decor" target="_blank"><i className="icon-linkedin icon"></i></a>
-                  <a href={this.state?.socialLinks?.youtube} rel="noopener noreferrer" className="link-no-decor" target="_blank"><i className="icon-youtube icon"></i></a>
+                  <a href={this.state?.socialLinks?.facebook} aria-label="facebook" rel="noopener noreferrer" target="_blank" className="link-no-decor"><i className="icon-facebook icon"></i></a>
+                  <a href={this.state?.socialLinks?.twitter} aria-label="twitter" rel="noopener noreferrer" className="link-no-decor" target="_blank"><i className="icon-twitter icon"></i></a>
+                  <a href={this.state?.socialLinks?.linkedIn} aria-label="linkedIn"rel="noopener noreferrer" className="link-no-decor" target="_blank"><i className="icon-linkedin icon"></i></a>
+                  <a href={this.state?.socialLinks?.youtube} aria-label="youtube" rel="noopener noreferrer" className="link-no-decor" target="_blank"><i className="icon-youtube icon"></i></a>
                 </div>
 
               </div>
@@ -144,7 +144,7 @@ class Footer extends Component {
                 <h3 className="gartner">
                   {ReactHtmlParser(this.state?.data?.description2)}
                 </h3>
-                <h5 className="text-xs text-white">{this.state?.data?.date}</h5>
+                <p className="text-xs text-white">{this.state?.data?.date}</p>
               </div>
               <p className="text-xxs text-grey1 box text-line-height-1-6 gartner-details">{this.state?.data?.description3}</p>
             </div>

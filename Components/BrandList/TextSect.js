@@ -5,12 +5,12 @@ class TextSect extends Component {
     let {data}= this.props
     return (
       <div>
-        <h4 className="text-sm mb-4 mt-2 font-weight-bold">
+        <p className="text-sm mb-4 mt-2 font-weight-bold">
         {this.props?.title?.description}
-        </h4>
-        <h2 className="text-xl font-weight-bold">
+        </p>
+        <p className="text-xl font-weight-bold">
         {this.props?.title?.description}
-        </h2>
+        </p>
         <div className="text-sm mt-4 text-brand">
          {/* <b><a href="#" className="text-brand">VIEW CASE STUDIES</a></b> */}
         </div>

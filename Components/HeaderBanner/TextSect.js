@@ -50,7 +50,7 @@ class TextSect extends Component {
             }
           </div>
           <div className="mt-4">
-            <h4 className="text-lg text-line-height-1-6 text-weight-400">{this.props.data?.subtitle}</h4>
+            <p className="text-lg text-line-height-1-6 text-weight-400">{this.props.data?.subtitle}</p>
           </div>
           {!this.props.data?.hideDemoBtn ?
             <div className="mt-4">

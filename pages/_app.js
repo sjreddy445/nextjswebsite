@@ -30,16 +30,19 @@ function MyApp({ Component, pageProps }, props) {
       localStorage.setItem("pageTitle", JSON.stringify(data));
     })
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/607e9262f7ce1827093c1f0f/1f3n6nkhl';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      s0.parentNode.insertBefore(s1, s0);
-    })();
+    window.addEventListener('load',
+      function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/607e9262f7ce1827093c1f0f/1f3n6nkhl';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+      }
+    );
   }, [])
-  
+
   return (
     <Layout {...props}>
       <Component {...pageProps} />
@@ -47,8 +50,10 @@ function MyApp({ Component, pageProps }, props) {
         location="bottom"
         buttonText="I Accept"
         cookieName="myAwesomeCookieName2"
+        SameSite="none"
+        cookieSecurity={true}
         style={{ background: "#2B373B", margin: "0px" }}
-        buttonStyle={{ color: "#4e503b", fontSize: "10px", margin: "10px" ,marginRight: 100}}
+        buttonStyle={{ color: "#4e503b", fontSize: "10px", margin: "10px", marginRight: 100 }}
         expires={150}
       >
         <span style={{ fontSize: "10px" }}>We use cookies to enhance the user experience.{" "}</span>

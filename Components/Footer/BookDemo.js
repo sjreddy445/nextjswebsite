@@ -25,8 +25,8 @@ const BookDemo = (props) => {
     };
     return (
         <form className="form" onSubmit={handleNavigate} >
-            <button className="btn" >
-                <strong>BOOK A DEMO</strong></button>
+            <button className="btn" style={{fontWeight:700}} >
+                BOOK A DEMO</button>
         </form>
     );
 }

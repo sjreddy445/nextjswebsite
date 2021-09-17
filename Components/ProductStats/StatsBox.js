@@ -11,7 +11,7 @@ export default class StatsBox extends Component {
             <span>{data.number}</span>
           </div>
           <div className="text" >
-            <h3 className={styles.text + " text-lg"}>{data.text}</h3>
+            <p className={styles.text + " text-lg"}>{data.text}</p>
           </div>
         </div>
     )

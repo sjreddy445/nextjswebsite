@@ -183,8 +183,8 @@ const FormSect = (props) => {
             <span className={styles.error}>{errors.message ? errors.message : null}</span>
           </Col>}
           <Col md={12} >
-            <input name="check" onChange={handleChange} type="checkbox" style={{ height: 14, width: 20 }} />
-            <span className="text-md" >I accept the <span className={styles.link}><Link href="/privacy"  >Privacy Policy</Link></span>, and authorize EDGE to contact me.</span>
+            <input id="check" name="check" onChange={handleChange} type="checkbox" style={{ height: 14, width: 20 }} />
+            <label htmlFor="check" className="text-md" >I accept the <span className={styles.link}><Link href="/privacy"  >Privacy Policy</Link></span>, and authorize EDGE to contact me.</label>
             <span className={styles.error}>{errors.check ? errors.check : null}</span>
           </Col>
 

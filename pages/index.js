@@ -1,5 +1,39 @@
 import React, { useEffect } from 'react'
-import HeaderBanner from '../Components/HeaderBanner/HeaderBanner'
+import dynamic from "next/dynamic";
+
+// import HeaderBanner from '../Components/HeaderBanner/HeaderBanner'
+const HeaderBanner = dynamic(() => import("../Components/HeaderBanner/HeaderBanner"), {
+  ssr: true
+});
+const ProductList = dynamic(() => import("../Components/ProductList/ProductList"), {
+  ssr: true
+});
+const SingleTextImageBanner = dynamic(() => import("../Components/SingleTextImageBanner/SingleTextImageBanner"), {
+  ssr: true
+});
+
+const HomeStats = dynamic(() => import('../Components/HomeStats/HomeStats'), {
+  ssr: true
+});
+const BrandList = dynamic(() => import('../Components/BrandList/BrandList'), {
+  ssr: true
+});
+const ServiceBanner = dynamic(() => import('../Components/ServiceBanner/ServiceBanner'), {
+  ssr: true
+});
+const Awards = dynamic(() => import('../Components/Awards/Awards'), {
+  ssr: true
+});
+const Contact = dynamic(() => import('../Components/ContactSect/Contact'), {
+  ssr: true
+});
+const Testimonial = dynamic(() => import('../Components/Testimonials/Testimonials'), {
+  ssr: true
+});
+const OurProducts = dynamic(() => import('../Components/OurProducts/OurProducts'), {
+  ssr: true
+});
+
 import { payload as HomeHeaderData } from '../Payloads/Home/Header.js'
 import { payload as SecretData } from '../Payloads/Home/Secret'
 import { getBrands } from '../Payloads/Home/BrandList'
@@ -10,16 +44,6 @@ import { payload as ProductListData } from '../Payloads/Home/ProductList'
 import { payload as ourProductsData } from '../Payloads/Home/OurProducts'
 import { payload as testimonialPayload } from '../Payloads/Testimonials/client'
 import { getServices, getServiceVideo } from '../Payloads/Home/Services';
-
-import ProductList from '../Components/ProductList/ProductList'
-import SingleTextImageBanner from '../Components/SingleTextImageBanner/SingleTextImageBanner';
-import HomeStats from '../Components/HomeStats/HomeStats';
-import BrandList from '../Components/BrandList/BrandList';
-import ServiceBanner from '../Components/ServiceBanner/ServiceBanner';
-import Awards from '../Components/Awards/Awards';
-import Contact from '../Components/ContactSect/Contact';
-import Testimonial from '../Components/Testimonials/Testimonials';
-import OurProducts from '../Components/OurProducts/OurProducts';
 import { setNavColor } from '../Components/TopNav/Utils'
 import Fade from 'react-reveal/Fade';
 import Head from 'next/head'
@@ -48,19 +72,19 @@ export default function Home(props) {
         <div className="section-margin">
           <ProductList data={props.productData} title={props.productsTitle} />
         </div>
-        {/* <div className="section-margin">
+        <div className="section-margin">
           <SingleTextImageBanner data={props.secretData} title={props.ServiceTitle} />
-        </div> */}
+        </div>
         <div className="section-margin">
           <BrandList brandList={props.brandList} title={props.brandTitle} />
         </div>
-        {/* <div className="section-margin">
+        <div className="section-margin">
           <ServiceBanner video={props.serviceVideo} serviceList={props.serviceList} title={props.ServiceTitle} />
-        </div> */}
+        </div>
         <div className="light-sliver-bg">
           <Awards data={props.awardsList} title={props.AwardTitle} />
         </div>
-        <div className="section-margin" > 
+        <div className="section-margin" >
           <Contact title={props.contactTitle} />
         </div>
         <div className="section-margin light-sliver-bg">
@@ -112,7 +136,7 @@ export async function getServerSideProps(context) {
       ServiceTitle: ServiceTitle,
       statsTitle: statsTitle,
       productsTitle: productsTitle,
-      serviceVideo:serVideo
+      serviceVideo: serVideo
     }
   }
 }
