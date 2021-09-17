@@ -38,8 +38,7 @@ Api.interceptors.response.use(function (response) {
   }
 });
 
-
-
-
-
+export function reportWebVitals(metric) {
+  console.log("metric",metric)
+}
 export default Api

@@ -3,6 +3,7 @@ import styles from './BrandList.module.scss'
 import Slider from "react-slick";
 import styled from "styled-components";
 import { AddCmsImgBaseUrl } from '../../Utils/Utils';
+import Image from 'next/image'
 
 const StyledSlider = styled(Slider)`
   .slick-list {
