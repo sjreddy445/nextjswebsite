@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {AddCmsImgBaseUrl, YouTubeGetID} from '../../Utils/Utils'
-import YouTube from 'react-youtube'
+const YouTube = dynamic(() => import("react-youtube"), {
+  ssr: false
+});
 class ImageSect extends Component {
   render() {
     let videoId

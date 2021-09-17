@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Col, Row } from 'reactstrap';
 import styles from './ServiceBanner.module.scss'
 import {YouTubeGetID} from '../../Utils/Utils'
-import YouTube from 'react-youtube'
-
+const YouTube = dynamic(() => import("react-youtube"), {
+  ssr: false
+});
 
 
 class ListSect extends Component {
@@ -27,7 +28,7 @@ class ListSect extends Component {
         <div className="section-margin mb-n5">
           <div className="d-flex justify-content-center">
             <div className="embed-responsive embed-responsive-16by9">
-              {/* <YouTube videoId={videoId} opts={opts} onReady={this._onReady} className="embed-responsive-item"/> */}
+              <YouTube videoId={videoId} opts={opts} onReady={this._onReady} className="embed-responsive-item"/>
             </div>
           </div>
         </div>
