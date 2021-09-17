@@ -27,7 +27,3 @@ module.exports = {
     path: 'api.getedge.ai',
   }
 }
-
-module.exports = {
-  productionBrowserSourceMaps: true,
-}
