@@ -3,35 +3,35 @@ import dynamic from "next/dynamic";
 
 // import HeaderBanner from '../Components/HeaderBanner/HeaderBanner'
 const HeaderBanner = dynamic(() => import("../Components/HeaderBanner/HeaderBanner"), {
-  ssr: true
+  ssr: false
 });
 const ProductList = dynamic(() => import("../Components/ProductList/ProductList"), {
-  ssr: true
+  ssr: false
 });
 const SingleTextImageBanner = dynamic(() => import("../Components/SingleTextImageBanner/SingleTextImageBanner"), {
-  ssr: true
+  ssr: false
 });
 
 const HomeStats = dynamic(() => import('../Components/HomeStats/HomeStats'), {
-  ssr: true
+  ssr: false
 });
 const BrandList = dynamic(() => import('../Components/BrandList/BrandList'), {
-  ssr: true
+  ssr: false
 });
 const ServiceBanner = dynamic(() => import('../Components/ServiceBanner/ServiceBanner'), {
-  ssr: true
+  ssr: false
 });
 const Awards = dynamic(() => import('../Components/Awards/Awards'), {
-  ssr: true
+  ssr: false
 });
 const Contact = dynamic(() => import('../Components/ContactSect/Contact'), {
-  ssr: true
+  ssr: false
 });
 const Testimonial = dynamic(() => import('../Components/Testimonials/Testimonials'), {
-  ssr: true
+  ssr: false
 });
 const OurProducts = dynamic(() => import('../Components/OurProducts/OurProducts'), {
-  ssr: true
+  ssr: false
 });
 
 import { payload as HomeHeaderData } from '../Payloads/Home/Header.js'

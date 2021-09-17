@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://www.get-edge-nextjs.vercel.app/sitemap.xml

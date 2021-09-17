@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import dynamic from "next/dynamic";
 import {AddCmsImgBaseUrl, YouTubeGetID} from '../../Utils/Utils'
-import YouTube from 'react-youtube'
+// import YouTube from 'react-youtube'
+const YouTube = dynamic(() => import("react-youtube"), {
+  ssr: false
+});
 
 class ImageSect extends Component {
   render() {

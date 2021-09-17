@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import dynamic from "next/dynamic";
 import { Col, Row } from 'reactstrap';
 import styles from './ServiceBanner.module.scss'
 import {YouTubeGetID} from '../../Utils/Utils'
-import YouTube from 'react-youtube'
-import Image from 'next/image';
+// import YouTube from 'react-youtube'
+const YouTube = dynamic(() => import("react-youtube"), {
+  ssr: false
+});
+
 
 class ListSect extends Component {
   render() {
