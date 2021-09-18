@@ -15,7 +15,7 @@ class resourceViewAll extends Component {
     super();
     this.state = {
       activePage: 0,
-      headerData:{}
+      headerData: {}
     };
 
     this.handlePageChange = this.handlePageChange.bind(this);
@@ -46,7 +46,7 @@ class resourceViewAll extends Component {
   handlePageChange(pageNumber) {
     this.setState({ ...this.state, activePage: pageNumber });
 
-    Api.get(this.props.router.query.slug, { params: { _limit: 6, _start: 6 * (pageNumber - 1),_sort: "created_at:desc" } }).then(({ data: dataItems }) => {
+    Api.get(this.props.router.query.slug, { params: { _limit: 6, _start: 6 * (pageNumber - 1), _sort: "created_at:desc" } }).then(({ data: dataItems }) => {
       this.setState({ ...this.state, ...{ resouceItem: dataItems } })
     });
   }
@@ -89,10 +89,11 @@ class resourceViewAll extends Component {
 
 
 
+
 export async function getServerSideProps(context) {
-  var headerData = await BlogHeaderData(); 
+  var headerData = await BlogHeaderData();
   return {
-    props: {headerData:headerData}
+    props: { headerData: headerData }
   }
 }
 export default withRouter(resourceViewAll)

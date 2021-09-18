@@ -4,7 +4,7 @@ import BlogHeaders from '../../Components/BlogItem/BlogHeaders';
 import { AddCmsImgBaseUrl } from '../../Utils/Utils'
 import { setNavColor } from '../../Components/TopNav/Utils'
 import { withRouter } from 'next/router';
-import { singleBlog, blogPopup } from '../../Payloads/Blog/BlogPost';
+import { singleBlog, blogPopup,allBlog } from '../../Payloads/Blog/BlogPost';
 import FormModal from '../../Components/Model/FormModel';
 import moment from 'moment';
 import Head from '../../Components/Metdata/head';
@@ -145,6 +145,9 @@ class BlogPost extends Component {
     )
   }
 }
+
+
+
 export async function getServerSideProps({ query }) {
   var data = await singleBlog(query?.id?.toLowerCase())
   var settings = await blogPopup();

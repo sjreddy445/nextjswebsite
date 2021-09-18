@@ -34,6 +34,15 @@ export const singleBlog = (id) => {
     })
 }
 
+export const allBlog = () => {
+    return Api.get(`blogs/`).then(result => {
+        if (result.status == 200) {
+            return result.data;
+        }
+        return {};
+    })
+}
+
 
 export const blogPopup = () => {
     return Api.get(`blog-popups`).then(result => {

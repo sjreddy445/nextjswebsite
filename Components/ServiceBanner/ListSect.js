@@ -7,10 +7,9 @@ import YouTube from"react-youtube"
 class ListSect extends Component {
   render() {
     let serviceList = this.props.data
-    // let videoId = YouTubeGetID(this.props?.video?.url)
     let videoId
     if (this.props?.video?.url) {
-      videoId = YouTubeGetID(this.props.data?.youtube)
+      videoId = YouTubeGetID(this.props?.video?.url)
     }
     else{
       return(

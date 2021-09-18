@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import styles from './Awards.module.scss'
 import styled from "styled-components";
 import { AddCmsImgBaseUrl } from '../../Utils/Utils';
+import Image from "next/image";
 const StyledSlider = styled(Slider)`
   .slick-list {
     padding: 0px 70px !important;
@@ -10,6 +11,9 @@ const StyledSlider = styled(Slider)`
   }
 `;
 class AwardImage extends Component {
+    myLoader = (url) => {
+        return AddCmsImgBaseUrl(url)
+    }
     render() {
         var settings = {
             // dots: false,
@@ -36,12 +40,14 @@ class AwardImage extends Component {
                 }
             ]
         };
+
         return (
             <div className="container-fluid">
                 <StyledSlider {...settings}>
                     {this.props?.data?.map((list, i) => (
                         <div key={i}>
-                            <img onClick={() => window.open(list.link, "_bank")} src={AddCmsImgBaseUrl(list.imgUrl.url)} alt={list.imgUrl} className={styles.img} />
+                            <Image loader={() => this.myLoader(list.imgUrl.url)} width={235}
+                                height={100} layout="fixed" onClick={() => window.open(list.link, "_bank")} src={AddCmsImgBaseUrl(list.imgUrl.url)} alt={list.imgUrl} className={styles.img} />
                         </div>
                     ))}
                 </StyledSlider>
