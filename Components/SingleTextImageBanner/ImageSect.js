@@ -18,7 +18,7 @@ class ImageSect extends Component {
     }
     return (
       <div>
-        {this.props.data?.youtube?
+        {videoId?
           <div className="embed-responsive embed-responsive-16by9">
             <YouTube videoId={videoId} opts={opts} onReady={this._onReady} className="embed-responsive-item"/>
           </div>

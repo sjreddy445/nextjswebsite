@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-// import { NavLink } from 'react-router-dom';
 import NavLink from 'next/link'
-// import "./Footer.scss";
 import CreditModalImg from '../../Assets/images/Icons/credits-modal.svg'
-import LogoWhite from "../../Assets/images/edge_logo_white.svg";
-import GartnerCoolImg from "../../Assets/images/Gartner_Cool_Vendor.png"
+import Image from "next/image";
 import { Modal, ModalHeader, ModalBody, Col, Row } from 'reactstrap';
 import NewsletterForm from './NewsletterForm';
 import BookDemo from './BookDemo';
-import { payload as sectionTitle,  } from '../../Payloads/sectionTitle/title'
-import { payload as footerData,socialLinks  } from '../../Payloads/Footer/footer'
+import { payload as sectionTitle, } from '../../Payloads/sectionTitle/title'
+import { payload as footerData, socialLinks } from '../../Payloads/Footer/footer'
 import ReactHtmlParser from 'react-html-parser';
 import { AddCmsImgBaseUrl } from '../../Utils/Utils';
 const year = new Date().getFullYear()
@@ -36,6 +33,9 @@ class Footer extends Component {
     this.setState({
       modal: !this.state.modal,
     })
+  }
+  myLoader = (url) => {
+    return AddCmsImgBaseUrl(url)
   }
 
   render() {
@@ -128,7 +128,7 @@ class Footer extends Component {
                 <div className="social-icons">
                   <a href={this.state?.socialLinks?.facebook} aria-label="facebook" rel="noopener noreferrer" target="_blank" className="link-no-decor"><i className="icon-facebook icon"></i></a>
                   <a href={this.state?.socialLinks?.twitter} aria-label="twitter" rel="noopener noreferrer" className="link-no-decor" target="_blank"><i className="icon-twitter icon"></i></a>
-                  <a href={this.state?.socialLinks?.linkedIn} aria-label="linkedIn"rel="noopener noreferrer" className="link-no-decor" target="_blank"><i className="icon-linkedin icon"></i></a>
+                  <a href={this.state?.socialLinks?.linkedIn} aria-label="linkedIn" rel="noopener noreferrer" className="link-no-decor" target="_blank"><i className="icon-linkedin icon"></i></a>
                   <a href={this.state?.socialLinks?.youtube} aria-label="youtube" rel="noopener noreferrer" className="link-no-decor" target="_blank"><i className="icon-youtube icon"></i></a>
                 </div>
 
@@ -137,8 +137,15 @@ class Footer extends Component {
 
             <hr></hr>
             <div className="py-5 container-inner footer-trio-element d-flex justify-content-between align-items-center">
-              <div>
-                <img className="gartner-img" alt='' src={AddCmsImgBaseUrl(this.state?.data?.logo2?.url)} />
+              <div className="gartner-img">
+                {this.state?.data?.logo2?.url && <Image
+                  loader={() => this.myLoader(this.state?.data?.logo2?.url)}
+                  
+                  alt=''
+                  width={700}
+                  height={700}
+                  src={AddCmsImgBaseUrl(this.state?.data?.logo2?.url)} />
+                }
               </div>
               <div className="text-grey1 box gartner-title">
                 <h3 className="gartner">
