@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {YouTubeGetID} from '../../Utils/Utils'
 import YouTube from 'react-youtube'
+import { API_BASE_URL } from '../../configs/constants'
 
 class VideoItem extends Component {
   _onReady(event) {
@@ -11,7 +12,10 @@ class VideoItem extends Component {
   render() {
     let videoId = YouTubeGetID(this.props.data.url)
     const opts  = {
-      playerVars : {rel: 0},
+      playerVars : {
+        rel: 0,
+        origin:API_BASE_URL
+      },
       height:'100%',
       width:'100%',
     }

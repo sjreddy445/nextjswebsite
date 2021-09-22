@@ -1,29 +1,33 @@
 import React, { Component } from 'react';
 import dynamic from "next/dynamic";
-import {AddCmsImgBaseUrl, YouTubeGetID} from '../../Utils/Utils'
-import YouTube from"react-youtube";
+import { AddCmsImgBaseUrl, YouTubeGetID } from '../../Utils/Utils'
+import YouTube from "react-youtube";
+import { API_BASE_URL } from '../../configs/constants'
 class ImageSect extends Component {
   render() {
     let videoId
     if (this.props.data?.youtube) {
       videoId = YouTubeGetID(this.props.data?.youtube)
     }
-    else{
-      return(
+    else {
+      return (
         <p>Loading....</p>
       )
     }
-    const opts  = {
-      playerVars : {rel: 0}
+    const opts = {
+      playerVars: {
+        rel: 0,
+        origin: API_BASE_URL
+      }
     }
     return (
       <div>
-        {videoId?
+        {videoId ?
           <div className="embed-responsive embed-responsive-16by9">
-            <YouTube videoId={videoId} opts={opts} onReady={this._onReady} className="embed-responsive-item"/>
+            <YouTube videoId={videoId} opts={opts} onReady={this._onReady} className="embed-responsive-item" />
           </div>
           :
-          <img src={AddCmsImgBaseUrl(this.props.data?.imgUrl)} className="img-fluid img-round" alt="edge-news"/>
+          <img src={AddCmsImgBaseUrl(this.props.data?.imgUrl)} className="img-fluid img-round" alt="edge-news" />
         }
       </div>
     );

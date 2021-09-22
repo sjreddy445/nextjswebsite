@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import YouTube from 'react-youtube'
 import { Row, Col } from 'reactstrap'
+import { API_BASE_URL } from '../../configs/constants'
 export default class BlogVideo extends Component {
 
   constructor() {
@@ -12,7 +13,10 @@ export default class BlogVideo extends Component {
     const opts = {
       height: '390',
       width: '640',
-      playerVars: { rel: 0 }
+      playerVars: {
+        rel: 0,
+        origin:API_BASE_URL
+       }
     }
     let { video } = this.props
 
