@@ -11,7 +11,7 @@ export default class Accordion extends Component {
   }
 
   componentDidMount() {
-    this.collapsible = this.collapsible.current;
+    this.collapsible = this.collapsible.current; 
   }
 
   toggleExpansion() {
