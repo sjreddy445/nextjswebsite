@@ -1,0 +1,33 @@
+
+pipeline {
+    agent {
+        label 'master'
+    }
+    environment {
+        // version can be automatically parsed from git configurations if the git project is versioned.
+        VERSION = sh (
+            script: 'cat VERSION',
+             returnStdout: true
+         ).trim() 
+        DOCKER_IMG_NAME = "avredgenetworks.azurecr.io/getedge-website:${VERSION}"
+    }
+    stages {
+        stage('Build') {
+            steps {   
+    	    sh "docker build -t ${DOCKER_IMG_NAME} -f Dockerfile ."
+            }
+        }
+        stage('Store') {
+            steps {
+                sh 'docker push ${DOCKER_IMG_NAME}'
+            }
+        }
+    }
+    post {
+        always {
+            sh "docker rmi ${DOCKER_IMG_NAME}"
+            sh "docker system prune -f"
+            cleanWs()
+        }
+    }
+}

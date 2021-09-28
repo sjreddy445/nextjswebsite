@@ -34,3 +34,32 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+# To Build the Docker Image
+
+Step 1:- Go to the main application root directory and run the following command
+
+```
+docker build -t getedge:1.0 .
+
+```
+-t  --> To tag the docker image
+1.0 --> Docker Image version No.
+
+
+Step 2:- Run The Docker Container
+
+```
+docker run -it -d -p 3030:3030 getedge:1.0
+
+```
+-it ---> Run the Docker container in Interactive tty mode
+
+-d  ---> To run the Docker container in a backend (Dettached) mode
+
+-p  ---> Port no to map the local port 3030 to the docker container port 3030
+
+
+
+
