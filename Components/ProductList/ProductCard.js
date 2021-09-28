@@ -31,7 +31,7 @@ class ProductCard extends Component {
             <img src={AddCmsImgBaseUrl(this.props.data.imgUrl?.url)} alt={this.props.data.title1 + this.props.data.title2} className="img-fluid"/>
           </div>
         </Col>
-      </>
+      </> 
     );
   }
 }
