@@ -35,7 +35,7 @@ const FormSect = (props) => {
   const router = useRouter();
   const toggleModal = (val) => setModal(val);
   const [token, setToken] = useState("");
-  const TEST_SITE_KEY = "6Lcp29sbAAAAABOxCTB4s47Dtb_v07NtaTwuS8pN";
+  const RECAPTCHA_SITE_KEY = "6LcHFnIcAAAAAMJJZ0qiDp7OVLjE9KE61CbvMW1m";
   let msg = "Your message has been sent. The team will get in touch with you shortly."
   const { handleSubmit, handleChange, values, errors } = useFormik({
     enableReinitialize: true,
@@ -199,7 +199,7 @@ const FormSect = (props) => {
           <div style={{ visibility: 'hidden' }}>
             <Recaptcha
               ref={refRecaptcha}
-              sitekey={TEST_SITE_KEY}
+              sitekey={RECAPTCHA_SITE_KEY}
               onChange={onResolve}
               onResolved={(X) => onResolve(X)}
             />
