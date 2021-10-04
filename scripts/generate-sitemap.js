@@ -25,7 +25,7 @@ const prettier = require('prettier');
 
                 return `
                         <url>
-                            <loc>${`https://www.getedge.ntb.one${route}`}</loc>
+                            <loc>${`https://www.getedge.ai${route}`}</loc>
                         </url>
                     `;
               })
