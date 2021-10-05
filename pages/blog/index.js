@@ -48,10 +48,10 @@ export default class Blog extends Component {
     }
     return (
       <Fade>
-        {/* <Head>
+        <Head>
         <title>{pageTitle('blog')}</title>
           <meta name="description" content="getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management. " />
-        </Head> */}
+        </Head>
         <div>
           <HeaderBanner data={this.props.headerData} />
         </div>
