@@ -98,19 +98,11 @@ export default class Blog extends Component {
 export async function getServerSideProps(context) {
   var headerData = await BlogHeaderData();
   var pagSection = await BlogpageSectionPayload();
-  // var blogData = await blogPayload(BLOG);
-  var videoData = await videoPayload(VIDEOS);
-  var podcastData = await podcastPayload(PODCAST);
 
   return {
     props: {
       headerData: headerData,
       blogPageSections: pagSection,
-      blogList: [],
-      videoList: videoData,
-      podcastList: podcastData
-
-
     }
   }
 }
