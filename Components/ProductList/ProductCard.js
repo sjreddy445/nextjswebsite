@@ -25,7 +25,7 @@ class ProductCard extends Component {
             {this.props.data.subtitle}
           </div>
           <div className={styles.cardLink + " text-xs mt-2"}>
-            <a href={this.props.data.url}>See More</a>
+            <a href={this.props.data.url}>See Details</a>
           </div>
           <div className="d-sm-block d-md-none sm-center">
             <img src={AddCmsImgBaseUrl(this.props.data.imgUrl?.url)} alt={this.props.data.title1 + this.props.data.title2} className="img-fluid"/>
