@@ -17,20 +17,20 @@ function HeadPage(props) {
             <meta name="theme-color" content="#000000" />
             {blogPost && <title>{`getEDGE Blog : ${blogPost?.title}`}</title>}
             <meta property="fb:app_id" content="461794585182726" />
-            <meta property="og:image" content={blogPost ? AddCmsImgBaseUrl(blogPost?.featuredImage?.url) : "https://getedge.ai/images/Home/product1.jpg"} />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content={blogPost ? `https://getedge.ntb.one/blog/${title}` : "https://getedge.ntb.one/"} />
+            <meta property="og:title" content={blogPost ? blogPost?.title : "getEdGE AI: HR Strategic Workforce Talent Management Simplified"} />
+            <meta property="og:image" content={blogPost ? AddCmsImgBaseUrl(blogPost?.featuredImage?.url) : "https://getedge.ntb.one/images/Home/product1.jpg"} />
             <meta property="og:image:width" content="500" />
             <meta property="og:image:height" content="500" />
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content={blogPost ? `https://getedge.ai/blog/${title}` : "https://getedge.ai/"} />
-            <meta property="og:title" content={blogPost ? blogPost?.title : "getEdGE AI: HR Strategic Workforce Talent Management Simplified"} />
             <meta property="og:description" content={blogPost ? blogPost?.content?.replace(/(<([^>]+)>)/gi, "") : "getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management."} />
             {/* <!-- Twitter --> */}
             <meta property="twitter:card" content="summary_large_image" />
-            <meta property="twitter:image" content={blogPost ? AddCmsImgBaseUrl(blogPost?.featuredImage?.url) : "https://getedge.ai/images/Home/product1.jpg"} />
+            <meta property="twitter:url" content={blogPost ? `https://getedge.ntb.one/blog/${title}` : "https://getedge.ntb.one/"} />
+            <meta property="twitter:title" content={blogPost ? blogPost?.title : "getEdGE AI: HR Strategic Workforce Talent Management Simplified"} />
+            <meta property="twitter:image" content={blogPost ? AddCmsImgBaseUrl(blogPost?.featuredImage?.url) : "https://getedge.ntb.one/images/Home/product1.jpg"} />
             <meta property="twitter:image:width" content="550" />
             <meta property="twitter:image:height" content="550" />
-            <meta property="twitter:url" content={blogPost ? `https://getedge.ai/blog/${title}` : "https://getedge.ai/"} />
-            <meta property="twitter:title" content={blogPost ? blogPost?.title : "getEdGE AI: HR Strategic Workforce Talent Management Simplified"} />
             <meta property="twitter:description" content={blogPost ? strippedString : "getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management."} />
         </Head>
     )
