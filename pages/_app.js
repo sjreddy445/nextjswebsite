@@ -49,11 +49,17 @@ function MyApp({ Component, pageProps }, props) {
       <CookieConsent
         location="bottom"
         buttonText="I Accept"
+        enableDeclineButton
+        onDecline={() => {
+        }}
+        declineButtonText="Reject"
+        declineButtonStyle={{color: "white", fontSize: "12px", padding:6, margin: "10px", marginRight: 10 }}
         cookieName="myAwesomeCookieName2"
         SameSite="none"
+        setDeclineCookie={true}
         cookieSecurity={true}
         style={{ background: "#2B373B", margin: "0px" }}
-        buttonStyle={{ color: "#4e503b", fontSize: "10px", margin: "10px", marginRight: 100 }}
+        buttonStyle={{ color: "#4e503b", fontSize: "12px", margin: "10px", marginRight: 100 }}
         expires={150}
       >
         <span style={{ fontSize: "10px" }}>We use cookies to enhance the user experience.{" "}</span>
