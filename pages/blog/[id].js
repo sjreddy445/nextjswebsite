@@ -7,7 +7,7 @@ import { withRouter } from 'next/router';
 import { singleBlog, blogPopup,allBlog } from '../../Payloads/Blog/BlogPost';
 import FormModal from '../../Components/Model/FormModel';
 import moment from 'moment';
-import Head from '../../Components/Metdata/head';
+import Head from '../../Components/Metdata/head-1';
 class BlogPost extends Component {
 
   constructor(props) {

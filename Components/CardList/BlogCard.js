@@ -19,7 +19,7 @@ class BlogCard extends Component {
   }
 
   getCleanText = (content) => {
-    let filtered = content.replace(/&nbsp;/g, ' ')
+    let filtered = content ? content.replace(/&nbsp;/g, ' ') : '';
     return filtered
   }
 
