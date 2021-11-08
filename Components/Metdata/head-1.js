@@ -4,7 +4,7 @@ import ReactHtmlParser from 'react-html-parser';
 function HeadPage(props) {
     const { blogPost } = props;
     let title = blogPost?.title?.replace(/\s/g, "-")
-    const strippedString = blogPost?.content?.replace(/(<([^>]+)>)/gi, "");
+    const strippedString = blogPost?.content?.replace(/(<([^>]+)>)/gi, "").substring(0, 100);
     return (
         <Head >
             <meta name="google-site-verification" content="EiX1HxWJfBm1Db6kI8be_kno-5tqucCTkb1EC3IE0iM" />
@@ -24,7 +24,7 @@ function HeadPage(props) {
             <meta property="og:url" content={`https://getedge.ntb.one/blog/${title}`} />
             <meta property="og:title" content={blogPost?.title} />
 
-            <meta property="og:description" content={blogPost?.content?.replace(/(<([^>]+)>)/gi, "")} />
+            <meta property="og:description" content={blogPost?.content?.replace(/(<([^>]+)>)/gi, "").substring(0, 100)} />
             {/* <!-- Twitter --> */}
             <meta property="twitter:card" content="summary_large_image" />
             <meta property="twitter:image" content={AddCmsImgBaseUrl(blogPost?.featuredImage?.url)} />
