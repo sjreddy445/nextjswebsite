@@ -85,7 +85,7 @@ export default class Blog extends Component {
           {this.state?.blogPageSections?.map((item, i) => {
             let podcastSect = null;
             if (item.resourceUrl === PODCAST) {
-              podcastSect = <BlogPodcast {...this.props} key={i} title={item.name} resourceUrl={item.resourceUrl} data={this.props.podcastList} />
+              podcastSect = <BlogPodcast {...this.props} key={i} title={item.name} resourceUrl={item.resourceUrl} />
             }
             return podcastSect;
           })}
