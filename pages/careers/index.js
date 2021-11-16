@@ -42,7 +42,7 @@ export default class Careers extends Component {
               </div>
             </div>
             <div className="section-margin">
-              <h2 className={styles.boldtitle}>Open Position123s:</h2>
+              <h2 className={styles.boldtitle}>Open Positions:</h2>
             </div>
             <div className="section-margin mt-4">
               {this.props.openings?.map((data, index) => <Accordion key={`jobs_list_${index}`} head={<Header title={data.title} />} body={<CareerCard data={data} emailData={this.props.emailData} />} />)}
