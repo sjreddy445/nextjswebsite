@@ -19,7 +19,7 @@ class CareerCard extends Component {
   }
 
   checkTitleExist(type) {
-    let abc = this.state.openingData.findIndex(x => x[type] !== null);
+    let abc = this.state.openingData.findIndex(x => x[type] !== null && x[type] !== '' );
     return abc;
   }
 
@@ -30,31 +30,36 @@ class CareerCard extends Component {
           <h4 className={styles.coltitle}>Details</h4>
           <table>
             <tbody>
-
-              <tr key={`details-table-row-${0}`}>
-                <th>{'Experience'}</th>
-                <td>{this.state?.details?.experience}</td>
-              </tr>
-              <tr key={`details-table-row-${1}`}>
-                <th>{'Education'}</th>
-                <td>{this.state?.details?.education}</td>
-              </tr>
-              <tr key={`details-table-row-${2}`}>
-                <th>{'Role'}</th>
-                <td>{this.state?.details?.role}</td>
-              </tr>
-              <tr key={`details-table-row-${3}`}>
-                <th>{'Functional Area'}</th>
-                <td>{this.state?.details?.functionalArea}</td>
-              </tr>
-              <tr key={`details-table-row-${4}`}>
-                <th>{'Location'}</th>
-                <td>{this.state?.details?.location}</td>
-              </tr>
-              <tr key={`details-table-row-${5}`}>
-                <th>{'Compensation'}</th>
-                <td>{this.state?.details?.compensation}</td>
-              </tr>
+              {this.state?.details?.experience ?
+                <tr key={`details-table-row-${0}`}>
+                  <th>{'Experience'}</th>
+                  <td>{this.state?.details?.experience}</td>
+                </tr> : ""}
+              {this.state?.details?.education ?
+                <tr key={`details-table-row-${1}`}>
+                  <th>{'Education'}</th>
+                  <td>{this.state?.details?.education}</td>
+                </tr> : ""}
+              {this.state?.details?.role ?
+                <tr key={`details-table-row-${2}`}>
+                  <th>{'Role'}</th>
+                  <td>{this.state?.details?.role}</td>
+                </tr> : ''}
+              {this.state?.details?.functionalArea ?
+                <tr key={`details-table-row-${3}`}>
+                  <th>{'Functional Area'}</th>
+                  <td>{this.state?.details?.functionalArea}</td>
+                </tr> : ''}
+              {this.state?.details?.location ?
+                <tr key={`details-table-row-${4}`}>
+                  <th>{'Location'}</th>
+                  <td>{this.state?.details?.location}</td>
+                </tr> : ''}
+              {this.state?.details?.compensation ?
+                <tr key={`details-table-row-${5}`}>
+                  <th>{'Compensation'}</th>
+                  <td>{this.state?.details?.compensation}</td>
+                </tr> : ''}
             </tbody>
           </table>
         </div>
@@ -102,7 +107,7 @@ class CareerCard extends Component {
           }
           {this.state.prospects ?
             <>
-              <h4 className={styles.coltitle}>Prospects and Pipeline Management</h4>
+             <h4 className={styles.coltitle}>Prospects and Pipeline Management</h4>
 
               {this.state?.prospects?.map((data, listIndex) =>
                 <div className={styles.listitem} key={`list-item-${listIndex}`}>{ReactHtmlParser(data.text)}
@@ -185,14 +190,14 @@ class CareerCard extends Component {
           {this.state.openingData.length > 0 ?
             <>
               {this.checkTitleExist('joinus') !== -1 && <h4 className={styles.coltitle}>{'Why should you join us'}</h4>}
-                {this.state.openingData?.map((data, listIndex) => {
-                  var res = null;
-                  if (data.joinus) {
-                    res = <div key={listIndex} className={styles.listitem}>{ReactHtmlParser(data.joinus)}
-                    </div>
-                  }
-                  return res;
-                })}
+              {this.state.openingData?.map((data, listIndex) => {
+                var res = null;
+                if (data.joinus) {
+                  res = <div key={listIndex} className={styles.listitem}>{ReactHtmlParser(data.joinus)}
+                  </div>
+                }
+                return res;
+              })}
             </>
             :
             ""
