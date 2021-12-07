@@ -8,7 +8,7 @@ import BlogPodcast from '../../Components/CardList/BlogPodcast';
 import BlogVideo from '../../Components/CardList/BlogVideo';
 import { setNavColor } from '../../Components/TopNav/Utils'
 import { withRouter } from 'next/router';
-
+import Head from '../../Components/Metdata/head-1';
 class resourceViewAll extends Component {
 
   constructor() {
@@ -58,6 +58,7 @@ class resourceViewAll extends Component {
     return (
       <div>
         <div>
+          <Head htitle={checkUrl} />
           <HeaderBanner data={this.props.headerData} />
         </div>
         <div className="mt-5 container-inner">
