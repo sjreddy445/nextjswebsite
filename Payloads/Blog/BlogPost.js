@@ -1,15 +1,4 @@
 import Api from '../../Config/Api'
-// export const blogs = (url) => {
-//     return Api.get('blogs').then(result => {
-//         if (result.status == 200) {
-//             console.log("sdfdfsd")
-//             return result.data;
-//         }
-//         return {};
-//     })
-// }
-
-
 export const blogs = (url) => {
     return Api.get(url).then(result => {
         if (result.status == 200) {
@@ -23,7 +12,6 @@ export const blogs = (url) => {
 export const videos = (url) => {
     return Api.get(url).then(result => {
         if (result.status == 200) {
-            console.log("hello4")
             return result.data;
         }
         return {};
@@ -33,7 +21,6 @@ export const videos = (url) => {
 export const podcast = (url) => {
     return Api.get(url, { params: { _limit: 6, _sort: "episode:asc" } }).then(result => {
         if (result.status == 200) {
-            console.log("hello5")
             return result.data;
         }
         return {};
@@ -51,7 +38,6 @@ export const singleBlog = (id) => {
 
 export const allBlog = () => {
     return Api.get(`blogs/`).then(result => {
-        console.log("hello3")
         if (result.status == 200) {
             return result.data;
         }

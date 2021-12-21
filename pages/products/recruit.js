@@ -30,7 +30,6 @@ class Recruit extends Component {
   componentDidMount() {
     setNavColor("transparent-bg")
     window.scrollTo(0, 0)
-    console.log("props",this.props)
   }
 
   
