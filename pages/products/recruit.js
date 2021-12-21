@@ -4,7 +4,7 @@ import { payload as RecruitHeaderData, getServiceVideo } from '../../Payloads/Re
 import { payload as ourProductsData } from '../../Payloads/Home/OurProducts'
 import { payload as testimonialPayload } from '../../Payloads/Testimonials/client'
 import { payload as sliderData } from '../../Payloads/Recruit/Slider'
-import { payload as screenshotData } from '../../Payloads/Pathfinder/screenshots'
+import { payload as screenshotData } from '../../Payloads/Recruit/screenshots'
 import { payload as payloadAwards } from '../../Payloads/Awards/logo';
 import { payload as sectionTitle } from '../../Payloads/sectionTitle/title'
 import OurProducts from '../../Components/OurProducts/OurProducts';
@@ -30,10 +30,10 @@ class Recruit extends Component {
   componentDidMount() {
     setNavColor("transparent-bg")
     window.scrollTo(0, 0)
-
+    console.log("props",this.props)
   }
 
-
+  
 
   render() {
     return (

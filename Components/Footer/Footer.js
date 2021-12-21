@@ -140,7 +140,7 @@ class Footer extends Component {
               <div className="gartner-img">
                 {this.state?.data?.logo2?.url && <Image
                   loader={() => this.myLoader(this.state?.data?.logo2?.url)}
-                  
+
                   alt=''
                   width={700}
                   height={700}
@@ -159,7 +159,7 @@ class Footer extends Component {
             <hr></hr>
 
             <div className="container-inner py-2">
-              <p className="text-right text-grey1 text-xxs sm-text-left m-0 py-2">{year} {this.state?.data?.description4}|<NavLink href="/privacy" className="link-no-decor"> Privacy Policy</NavLink> | <span onClick={this.toggleCreditModal} className="pointer">Credits</span></p>
+              <p className="text-right text-grey1 text-xxs sm-text-left m-0 py-2">{this.state?.data?.address} &nbsp; {year} {this.state?.data?.description4}|<NavLink href="/privacy" className="link-no-decor"> Privacy Policy</NavLink> | <span onClick={this.toggleCreditModal} className="pointer">Credits</span></p>
             </div>
           </div>
         </div>
