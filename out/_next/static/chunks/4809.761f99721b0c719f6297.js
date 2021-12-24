@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[4809],{44809:function(s,e,c){"use strict";c.r(e),e.default={src:"/_next/static/image/Assets/images/Icons/vip-diamond.85117090904e93452270d23ccca8d5cf.svg",height:60,width:60}}}]);

@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[9854],{9854:function(e,s,t){"use strict";t.r(s),s.default={src:"/_next/static/image/Assets/images/Icons/user-follow.d8469b4e708b2d85f28299bc540deada.svg",height:60,width:60}}}]);

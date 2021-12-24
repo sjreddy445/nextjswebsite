@@ -45,7 +45,7 @@ export class ContactUs extends Component {
 export default ContactUs
 
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   var headerData = await ContactHeaderData();
   var contactAddress = await addressPayload();
   return {

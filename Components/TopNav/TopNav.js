@@ -106,7 +106,7 @@ class TopNav extends Component {
                 <button className="mobile-hamburger" onClick={this.toggleMobileMenu}><i className="icon-menu"></i></button>
                 <div className={`back-drop ${this.state.mobileMenuActive ? "active" : ''}`} onClick={this.hideMobileMenu}></div>
                 <ul className={`top-menu  ${this.state.mobileMenuActive ? "active" : ''}`} onClick={this.hideMobileMenu}>
-                  <li className="has-sub-menu nav-item">
+                  {/* <li className="has-sub-menu nav-item">
                     <a className="link-no-decor nav-link" aria-label="Products" href="/#">Products <i className="arrow-down icon-chevron-down"></i></a>
                     <ul className="sub-menu dropdown-menu ">
 
@@ -128,7 +128,8 @@ class TopNav extends Component {
                         </DropdownItem>
                       </li>
                     </ul>
-                  </li>
+                  </li> */}
+                  <NavItem><NavLink activeClassName="selected" href="/products/recruit"><a aria-label="Recruit" className="link-no-decor"> EDGE Recruit  <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
                   <NavItem><NavLink activeClassName="selected" href="/blog"><a aria-label="integrations" className="link-no-decor">Blog & Resources  <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
                   <NavItem><NavLink activeClassName="selected" href="/integrations"><a aria-label="integrations" className="link-no-decor">Integrations <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
                   <NavItem><NavLink activeClassName="selected" href="/contact"><a aria-label="contact" className="link-no-decor">Contact <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>

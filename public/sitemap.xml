@@ -37,22 +37,6 @@
   </url>
 
   <url>
-    <loc>https://www.getedge.ai/blog/[id]</loc>
-  </url>
-
-  <url>
-    <loc>https://www.getedge.ai/blog/index</loc>
-  </url>
-
-  <url>
-    <loc>https://www.getedge.ai/blog/index1</loc>
-  </url>
-
-  <url>
-    <loc>https://www.getedge.ai/elapage/index</loc>
-  </url>
-
-  <url>
     <loc>https://www.getedge.ai/careers/ApplyForm</loc>
   </url>
 
@@ -73,7 +57,23 @@
   </url>
 
   <url>
+    <loc>https://www.getedge.ai/blog/[id]</loc>
+  </url>
+
+  <url>
+    <loc>https://www.getedge.ai/blog/index</loc>
+  </url>
+
+  <url>
+    <loc>https://www.getedge.ai/blog/index1</loc>
+  </url>
+
+  <url>
     <loc>https://www.getedge.ai/privacy/index</loc>
+  </url>
+
+  <url>
+    <loc>https://www.getedge.ai/elapage/index</loc>
   </url>
 
   <url>

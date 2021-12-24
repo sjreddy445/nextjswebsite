@@ -70,10 +70,10 @@ export default function Home(props) {
           <HomeStats data={props.statsData} title={props.statsTitle} />
         </div>
         <div className="section-margin">
-          <ProductList data={props.productData} title={props.productsTitle} />
+          <SingleTextImageBanner data={props.secretData} title={props.ServiceTitle} />
         </div>
         <div className="section-margin">
-          <SingleTextImageBanner data={props.secretData} title={props.ServiceTitle} />
+          <ProductList data={props.productData} title={props.productsTitle} />
         </div>
         <div className="section-margin">
           <BrandList brandList={props.brandList} title={props.brandTitle} />
@@ -99,7 +99,7 @@ export default function Home(props) {
 }
 
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   var headerData = await HomeHeaderData();
   var secretData = await SecretData();
   let awardsData = await payloadAwards();

@@ -19,7 +19,7 @@ function HeadPage(props) {
             <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta name="theme-color" content="#000000" />
-            <title>{blogPost?.title?`getEDGE Blog : ${blogPost?.title}` :`getEDGE ${capitalize(htitle.split("-")[1])}`}</title>
+            <title>{blogPost?.title?`getEDGE Blog : ${blogPost?.title}` :`getEDGE ${capitalize(htitle?.split("-")[1])}`}</title>
             <meta property="fb:app_id" content="461794585182726" />
             <meta property="og:type" content="website" />
             <meta property="og:image" content={AddCmsImgBaseUrl(blogPost?.featuredImage?.url)} />

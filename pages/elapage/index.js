@@ -47,7 +47,7 @@ export default class ElaPage extends Component {
     )
   }
 }
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   var headerData = await ELAHeaderData();
   var data = await ElaData();
   var description = await ElaTitle('ela');
