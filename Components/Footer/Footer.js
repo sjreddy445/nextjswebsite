@@ -158,8 +158,11 @@ class Footer extends Component {
 
             <hr></hr>
 
-            <div className="container-inner py-2">
-              <p className="text-center text-grey1 text-xxs sm-text-left m-0 py-2">{this.state?.data?.address} &nbsp; {year} {this.state?.data?.description4}|<NavLink href="/privacy" className="link-no-decor"> Privacy Policy</NavLink> | <span onClick={this.toggleCreditModal} className="pointer">Credits</span></p>
+            <div className="container-inner py-2 d-flex justify-content-between">
+            <p className="text-left text-grey1 text-xxs sm-text-left m-0 py-2 md-4">
+                {this.state?.data?.address}
+              </p>
+              <p className="text-right text-grey1 text-xxs sm-text-left m-0 py-2"> {year} {this.state?.data?.description4}|<NavLink href="/privacy" className="link-no-decor"> Privacy Policy</NavLink> | <span onClick={this.toggleCreditModal} className="pointer">Credits</span></p>
             </div>
           </div>
         </div>
