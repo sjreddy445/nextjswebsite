@@ -5,7 +5,7 @@ import { withRouter } from 'next/router'
 class RatioCard extends Component {
 
   handleClick = (url) => {
-    this.props.router.push("/products/" + url, '')
+    // this.props.router.push("/products/" + url, '')
   }
 
   render() {
