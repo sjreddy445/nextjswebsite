@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[8593],{38593:function(e,s,a){"use strict";a.r(s),s.default={src:"/_next/static/image/Assets/images/Icons/linkedin.2eda7bddaacee15c44494bb63ca94165.svg",height:16,width:16}}}]);

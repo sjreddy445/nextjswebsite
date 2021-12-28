@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Col, Row } from 'reactstrap'
 import PeopleCard from './PeopleCard'
 import { payload as PeopleData } from '../../Payloads/AboutUs/People'
+
 export default class Leadership extends Component {
   render() {
     
