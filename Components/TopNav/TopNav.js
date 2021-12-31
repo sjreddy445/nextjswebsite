@@ -6,7 +6,7 @@ import { event } from "../../Utils/Utils";
 import { DropdownItem, NavItem, UncontrolledDropdown } from 'reactstrap';
 import Scroll from 'react-scroll'
 import Head from '../Metdata/head'
-import { payload as TopBanner } from '../../Payloads/TopBanner/topbanner'
+import { payload as TopBanner, topNavPayload } from '../../Payloads/TopBanner/topbanner'
 
 class TopNav extends Component {
 
@@ -15,7 +15,8 @@ class TopNav extends Component {
     this.state = {
       mobileMenuActive: false,
       bgClass: "",
-      TopContainer: {}
+      TopContainer: {},
+      navList: []
     }
 
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
@@ -29,6 +30,7 @@ class TopNav extends Component {
       this.setState({ bgClass: 'transparent-bg text-white' });
     }
     this.TopDataFunc();
+    this.getNav();
     event.on("setNavColor", (data) => {
       this.setState({ ...this.state, bgClass: data })
     });
@@ -61,6 +63,12 @@ class TopNav extends Component {
   }
 
 
+  getNav = async () => {
+    let topNav = await topNavPayload();
+  
+    this.setState({ navList: topNav })
+  }
+
 
   scrollToContact = () => {
     let scroller = Scroll.scroller
@@ -87,10 +95,10 @@ class TopNav extends Component {
   };
 
   render() {
-    const { router: { pathname } } = this.props;
+    const { router: { pathname }, topNav } = this.props;
     return (
       <>
-        {!pathname.includes('/blog/')  && <Head />}
+        {!pathname.includes('/blog/') && <Head />}
         <div className="text-center" className="adv">
           <p onClick={() => { this.handleNavigate() }} className={`text-xs top-bar${this.state.mobileMenuActive ? ' zindex' : ''}`}>
             <strong style={{ color: 'black' }}>{this.state.TopContainer.strongText}</strong > {this.state.TopContainer.normalText}
@@ -106,10 +114,9 @@ class TopNav extends Component {
                 <button className="mobile-hamburger" onClick={this.toggleMobileMenu}><i className="icon-menu"></i></button>
                 <div className={`back-drop ${this.state.mobileMenuActive ? "active" : ''}`} onClick={this.hideMobileMenu}></div>
                 <ul className={`top-menu  ${this.state.mobileMenuActive ? "active" : ''}`} onClick={this.hideMobileMenu}>
-                  <li className="has-sub-menu nav-item">
+                  {/* <li className="has-sub-menu nav-item">
                     <a className="link-no-decor nav-link" aria-label="Products" href="/#">Products <i className="arrow-down icon-chevron-down"></i></a>
                     <ul className="sub-menu dropdown-menu ">
-
                       <li>
                         <DropdownItem>
                           <NavLink activeClassName="selected" href="/products/pathfinder" ><a aria-label="Pathfinder" className="link-no-decor">Pathfinder <i className="mobile-only icon-chevron-right"></i></a></NavLink>
@@ -128,12 +135,16 @@ class TopNav extends Component {
                         </DropdownItem>
                       </li>
                     </ul>
-                  </li>
+                  </li> */}
+                  {this.state.navList.map((data, idx) => (
+                    <NavItem key={idx}><NavLink activeClassName="selected" href={`/${data.url}`}><a aria-label={data.name} className="link-no-decor"> {data.name}  <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
+                  ))}
+                  {/* <NavItem><NavLink activeClassName="selected" href="/products/recruit"><a aria-label="Recruit" className="link-no-decor"> EDGE Recruit  <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
                   <NavItem><NavLink activeClassName="selected" href="/blog"><a aria-label="integrations" className="link-no-decor">Blog & Resources  <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
                   <NavItem><NavLink activeClassName="selected" href="/integrations"><a aria-label="integrations" className="link-no-decor">Integrations <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
                   <NavItem><NavLink activeClassName="selected" href="/contact"><a aria-label="contact" className="link-no-decor">Contact <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
                   <NavItem><NavLink activeClassName="selected" href="/careers" ><a aria-label="careers" className="link-no-decor">Careers <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
-                  <NavItem><NavLink activeClassName="selected" href="/about"><a aria-label="about" className="link-no-decor">About Us <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem>
+                  <NavItem><NavLink activeClassName="selected" href="/about"><a aria-label="about" className="link-no-decor">About Us <i className="mobile-only icon-chevron-right"></i></a></NavLink></NavItem> */}
                 </ul>
               </UncontrolledDropdown>
             </div>

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import styles from './Leadership.module.scss'
-import Image from 'next/image';
 import { AddCmsImgBaseUrl } from '../../Utils/Utils';
+import ReactHtmlParser from 'react-html-parser';
+
 export default class PeopleCard extends Component {
   render() {
     let people = this.props.data
@@ -17,11 +18,17 @@ export default class PeopleCard extends Component {
           <div className={styles.peopleTitle + " mt-1"}>
             <span>{people.title}</span>
           </div>
-          <div className={styles.peopleDesc + " mt-4 text-md pr-2"}>
-            <span>{people.desc}</span>
-          </div>
+          {people.IsShowLinkedIn ?
+            <div className='ml-1'>
+              <img onClick={() => window.open(people.LinkedIn)} src={AddCmsImgBaseUrl('/uploads/linkedin_d0a0d76670.svg')} alt="" height={24} width={24} />
+            </div>
+            :
+            <div className={styles.peopleDesc + " mt-4 text-md pr-2"}>
+              <span>{ReactHtmlParser(people.desc)}</span>
+            </div>
+          }
         </div>
       </div>
-    ) 
+    )
   }
 }
