@@ -65,7 +65,7 @@ class TopNav extends Component {
 
   getNav = async () => {
     let topNav = await topNavPayload();
-    console.log("toopNav", topNav)
+  
     this.setState({ navList: topNav })
   }
 
@@ -96,7 +96,6 @@ class TopNav extends Component {
 
   render() {
     const { router: { pathname }, topNav } = this.props;
-    console.log("topNav", this.props)
     return (
       <>
         {!pathname.includes('/blog/') && <Head />}
@@ -118,7 +117,6 @@ class TopNav extends Component {
                   {/* <li className="has-sub-menu nav-item">
                     <a className="link-no-decor nav-link" aria-label="Products" href="/#">Products <i className="arrow-down icon-chevron-down"></i></a>
                     <ul className="sub-menu dropdown-menu ">
-
                       <li>
                         <DropdownItem>
                           <NavLink activeClassName="selected" href="/products/pathfinder" ><a aria-label="Pathfinder" className="link-no-decor">Pathfinder <i className="mobile-only icon-chevron-right"></i></a></NavLink>

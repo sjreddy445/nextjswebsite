@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[5909],{35909:function(e,s,c){"use strict";c.r(s),s.default={src:"/_next/static/image/Assets/images/Icons/user-heart.21df6d2b5cb6c00ac62e5badefceb869.svg",height:60,width:60}}}]);

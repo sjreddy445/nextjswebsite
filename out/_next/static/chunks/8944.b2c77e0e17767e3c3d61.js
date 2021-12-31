@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[8944],{78944:function(e,s,t){"use strict";t.r(s),s.default={src:"/_next/static/image/Assets/images/Icons/line-chart.8f27a03e97f9006ae017c22e146d6e37.svg",height:60,width:60}}}]);
