@@ -43,7 +43,7 @@ class resourceViewAll extends Component {
       // this.scrollWindow()
     });
   }
-
+ 
   handlePageChange(pageNumber) {
     this.setState({ ...this.state, activePage: pageNumber });
 
