@@ -157,4 +157,3 @@ class TopNav extends Component {
 }
 
 export default withRouter(TopNav);
-

@@ -53,7 +53,7 @@ export default class Careers extends Component {
     )
   }
 }
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   var headerData = await CareerHeaderData();
   var opening = await openingData();
   var careerTitle = await sectionTitle('career');

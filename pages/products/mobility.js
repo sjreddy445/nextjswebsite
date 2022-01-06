@@ -73,7 +73,7 @@ class Mobility extends Component {
 
 export default Mobility;
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   var headerData = await MobilityHeaderData();
   var slidData = await sliderData();
   var ssData = await screenshotData();

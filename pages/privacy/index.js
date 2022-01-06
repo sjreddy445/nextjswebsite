@@ -41,7 +41,7 @@ export default class PrivacyPolicy extends Component {
   }
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   var headerData = await PrivacyHeaderData();
   var privacyData = await privacyPayload();
   return {

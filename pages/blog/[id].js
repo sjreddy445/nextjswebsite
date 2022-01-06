@@ -4,7 +4,7 @@ import BlogHeaders from '../../Components/BlogItem/BlogHeaders';
 import { AddCmsImgBaseUrl } from '../../Utils/Utils'
 import { setNavColor } from '../../Components/TopNav/Utils'
 import { withRouter } from 'next/router';
-import { singleBlog, blogPopup, allBlog, allBlogCount, allBlogWithparmas } from '../../Payloads/Blog/BlogPost';
+import { singleBlog, blogPopup,allBlog } from '../../Payloads/Blog/BlogPost';
 import FormModal from '../../Components/Model/FormModel';
 import moment from 'moment';
 import Head from '../../Components/Metdata/head-1';
@@ -14,7 +14,8 @@ class BlogPost extends Component {
     super(props);
     this.state = {
       isModal: false
-    }
+    };
+
   }
 
   componentDidMount() {
@@ -36,7 +37,7 @@ class BlogPost extends Component {
       this.onTimeBound(setting.seconds)
       return
     }
-    if (setting?.userLeaving) {
+    if (setting.userLeaving) {
       document.documentElement.addEventListener("mouseleave", () => this.onuserLeaving(setting.userLeaving), false);
       return
     }
@@ -102,7 +103,6 @@ class BlogPost extends Component {
   }
 
   render() {
-
     return (
       <div className="container-inner" >
         <Head {...this.props} />
@@ -147,26 +147,9 @@ class BlogPost extends Component {
 }
 
 
-export async function getStaticPaths() {
-  var count = await allBlogCount();
-  var data = [];
-  let no = 0;
-  if (count > 0) {
-    no = Math.ceil(count / 80)
-  }
-  for (var i = 0; i < no; i++) {
-    var ds = await allBlogWithparmas(i)
-    data=[...data,...ds]
-  }
-  const paths = data.map((user) => ({
-    params: { id: user.slug.toString() },
-  }))
 
-  return { paths, fallback: false }
-}
-
-export async function getStaticProps({ params }) {
-  var data = await singleBlog(params?.id?.toLowerCase())
+export async function getServerSideProps({ query }) {
+  var data = await singleBlog(query?.id?.toLowerCase())
   var settings = await blogPopup();
   return {
     props: {

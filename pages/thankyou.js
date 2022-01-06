@@ -107,7 +107,7 @@ class SuccessModal extends Component {
     )
   }
 }
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   var headerData = await HomeHeaderData();
   var secretData = await SecretData();
   let awardsData = await payloadAwards();

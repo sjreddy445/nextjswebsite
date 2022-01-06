@@ -37,7 +37,7 @@ class Sitemap extends Component {
 
 export default Sitemap;
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   var headerData = await SiteHeaderData();
   return {
     props: { headerData: headerData}

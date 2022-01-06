@@ -66,7 +66,7 @@ class AboutUs extends Component {
 
 export default AboutUs;
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   var headerData = await AboutHeaderData();
   var vid = await VideoData();
   var news = await NewsData();

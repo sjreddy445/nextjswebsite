@@ -6,7 +6,7 @@ class TextSect extends Component {
     return (
       <div>
         <p className="text-sm mb-4 mt-2 font-weight-bold">
-        {this.props?.title?.title}
+        {this.props?.title?.description}
         </p>
         <p className="text-xl font-weight-bold">
         {this.props?.title?.description}

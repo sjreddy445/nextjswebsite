@@ -95,7 +95,7 @@ export default class Blog extends Component {
   }
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   var headerData = await BlogHeaderData();
   var pagSection = await BlogpageSectionPayload();
   var blogData = await blogPayload(BLOG);

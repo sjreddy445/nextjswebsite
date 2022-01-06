@@ -63,7 +63,7 @@ export default function Home(props) {
 }
 
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     var headerData = await IntegrationHeaderData();
     let awardsData = await payloadAwards();
     var testimonialData = await testimonialPayload();
