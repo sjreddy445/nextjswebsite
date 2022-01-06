@@ -14,7 +14,7 @@ class SubMenu extends Component {
               <div className="d-flex justify-content-around py-2">
                 {menuItems?.map((item, i) => (
                   <a className="item p-3 text-md link-no-decor" key={i} href={`#${item}`}>{DashToUpper(item)}</a>
-                ))}
+                ))}  
               </div>
             </Col>
             {this.props.hasSocial ?
