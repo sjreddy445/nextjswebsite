@@ -11,7 +11,7 @@ class RatioCard extends Component {
   render() {
     let { data } = this.props
     return (
-      <div className={styles.ratiocard + ` pointer ${this.props.ratio}`} style={{ backgroundImage: `url('${AddCmsImgBaseUrl(data.imgUrl.url)}')`, backgroundColor: data.bgColor }} onClick={() => this.handleClick(data.pageUrl)}>
+      <div className={styles.ratiocard + ` pointer ${this.props.ratio}`} style={{ backgroundImage: `url('${AddCmsImgBaseUrl(data.imgUrl.url)}')`, backgroundColor: data.bgColor }} onClick={() => window.open(data.pageUrl, '_blank')}>
         <div className={styles.contentbox}>
           <div className={styles.logo}>
             <img src={AddCmsImgBaseUrl(data.logo.url)} alt={data.alt} className="img-fluid" />
