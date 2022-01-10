@@ -47,7 +47,6 @@ import { getServices, getServiceVideo } from '../Payloads/Home/Services';
 import { setNavColor } from '../Components/TopNav/Utils'
 import Fade from 'react-reveal/Fade';
 import Head from 'next/head'
-
 import Api from '../Config/Api'
 import { pageTitle } from '../Payloads/pageTitle/title';
 
