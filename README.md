@@ -61,5 +61,5 @@ docker run -it -d -p 3030:3030 getedge:1.0
 -p  ---> Port no to map the local port 3030 to the docker container port 3030
 
 
-
-
+For Build App
+    npm run build
