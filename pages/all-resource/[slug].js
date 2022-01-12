@@ -95,7 +95,6 @@ export async function getStaticPaths() {
   const paths = data.map((user) => ({
     params: { slug: user.resourceUrl.toString().split('/')[1] },
   }))
-  // console.log("user",paths)
   return { paths, fallback: false }
 }
 

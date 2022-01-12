@@ -12,7 +12,7 @@
 
 .number {
     font-size: 3rem;
-    display: flex;
+    display: table-cell;
     align-items: center;
     color: #fff;
     margin-right: 1rem;
@@ -23,8 +23,8 @@
 .text {
     color: #fff;
     align-items: center;
-    display: flex;
     font-weight: 600;
+    display: table-cell;
 }
 
 .mobileview {

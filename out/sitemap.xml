@@ -73,6 +73,10 @@
   </url>
 
   <url>
+    <loc>https://www.getedge.ai/privacy/index</loc>
+  </url>
+
+  <url>
     <loc>https://www.getedge.ai/products/mobility</loc>
   </url>
 
@@ -82,9 +86,5 @@
 
   <url>
     <loc>https://www.getedge.ai/products/recruit</loc>
-  </url>
-
-  <url>
-    <loc>https://www.getedge.ai/privacy/index</loc>
   </url>
 </urlset>

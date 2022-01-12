@@ -65,7 +65,6 @@ class TopNav extends Component {
 
   getNav = async () => {
     let topNav = await topNavPayload();
-    console.log("toopNav", topNav)
     this.setState({ navList: topNav })
   }
 
@@ -96,7 +95,7 @@ class TopNav extends Component {
 
   render() {
     const { router: { pathname }, topNav } = this.props;
-    console.log("topNav", this.props)
+
     return (
       <>
         {!pathname.includes('/blog/') && <Head />}

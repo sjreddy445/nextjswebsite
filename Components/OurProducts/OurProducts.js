@@ -36,9 +36,9 @@ class OurProducts extends Component {
     };
     return (
       <div className="container-inner py-4">
-        <h3 className="mb-3">Our Products.</h3>
+        <h3 className="mb-3">{this.props?.title?.title}</h3>
 
-        <Slider className="arrow-dark arrow-slider gap-10" {...settings}>
+        <Slider className="arrow-dark arrow-slider" {...settings}>
           {this.props?.data?.map((data, i) => <RatioCard key={i} ratio={styles.seventyperc} data={data} />)}
         </Slider>
       </div>

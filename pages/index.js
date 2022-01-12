@@ -91,7 +91,7 @@ export default function Home(props) {
           <Testimonial data={props.testimonialService} title={props.TestimonialTitle} />
         </div>
         <div className="section-margin">
-          <OurProducts data={props.ourProductData} />
+          <OurProducts data={props.ourProductData} title={props.beforeFooterTitle} />
         </div>
       </Fade>
     </>
@@ -116,6 +116,7 @@ export async function getStaticProps(context) {
   var ServiceTitle = await sectionTitle('offers');
   var statsTitle = await sectionTitle('stats');
   var productsTitle = await sectionTitle('3products');
+  var beforeFooterTitle = await sectionTitle('home-before-footer');
   var serVideo = await getServiceVideo();
 
   return {
@@ -136,6 +137,7 @@ export async function getStaticProps(context) {
       ServiceTitle: ServiceTitle,
       statsTitle: statsTitle,
       productsTitle: productsTitle,
+      beforeFooterTitle: beforeFooterTitle,
       serviceVideo: serVideo
     }
   }
