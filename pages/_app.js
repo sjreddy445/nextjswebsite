@@ -23,6 +23,9 @@ function MyApp({ Component, pageProps }, props) {
   useEffect(() => {
     ReactGa.initialize('UA-35684919-1');
     ReactGa.pageview(window.location.pathname + window.location.search);
+    // Api.get("/blog-page-sections").then(({ data }) => {
+    //   localStorage.setItem("blogPageSections", JSON.stringify(data));
+    // })
     Api.get("/page-titles").then(({ data }) => {
       localStorage.setItem("pageTitle", JSON.stringify(data));
     })

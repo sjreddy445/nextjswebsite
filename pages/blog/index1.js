@@ -109,8 +109,6 @@ export async function getStaticProps(context) {
       blogList: blogData,
       videoList: videoData,
       podcastList: podcastData
-
-
     }
   }
 }

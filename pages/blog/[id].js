@@ -4,7 +4,7 @@ import BlogHeaders from '../../Components/BlogItem/BlogHeaders';
 import { AddCmsImgBaseUrl } from '../../Utils/Utils'
 import { setNavColor } from '../../Components/TopNav/Utils'
 import { withRouter } from 'next/router';
-import { singleBlog, blogPopup, allBlog, allBlogCount, allBlogWithparmas } from '../../Payloads/Blog/BlogPost';
+import { singleBlog, blogPopup,  allBlogCount, allBlogWithparmas } from '../../Payloads/Blog/BlogPost';
 import FormModal from '../../Components/Model/FormModel';
 import moment from 'moment';
 import Head from '../../Components/Metdata/head-1';
