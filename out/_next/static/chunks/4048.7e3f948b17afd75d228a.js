@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[4048],{84048:function(e,s,t){"use strict";t.r(s),s.default={src:"/_next/static/image/Assets/images/Products/recruitLogo.6ce593ecee24262d5f70d9836c99545a.svg",height:150,width:409}}}]);

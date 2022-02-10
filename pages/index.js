@@ -98,7 +98,7 @@ export default function Home(props) {
 }
 
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   var headerData = await HomeHeaderData();
   var secretData = await SecretData();
   let awardsData = await payloadAwards();

@@ -43,7 +43,7 @@ export default class Life extends Component {
   }
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   var headerData = await LifeHeaderData();
   var slider = await SliderData();
   return {

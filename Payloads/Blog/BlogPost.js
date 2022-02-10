@@ -45,6 +45,24 @@ export const allBlog = () => {
     })
 }
 
+export const allBlogWithparmas = (pageNumber) => {
+    return Api.get('blogs/', { params: { _limit: 80, _start: 0 + (pageNumber * 80), _sort: "created_at:desc" } }).then(result => {
+        if (result.status == 200) {
+            return result.data;
+        }
+    })
+}
+
+
+export const allBlogCount = () => {
+    return Api.get(`blogs/count`).then(result => {
+        if (result.status == 200) {
+            return result.data;
+        }
+        return {};
+    })
+}
+
 
 export const blogPopup = () => {
     return Api.get(`blog-popups`).then(result => {

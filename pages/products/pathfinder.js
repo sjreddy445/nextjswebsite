@@ -75,7 +75,7 @@ class Pathfinder extends Component {
 
 export default Pathfinder;
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   var headerData = await PathfinderHeaderData();
   var slidData = await sliderData();
   var ssData = await screenshotData();
