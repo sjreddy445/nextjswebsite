@@ -12,9 +12,9 @@ import Api from '../../Config/Api'
 //   {
 //     url: "https://thestartuplab.in/how-edge-networks-is-leveraging-ai-and-helping-companies-take-the-right-talent-acquisition-decision/"
 //   }
-// ]
+// ] 
 
-
+    
 export const payload = () => {
   return Api.get('edge-news').then(result => {
     if (result.status == 200) {
