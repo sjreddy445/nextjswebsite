@@ -65,7 +65,6 @@ class TopNav extends Component {
 
   getNav = async () => {
     let topNav = await topNavPayload();
-  
     this.setState({ navList: topNav })
   }
 

@@ -62,8 +62,8 @@ docker run -it -d -p 3030:3030 getedge:1.0
 
 
 
+
 For production build :
     npm run build
  
-For running production the build :
-    npm start
+after build, it will create out folder with static files.
