@@ -23,12 +23,6 @@ function MyApp({ Component, pageProps }, props) {
   useEffect(() => {
     ReactGa.initialize('UA-35684919-1');
     ReactGa.pageview(window.location.pathname + window.location.search);
-    // Api.get("/blog-page-sections").then(({ data }) => {
-    //   localStorage.setItem("blogPageSections", JSON.stringify(data));
-    // })
-    Api.get("/page-titles").then(({ data }) => {
-      localStorage.setItem("pageTitle", JSON.stringify(data));
-    })
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     window.addEventListener('load',
       function () {
@@ -64,6 +58,7 @@ function MyApp({ Component, pageProps }, props) {
       >
         <span style={{ fontSize: "10px" }}>We use cookies to enhance the user experience.{" "}</span>
       </CookieConsent>
-    </Layout>)
+    </Layout>
+    )
 }
 export default withRouter(MyApp)

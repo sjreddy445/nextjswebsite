@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-
+export const BASEURL="https://api.getedge.ai"
 const Api = axios.create(
   {
     baseURL: "https://api.getedge.ai/",

@@ -33,6 +33,10 @@
   </url>
 
   <url>
+    <loc>https://www.getedge.ai/all-resource/[slug]</loc>
+  </url>
+
+  <url>
     <loc>https://www.getedge.ai/blog/[id]</loc>
   </url>
 
@@ -42,10 +46,6 @@
 
   <url>
     <loc>https://www.getedge.ai/blog/index1</loc>
-  </url>
-
-  <url>
-    <loc>https://www.getedge.ai/all-resource/[slug]</loc>
   </url>
 
   <url>

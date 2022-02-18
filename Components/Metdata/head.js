@@ -17,7 +17,7 @@ function HeadPage(props) {
             <meta property="og:image:height" content="500" />
             <meta property="og:url" content={"https://getedge.ntb.one/"} />
             <meta property="og:title" content={"getEdGE AI: HR Strategic Workforce Talent Management Simplified"} />
-            
+
             <meta property="og:description" content={"getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management."} />
             {/* <!-- Twitter --> */}
             <meta property="twitter:card" content="summary_large_image" />
@@ -25,8 +25,15 @@ function HeadPage(props) {
             <meta property="twitter:image:width" content="550" />
             <meta property="twitter:image:height" content="550" />
             <meta property="twitter:url" content={`https://getedge.ntb.one/`} />
-            <meta property="twitter:title" content={ "getEdGE AI: HR Strategic Workforce Talent Management Simplified"} />
+            <meta property="twitter:title" content={"getEdGE AI: HR Strategic Workforce Talent Management Simplified"} />
             <meta property="twitter:description" content={"getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management."} />
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-XRR970NRE9"></script>
+            <script dangerouslySetInnerHTML={{
+                __html: `window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-XRR970NRE9')`
+                }} />
         </Head>
     )
 }

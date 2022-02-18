@@ -37,9 +37,9 @@ class Footer extends Component {
   myLoader = (url) => {
     return AddCmsImgBaseUrl(url)
   }
-
+  
   render() {
-
+    
     return (
       <>
         <Modal isOpen={this.state.modal} toggle={this.toggleCreditModal} className="info-modal" size="lg" >

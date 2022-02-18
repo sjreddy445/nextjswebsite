@@ -8,6 +8,7 @@ import { singleBlog, blogPopup,  allBlogCount, allBlogWithparmas } from '../../P
 import FormModal from '../../Components/Model/FormModel';
 import moment from 'moment';
 import Head from '../../Components/Metdata/head-1';
+import { BASEURL } from '../../Config/Api';
 class BlogPost extends Component {
 
   constructor(props) {
@@ -58,12 +59,15 @@ class BlogPost extends Component {
   };
 
   getCleanText = (content) => {
+    console.log("content",content)
     let filtered = content.replace(/&nbsp;/g, ' ')
     let endpoint = filtered;
     endpoint = endpoint.replace('oembed url', 'iframe height=450 width=100% allowfullscreen="allowfullscreen" src');
     // endpoint = endpoint.replace('url', '');
     endpoint = endpoint.replace('watch?v=', 'embed/');
     endpoint = endpoint.replace('oembed', 'iframe');
+    endpoint = endpoint.replace(`<img src="`, `<img height=450 width=100%  src="${BASEURL}`);
+    console.log("ednpoint",endpoint)
     return endpoint;
   }
 
