@@ -16,7 +16,8 @@ class resourceViewAll extends Component {
     super();
     this.state = {
       activePage: 0,
-      headerData: {}
+      headerData: {},
+      duplicateData: []
     };
 
     this.handlePageChange = this.handlePageChange.bind(this);
@@ -36,21 +37,27 @@ class resourceViewAll extends Component {
   }
 
   componentDidMount() {
-    this.handlePageChange(1);
-    const { router: { pathname } } = this.props;
-    Api.get(this.props.router?.query?.slug + "/count").then(({ data: totalItem }) => {
-      this.setState({ ...this.state, ...{ totalItem } })
-      // this.scrollWindow()
-    });
-  }
- 
-  handlePageChange(pageNumber) {
-    this.setState({ ...this.state, activePage: pageNumber });
+    // const { router: { pathname } } = this.props;
+    // Api.get(this.props.router?.query?.slug + "/count").then(({ data: totalItem }) => {
+    // this.setState({ ...this.state, })
+    this.setState({ ...this.state, totalItem: this.props.count, activePage: 1, resouceItem: this.props.data?.slice(0, 6), duplicateData: this.props.data })
+    // this.scrollWindow()
+    // });
+    // this.handlePageChange(1);
 
-    Api.get(this.props.router?.query?.slug, { params: { _limit: 6, _start: 6 * (pageNumber - 1), _sort: "created_at:desc" } }).then(({ data: dataItems }) => {
-      this.setState({ ...this.state, ...{ resouceItem: dataItems } })
-    });
   }
+
+  handlePageChange(pageNumber) {
+    
+    let abc = [...this.state.duplicateData];
+    let a= abc.splice((pageNumber - 1) * 6, 6);
+    this.setState({ ...this.state, activePage: pageNumber, resouceItem: a });
+    // Api.get(this.props.router?.query?.slug, { params: { _limit: 6, _start: 6 * (pageNumber - 1), _sort: "created_at:desc" } }).then(({ data: dataItems }) => {
+    //   this.setState({ ...this.state, ...{ resouceItem: dataItems } })
+    // });
+
+  }
+  
   render() {
     var checkUrl = this.props?.router?.query?.slug;
     if (!this.state.resouceItem) {
@@ -100,10 +107,25 @@ export async function getStaticPaths() {
 
 
 
-export async function getStaticProps(context) {
+export async function getStaticProps({ params }) {
   var headerData = await BlogHeaderData();
+  var data = [];
+  let count = await Api.get(params?.slug + "/count").then((res) => {
+    return res.data;
+  });
+  let no = 0;
+  if (count > 0) {
+    no = Math.ceil(count / 6)
+  }
+  for (var i = 1; i <= no; i++) {
+    let ds = await Api.get(params?.slug, { params: { _limit: 6, _start: 6 * (i - 1), _sort: "created_at:desc" } }).then((res) => {
+      return res.data
+    });
+    data = [...data, ...ds]
+  }
+
   return {
-    props: { headerData: headerData }
+    props: { headerData: headerData, count: count, data: data }
   }
 }
 export default withRouter(resourceViewAll)

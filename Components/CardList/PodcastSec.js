@@ -50,17 +50,17 @@ class PodcastSect extends Component {
           </div>
         </Col>
         <Row className={"container-fluid " + styles.desktopview}>
-          {sect?.items?.map((item, i) => (
-            <BlogPodcast podcast={item} key={i} {...this.props} />
-          ))}
+          {sect?.items?.map((item, i) => {
+            return <BlogPodcast items={item} key={i} {...this.props} />
+          })}
         </Row>
-        <Row className={"container-fluid text-center " + styles.mobileview}>
+        {/* <Row className={"container-fluid text-center " + styles.mobileview}>
           <StyledSlider {...settings}>
             {sect?.items?.map((item, i) => (
               <BlogPodcast podcast={item} key={i} {...this.props} />
             ))}
           </StyledSlider>
-        </Row>
+        </Row> */}
         <Col md={11} sm={8} xs={4} className={'container-inner'} >
           <span className="mt-2 text-xs" onClick={() => this.props.router.push(sect.viewAll, "", { shallow: true })} >
             <b className="text-brand mt-2 float-right" style={{ cursor: 'pointer' }}>VIEW ALL</b>

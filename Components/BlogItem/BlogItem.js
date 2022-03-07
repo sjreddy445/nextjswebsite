@@ -10,16 +10,14 @@ export default class BlogItem extends Component {
   }
 
   componentDidMount() {
-    
-    Api.get(this.props.resourceUrl, { params: { _limit: 6 , _sort:"created_at:desc" } }).then(({ data: dataItems }) => {
       this.setState({
         sect: {
           title: this.props.title,
-          items: dataItems,
+          items: this.props.blogs,
           viewAll: `/all-resource${this.props.resourceUrl}`
         }
       })
-    })
+    
   }
  
   render() {

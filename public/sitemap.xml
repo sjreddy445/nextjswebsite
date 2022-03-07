@@ -49,10 +49,6 @@
   </url>
 
   <url>
-    <loc>https://www.getedge.ai/elapage/index</loc>
-  </url>
-
-  <url>
     <loc>https://www.getedge.ai/careers/ApplyForm</loc>
   </url>
 
@@ -70,6 +66,10 @@
 
   <url>
     <loc>https://www.getedge.ai/careers/index</loc>
+  </url>
+
+  <url>
+    <loc>https://www.getedge.ai/elapage/index</loc>
   </url>
 
   <url>

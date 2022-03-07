@@ -7,7 +7,6 @@ export default class PeopleCard extends Component {
   
   render() {
     let people = this.props.data
-    console.log("peopel",people)
     return (
       <div>
         <div className={styles.peopleCard + " mb-5"}>

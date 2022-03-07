@@ -39,7 +39,7 @@ class Footer extends Component {
   }
   
   render() {
-    
+    console.log("props",this.props)  
     return (
       <>
         <Modal isOpen={this.state.modal} toggle={this.toggleCreditModal} className="info-modal" size="lg" >

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import HeaderBanner from '../../Components/HeaderBanner/HeaderBanner'
 import { payload as BlogHeaderData } from '../../Payloads/Blog/Header'
-import { payload as BlogpageSectionPayload } from '../../Payloads/Blog/Blogs'
-import { blogs as blogPayload, videos as videoPayload, podcast as podcastPayload } from '../../Payloads/Blog/BlogPost'
+import { payload as BlogpageSectionPayload, allBVP } from '../../Payloads/Blog/Blogs'
+import { blogs as blogPayload, videos as videoPayload, podcast as podcastPayload, } from '../../Payloads/Blog/BlogPost'
 import { setNavColor } from '../../Components/TopNav/Utils'
 import SubMenu from '../../Components/SubMenu/SubMenu';
 import { BrowserView } from 'react-device-detect'
@@ -49,7 +49,7 @@ export default class Blog extends Component {
     return (
       <Fade>
         <Head>
-        <title>{pageTitle('blog')}</title>
+          <title>{pageTitle('blog')}</title>
           <meta name="description" content="getEdGE talent acquisition tool is powered using Artificial Intelligence to ensure talent management systems are simplified.  HR solution for talent management. " />
         </Head>
         <div>
@@ -66,7 +66,7 @@ export default class Blog extends Component {
           {this.state?.blogPageSections?.map((item, i) => {
             let blogSect = null;
             if (item.resourceUrl === BLOG) {
-              blogSect = <BlogItem {...this.props} key={i} title={item.name} resourceUrl={item.resourceUrl} />
+              blogSect = <BlogItem {...this.props} key={i} title={item.name}  resourceUrl={item.resourceUrl} />
             }
             return blogSect;
           }
@@ -76,7 +76,7 @@ export default class Blog extends Component {
           {this.state?.blogPageSections?.map((item, i) => {
             let videoSect = null;
             if (item.resourceUrl === VIDEOS) {
-              videoSect = <BlogVideo {...this.props} key={i} title={item.name} resourceUrl={item.resourceUrl} />
+              videoSect = <BlogVideo {...this.props} key={i} title={item.name}  resourceUrl={item.resourceUrl} />
             }
             return videoSect
           })}
@@ -98,11 +98,31 @@ export default class Blog extends Component {
 export async function getStaticProps(context) {
   var headerData = await BlogHeaderData();
   var pagSection = await BlogpageSectionPayload();
+  var blogs = [];
+  var videos = [];
+  var podcast = [];
+  if (pagSection.length > 0) {
+    for (var i in pagSection) {
+      var allBV = await allBVP(pagSection[i].resourceUrl);
+      if (pagSection[i].resourceUrl === BLOG) {
+        blogs = allBV;
+      }
+      if (pagSection[i].resourceUrl === VIDEOS) {
+        videos = allBV;
+      }
+      if (pagSection[i].resourceUrl === PODCAST) {
+        podcast = allBV;
+      }
+    }
+  }
 
   return {
     props: {
       headerData: headerData,
       blogPageSections: pagSection,
+      blogs: blogs,
+      videos: videos,
+      podcast: podcast
     }
   }
 }

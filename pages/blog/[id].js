@@ -59,7 +59,6 @@ class BlogPost extends Component {
   };
 
   getCleanText = (content) => {
-    console.log("content",content)
     let filtered = content.replace(/&nbsp;/g, ' ')
     let endpoint = filtered;
     endpoint = endpoint.replace('oembed url', 'iframe height=450 width=100% allowfullscreen="allowfullscreen" src');
@@ -67,7 +66,6 @@ class BlogPost extends Component {
     endpoint = endpoint.replace('watch?v=', 'embed/');
     endpoint = endpoint.replace('oembed', 'iframe');
     endpoint = endpoint.replace(`<img src="`, `<img height=450 width=100%  src="${BASEURL}`);
-    console.log("ednpoint",endpoint)
     return endpoint;
   }
 

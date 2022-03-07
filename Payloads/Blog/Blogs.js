@@ -7,3 +7,11 @@ export const payload = () => {
     return {};
   })
 }
+export const allBVP = (url) => {
+  return Api.get(url,{ params: { _limit: 6, _sort: "created_at:desc" } }).then(result => {
+    if (result.status == 200) {
+      return result.data;
+    }
+    return {};
+  })
+}
