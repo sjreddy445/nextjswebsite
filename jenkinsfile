@@ -8,7 +8,7 @@ pipeline {
             script: 'cat VERSION',
              returnStdout: true
          ).trim() 
-        DOCKER_IMG_NAME = "https://hub.docker.com/repository/registry-1.docker.io/sjreddy/sjreddy-docker-registry/tags?page=1&ordering=last_updated"
+        DOCKER_IMG_NAME = "hub.docker.com/repository/registry-1.docker.io/sjreddy/sjreddy-docker-registry/tags?page=1&ordering=last_updated"
     }
     stages {
         stage('Build') {
